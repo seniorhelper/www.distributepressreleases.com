@@ -1,0 +1,43 @@
+{
+  "name": "Distribute Press Releases",
+  "short_name": "DPR",
+  "description": "Press release distribution across every open channel, with a public receipt.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#F6F8FC",
+  "theme_color": "#08214A",
+  "lang": "en-US",
+  "categories": [
+    "business",
+    "news",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/images/distribute-press-releases-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/distribute-press-releases-apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Grade a press release",
+      "url": "/tools/press-release-grader/"
+    },
+    {
+      "name": "Is this newsworthy?",
+      "url": "/tools/newsworthiness-check/"
+    },
+    {
+      "name": "Start a release",
+      "url": "/contact/"
+    }
+  ]
+}

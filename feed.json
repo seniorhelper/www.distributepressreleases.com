@@ -1,0 +1,15 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is a paid placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": []
+}

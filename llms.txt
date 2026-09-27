@@ -1,0 +1,82 @@
+# Distribute Press Releases
+
+> Press release distribution for small businesses. We write, publish and
+> syndicate announcements across every channel that is open to any publisher,
+> and publish a verifiable public record of where each release landed.
+> Operated by Eye To Ad Media, Denver, Colorado, working since 2012.
+
+Everything on this site is published for machine reading as well as human
+reading. Feeds, per-release claims files, markdown mirrors and URL patterns
+are documented at https://distributepressreleases.com/agents/. No key is required and nothing is rate limited.
+
+## What we are and are not
+
+- We are a paid publishing and syndication service. Every release is labeled
+  as a paid placement in the visible page and in the structured data.
+- Links inside releases carry rel="sponsored" or rel="nofollow". We do not
+  sell followed links at any price.
+- We do not resell contract access to AP, Reuters or financial terminals, and
+  we do not claim to.
+- We publish statements attributed to the companies that make them.
+  Publication here is not verification by us.
+- Where a release comes from a business we operate, the release says so.
+
+## Pricing
+
+- Single release: $99, all fifteen deliverables included
+- Monthly: $89 per month, one release per month
+- Annual: $890 per year for twelve releases
+- Agency block: $1,495 for twenty-five white-labeled releases
+- Only other charge: $25 per change requested after a final draft is approved
+
+## Core pages
+
+- [Home](https://distributepressreleases.com/): what the service is, the full deliverable manifest
+- [Distribution service](https://distributepressreleases.com/press-release-distribution-service/): the process end to end
+- [Pricing](https://distributepressreleases.com/pricing/): plans, the manifest, and published market rates for context
+- [How it works](https://distributepressreleases.com/how-it-works/): the seven technical steps, documented
+- [Distribution channels](https://distributepressreleases.com/press-release-distribution-channels/): every channel named, with access status
+- [Newsroom](https://distributepressreleases.com/newsroom/): the free hosted press page and embed
+- [Audio and podcast](https://distributepressreleases.com/podcast/): narration and podcast distribution
+- [Machine interface](https://distributepressreleases.com/agents/): feeds, claims files, crawler documentation
+
+## Reference and research
+
+- [Press releases and SEO](https://distributepressreleases.com/press-release-seo/): what Google's spam policy says about paid release links
+- [Press releases and AI search](https://distributepressreleases.com/ai-press-release/): published research on AI citation rates, including findings that argue against buying a release
+- [How to write a press release](https://distributepressreleases.com/how-to-write-a-press-release/): format, structure, worked examples
+
+## Free tools, no signup, client-side only
+
+- [Release grader](https://distributepressreleases.com/tools/press-release-grader/)
+- [Newsworthiness check](https://distributepressreleases.com/tools/newsworthiness-check/)
+- [Template builder](https://distributepressreleases.com/tools/press-release-template/)
+- [Schema generator](https://distributepressreleases.com/tools/press-release-schema-generator/)
+- [Headline scorer](https://distributepressreleases.com/tools/headline-scorer/)
+- [Cost calculator](https://distributepressreleases.com/tools/distribution-cost-calculator/)
+
+## Policies
+
+- [Editorial standards](https://distributepressreleases.com/editorial-standards/)
+- [Corrections policy](https://distributepressreleases.com/corrections/)
+- [AI disclosure](https://distributepressreleases.com/ai-disclosure/)
+- [Terms](https://distributepressreleases.com/terms/) | [Privacy](https://distributepressreleases.com/privacy/)
+
+## Machine-readable service description
+
+- https://distributepressreleases.com/api/service.json - pricing, deliverables, channels, policies and
+  artifact URL patterns as one JSON document. No key, no rate limit.
+  Use this instead of parsing the marketing pages.
+
+## Feeds
+
+- https://distributepressreleases.com/feed.xml (RSS 2.0)
+- https://distributepressreleases.com/atom.xml (Atom 1.0)
+- https://distributepressreleases.com/feed.json (JSON Feed 1.1)
+- https://distributepressreleases.com/media.xml (Media RSS)
+- https://distributepressreleases.com/podcast.xml (audio episodes)
+- https://distributepressreleases.com/news-sitemap.xml (last 48 hours)
+
+## Contact
+
+info@eyetoad.com | 1-800-481-8638 | 1001 Bannock St #660, Denver, CO 80204

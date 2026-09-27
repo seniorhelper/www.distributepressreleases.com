@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Distribute Press Releases</title>
+    <link>https://distributepressreleases.com/</link>
+    <description>Press releases published and syndicated by Distribute Press Releases. Every item is a paid placement, labeled as such, and publication is not verification.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Sep 2026 20:23:22 +0000</lastBuildDate>
+    <atom:link href="https://distributepressreleases.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <copyright>2026 Distribute Press Releases</copyright>
+
+  </channel>
+</rss>

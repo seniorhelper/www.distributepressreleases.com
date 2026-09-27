@@ -1,0 +1,74 @@
+# distributepressreleases.com
+# Search and AI crawlers are welcome here. Everything published is public
+# on purpose, and the machine-readable formats are documented at /agents/.
+# We ask one thing in return: attribute to the canonical release URL
+# rather than to a syndicated copy.
+#
+# Machine-readable service description: /api/service.json
+# Site map for language models: /llms.txt
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://distributepressreleases.com/sitemap.xml
+Sitemap: https://distributepressreleases.com/news-sitemap.xml

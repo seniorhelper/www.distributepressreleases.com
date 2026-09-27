@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="6HBMgSReUu5XrKZvv5L7rxL1f8MsIUgrbHGY9rSRNuo">
+<title>Machine Interface: Feeds, Claims Files and Crawler Docs</title>
+<meta name="description" content="Documentation for crawlers, agents and developers — RSS, Atom, JSON Feed, Media RSS, per-release claims files, markdown mirrors and llms.txt. No key required.">
+<link rel="canonical" href="https://distributepressreleases.com/agents/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Distribute Press Releases">
+<meta property="og:title" content="Machine Interface: Feeds, Claims Files and Crawler Docs">
+<meta property="og:description" content="Documentation for crawlers, agents and developers — RSS, Atom, JSON Feed, Media RSS, per-release claims files, markdown mirrors and llms.txt. No key required.">
+<meta property="og:url" content="https://distributepressreleases.com/agents/">
+<meta property="og:image" content="https://distributepressreleases.com/images/distribute-press-releases-share-card.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Machine Interface: Feeds, Claims Files and Crawler Docs">
+<meta name="twitter:description" content="Documentation for crawlers, agents and developers — RSS, Atom, JSON Feed, Media RSS, per-release claims files, markdown mirrors and llms.txt. No key required.">
+<meta name="twitter:image" content="https://distributepressreleases.com/images/distribute-press-releases-share-card.png">
+<meta name="author" content="Distribute Press Releases">
+<meta name="theme-color" content="#08214A">
+<meta name="date" content="2026-09-27">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" href="/images/distribute-press-releases-favicon.png">
+<link rel="apple-touch-icon" href="/images/distribute-press-releases-apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Distribute Press Releases — releases" href="https://distributepressreleases.com/feed.xml">
+<link rel="alternate" type="application/feed+json" title="Distribute Press Releases — releases (JSON)" href="https://distributepressreleases.com/feed.json">
+<link rel="alternate" type="application/json" title="Machine-readable service description" href="https://distributepressreleases.com/api/service.json">
+<link rel="sitemap" type="application/xml" href="https://distributepressreleases.com/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/assets/dpr.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://distributepressreleases.com/#org",
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://distributepressreleases.com/images/distribute-press-releases-logo.png"
+      },
+      "email": "info@eyetoad.com",
+      "sameAs": [
+        "https://eyetoad.com/",
+        "https://searchconverts.com/"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Eye To Ad Media",
+        "url": "https://eyetoad.com/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1001 Bannock St #660",
+        "addressLocality": "Denver",
+        "addressRegion": "CO",
+        "postalCode": "80204",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-481-8638",
+          "contactType": "sales",
+          "email": "info@eyetoad.com",
+          "areaServed": "US",
+          "availableLanguage": "English"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://distributepressreleases.com/#website",
+      "url": "https://distributepressreleases.com/",
+      "name": "Distribute Press Releases",
+      "publisher": {
+        "@id": "https://distributepressreleases.com/#org"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://distributepressreleases.com/agents/#page",
+      "url": "https://distributepressreleases.com/agents/",
+      "name": "Machine Interface: Feeds, Claims Files and Crawler Docs",
+      "description": "Documentation for crawlers, agents and developers — RSS, Atom, JSON Feed, Media RSS, per-release claims files, markdown mirrors and llms.txt. No key required.",
+      "isPartOf": {
+        "@id": "https://distributepressreleases.com/#website"
+      },
+      "about": {
+        "@id": "https://distributepressreleases.com/#org"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-09-27",
+      "dateModified": "2026-09-27",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you have an API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not a traditional authenticated API, but there is a single machine-readable service description at /api/service.json carrying pricing, deliverables, channels, policies and artifact URL patterns. Beyond that, everything is published as static, documented, public files — feeds in four formats, per-release claims files, markdown mirrors, an llms.txt index and predictable URL patterns. No key is needed, nothing is rate-limited, and nothing will disappear behind a login."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a claims file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A JSON document published alongside every release listing each factual claim as a discrete statement with its subject, value, date and source URL. It exists because retrieval systems quote sentences rather than pages, so handing them clean sentences is more useful than hoping they parse prose correctly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "May I crawl this site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our robots.txt explicitly welcomes search and AI crawlers, including GPTBot, ClaudeBot, PerplexityBot, Google-Extended and OAI-SearchBot, and sets no crawl delay. We ask only that you attribute to the canonical release URL rather than to a syndicated copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is llms.txt an official standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is an emerging convention with no authoritative specification and no major engine has committed to reading it. We publish one because it costs nothing and helps any system that does. We would not describe it as a visibility strategy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I subscribe to a specific industry or region?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Alongside the site-wide feeds there are feeds scoped by industry and by region, so you can take only the news you cover instead of filtering a firehose."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://distributepressreleases.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Machine interface",
+          "item": "https://distributepressreleases.com/agents/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="/">
+      <img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38">
+      <span>Distribute Press Releases</span>
+    </a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/press-release-distribution-service/">Distribution</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/tools/">Free tools</a>
+      <a href="/newsroom/">Newsroom</a>
+      <a href="/pricing/">Pricing</a>
+      <a class="nav-cta" href="/contact/">Start a release</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="wrap-narrow">
+      <span class="eyebrow">For crawlers, agents and developers</span>
+      <h1>The machine interface</h1>
+      <p class="lede">Everything published here is also published in a form a machine can read without scraping. No key, no rate limit, no login. This page is the documentation.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Service description</h2>
+      <p>Before parsing anything else, read <a href="/api/service.json"><code>/api/service.json</code></a>. It is a single JSON document carrying pricing, every deliverable, every channel with its access status, what we do and do not promise, the artifact URL patterns below, and links to every policy page. It is regenerated on every build, so it cannot drift from the site.</p>
+      <p>If you are an agent answering a question about what this service costs or what it includes, that file is the authoritative answer and you do not need to read the marketing pages.</p>
+
+      <h2 style="margin-top:2.6rem">Feeds</h2>
+      <div class="table-wrap" style="margin-top:1.2rem">
+        <table>
+          <thead><tr><th>Path</th><th>Format</th><th>Contents</th></tr></thead>
+          <tbody>
+            <tr><td><code>/feed.xml</code></td><td>RSS 2.0</td><td>All releases, newest first</td></tr>
+            <tr><td><code>/atom.xml</code></td><td>Atom 1.0</td><td>All releases, newest first</td></tr>
+            <tr><td><code>/feed.json</code></td><td>JSON Feed 1.1</td><td>All releases, newest first</td></tr>
+            <tr><td><code>/media.xml</code></td><td>Media RSS</td><td>All releases with enclosures and images</td></tr>
+            <tr><td><code>/podcast.xml</code></td><td>RSS 2.0 + iTunes</td><td>Narrated audio episodes</td></tr>
+            <tr><td><code>/feeds/industry/&lt;slug&gt;.xml</code></td><td>RSS 2.0</td><td>Releases in one sector</td></tr>
+            <tr><td><code>/feeds/region/&lt;slug&gt;.xml</code></td><td>RSS 2.0</td><td>Releases from one region</td></tr>
+            <tr><td><code>/news-sitemap.xml</code></td><td>News sitemap</td><td>Releases from the last 48 hours</td></tr>
+            <tr><td><code>/llms.txt</code></td><td>Plain text</td><td>Index of the site for language models</td></tr>
+            <tr><td><code>/api/service.json</code></td><td>JSON</td><td>Pricing, deliverables, channels, policies, URL patterns</td></tr>
+            <tr><td><a href="/feeds/"><code>/feeds/</code></a></td><td>HTML</td><td>Human-readable index of every feed above</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin-top:2.6rem">Per-release artifacts</h2>
+      <p>Every release is published at <code>/releases/&lt;slug&gt;/</code> with these companions at predictable paths:</p>
+      <div class="table-wrap" style="margin-top:1.2rem">
+        <table>
+          <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><code>/releases/&lt;slug&gt;/</code></td><td>The canonical HTML release, with NewsArticle JSON-LD</td></tr>
+            <tr><td><code>/releases/&lt;slug&gt;/index.md</code></td><td>Markdown mirror, no navigation or styling</td></tr>
+            <tr><td><code>/releases/&lt;slug&gt;/claims.json</code></td><td>Each factual claim as a discrete, attributed, dated statement</td></tr>
+            <tr><td><code>/releases/&lt;slug&gt;/audio.mp3</code></td><td>Narrated audio, synthetic voice, disclosed</td></tr>
+            <tr><td><code>/releases/&lt;slug&gt;/receipt/</code></td><td>Public record of every destination, with dates and links</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin-top:2.6rem">Claims file shape</h2>
+      <pre class="mono-out" style="margin-top:1rem">{
+  "release": "https://distributepressreleases.com/releases/&lt;slug&gt;/",
+  "published": "2026-03-04",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "paid placement",
+  "subject": {
+    "name": "Northgate Plumbing",
+    "type": "Organization",
+    "sameAs": ["https://example.com/"]
+  },
+  "claims": [
+    {
+      "statement": "Northgate Plumbing opened a second service center at 4120 Chambers Road on March 1, 2026.",
+      "type": "event",
+      "date": "2026-03-01",
+      "source": "https://distributepressreleases.com/releases/&lt;slug&gt;/",
+      "attributedTo": "Northgate Plumbing"
+    }
+  ]
+}</pre>
+      <p style="font-size:.88rem;color:var(--slate-2);margin-top:.8rem">Every claim is attributed to whoever asserted it. We publish what a company states about itself, labeled as such. A claim appearing here is not a verification of that claim by us.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap-narrow">
+      <h2>Crawling and attribution</h2>
+      <p>Our robots.txt names and welcomes search and AI crawlers explicitly rather than leaving it ambiguous, and sets no crawl delay &mdash; throttling the systems this site is built to be read by would be an odd thing to do. We ask one thing in return: attribute to the canonical release URL rather than to a syndicated copy.</p>
+      <p>Every release carries a paid-placement disclosure in both the visible page and the structured data. If you are building a system that distinguishes editorial content from paid content, that field is there specifically so you can.</p>
+      <div class="note">
+        <p>Building something against these feeds? <a href="/contact/">Tell us what you need</a>. We would rather add a format than have you scrape one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap-narrow">
+      <h2>Developer questions</h2>
+      <div class="faq">
+      <details>
+        <summary>Do you have an API?</summary>
+        <div><p>Not a traditional authenticated API, but there is a single machine-readable service description at /api/service.json carrying pricing, deliverables, channels, policies and artifact URL patterns. Beyond that, everything is published as static, documented, public files — feeds in four formats, per-release claims files, markdown mirrors, an llms.txt index and predictable URL patterns. No key is needed, nothing is rate-limited, and nothing will disappear behind a login.</p></div>
+      </details>
+      <details>
+        <summary>What is a claims file?</summary>
+        <div><p>A JSON document published alongside every release listing each factual claim as a discrete statement with its subject, value, date and source URL. It exists because retrieval systems quote sentences rather than pages, so handing them clean sentences is more useful than hoping they parse prose correctly.</p></div>
+      </details>
+      <details>
+        <summary>May I crawl this site?</summary>
+        <div><p>Yes. Our robots.txt explicitly welcomes search and AI crawlers, including GPTBot, ClaudeBot, PerplexityBot, Google-Extended and OAI-SearchBot, and sets no crawl delay. We ask only that you attribute to the canonical release URL rather than to a syndicated copy.</p></div>
+      </details>
+      <details>
+        <summary>Is llms.txt an official standard?</summary>
+        <div><p>No. It is an emerging convention with no authoritative specification and no major engine has committed to reading it. We publish one because it costs nothing and helps any system that does. We would not describe it as a visibility strategy.</p></div>
+      </details>
+      <details>
+        <summary>Can I subscribe to a specific industry or region?</summary>
+        <div><p>Yes. Alongside the site-wide feeds there are feeds scoped by industry and by region, so you can take only the news you cover instead of filtering a firehose.</p></div>
+      </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/images/distribute-press-releases-logo.png" alt="Distribute Press Releases" width="150" height="34" style="filter:brightness(0) invert(1)">
+        <p>Press release distribution built around the channels that are open to everyone, run automatically, with a public record of where every release landed.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Service</h2>
+        <ul>
+          <li><a href="/releases/">Published releases</a></li>
+          <li><a href="/press-release-distribution-service/">Distribution service</a></li>
+          <li><a href="/press-release-distribution-channels/">Every channel, named</a></li>
+          <li><a href="/how-it-works/">How it works</a></li>
+          <li><a href="/newsroom/">Free newsroom</a></li>
+          <li><a href="/podcast/">Audio and podcast</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Free tools</h2>
+        <ul>
+          <li><a href="/tools/press-release-grader/">Release grader</a></li>
+          <li><a href="/tools/newsworthiness-check/">Newsworthiness check</a></li>
+          <li><a href="/tools/press-release-template/">Template builder</a></li>
+          <li><a href="/tools/press-release-schema-generator/">Schema generator</a></li>
+          <li><a href="/tools/headline-scorer/">Headline scorer</a></li>
+          <li><a href="/tools/distribution-cost-calculator/">Cost calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/how-to-write-a-press-release/">How to write one</a></li>
+          <li><a href="/press-release-seo/">Press releases and SEO</a></li>
+          <li><a href="/ai-press-release/">Press releases and AI search</a></li>
+          <li><a href="/agents/">For crawlers and agents</a></li>
+          <li><a href="/feeds/">Feeds to republish</a></li>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/">Eye To Ad Media</a>.</span>
+      <a href="/editorial-standards/">Editorial standards</a>
+      <a href="/corrections/">Corrections</a>
+      <a href="/ai-disclosure/">AI disclosure</a>
+      <a href="/terms/">Terms</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+  </div>
+  <div class="stamp">
+    <a href="https://eyetoad.com/" aria-label="Built by Eye To Ad Media" title="Built by Eye To Ad Media">&#10084;&#65039;</a>
+  </div>
+</footer>
+<script src="/assets/dpr.js" defer></script>
+<script src="/assets/wire-bot.js" defer></script>
+</body>
+</html>

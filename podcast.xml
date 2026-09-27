@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distribute Press Releases — Announcements</title>
+    <link>https://distributepressreleases.com/podcast/</link>
+    <description>Business announcements, read aloud. Every episode is a paid press release and uses synthetic narration, disclosed in each episode.</description>
+    <language>en-us</language>
+    <itunes:author>Distribute Press Releases</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Business"/>
+    <itunes:image href="https://distributepressreleases.com/images/distribute-press-releases-share-card.png"/>
+    <itunes:owner><itunes:name>Distribute Press Releases</itunes:name><itunes:email>info@eyetoad.com</itunes:email></itunes:owner>
+    <atom:link href="https://distributepressreleases.com/podcast.xml" rel="self" type="application/rss+xml"/>
+
+  </channel>
+</rss>

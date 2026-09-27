@@ -1,0 +1,274 @@
+{
+  "$schema": "https://distributepressreleases.com/api/service.json",
+  "name": "Distribute Press Releases",
+  "url": "https://distributepressreleases.com/",
+  "updated": "2026-09-27",
+  "operator": {
+    "name": "Eye To Ad Media",
+    "url": "https://eyetoad.com/",
+    "address": "1001 Bannock St #660, Denver, CO 80204, US",
+    "email": "info@eyetoad.com",
+    "telephone": "+1-800-481-8638",
+    "founded": "2012"
+  },
+  "summary": "Press release writing, publishing and syndication. Every release ships as fifteen artifacts across the distribution channels that are open to any publisher, plus a public receipt page recording every destination.",
+  "disclosure": {
+    "content_type": "paid placement",
+    "every_release_labeled_paid": true,
+    "link_attributes": [
+      "sponsored",
+      "nofollow"
+    ],
+    "sells_followed_links": false,
+    "publication_is_verification": false,
+    "self_dealing_disclosed": true,
+    "ai_narration_disclosed": true,
+    "policy_urls": {
+      "editorial_standards": "https://distributepressreleases.com/editorial-standards/",
+      "corrections": "https://distributepressreleases.com/corrections/",
+      "ai_disclosure": "https://distributepressreleases.com/ai-disclosure/",
+      "terms": "https://distributepressreleases.com/terms/",
+      "privacy": "https://distributepressreleases.com/privacy/"
+    }
+  },
+  "pricing": {
+    "currency": "USD",
+    "plans": [
+      {
+        "id": "single",
+        "name": "Single release",
+        "price": 99,
+        "unit": "release",
+        "includes": "all fifteen deliverables, writing and one editorial pass"
+      },
+      {
+        "id": "monthly",
+        "name": "Monthly",
+        "price": 89,
+        "unit": "month",
+        "includes": "one release per month"
+      },
+      {
+        "id": "annual",
+        "name": "Annual",
+        "price": 890,
+        "unit": "year",
+        "includes": "twelve releases, about $74 each"
+      },
+      {
+        "id": "agency",
+        "name": "Agency block",
+        "price": 1495,
+        "unit": "25 releases",
+        "includes": "white-labeled, usable across any number of client companies"
+      }
+    ],
+    "additional_charges": [
+      {
+        "name": "Change requested after final draft approval",
+        "price": 25
+      }
+    ],
+    "no_charge_for": [
+      "extra words",
+      "images",
+      "video embeds",
+      "industry lists",
+      "corrections of our errors",
+      "the newsroom",
+      "the free tools"
+    ]
+  },
+  "deliverables": [
+    {
+      "name": "Written and edited release",
+      "description": "You send the facts. We write it and run one editorial pass."
+    },
+    {
+      "name": "Permanent canonical URL",
+      "description": "A stable address that stays live and stays the original."
+    },
+    {
+      "name": "Structured data",
+      "description": "NewsArticle and Organization JSON-LD, validated before publishing."
+    },
+    {
+      "name": "Atomic claims file",
+      "description": "Your facts as discrete, attributed, dated statements machines can lift."
+    },
+    {
+      "name": "Markdown mirror",
+      "description": "A clean, chrome-free copy for systems that prefer plain text."
+    },
+    {
+      "name": "Narrated audio",
+      "description": "The release read aloud, delivered as an MP3 you own."
+    },
+    {
+      "name": "Podcast episode and transcript",
+      "description": "Published to our feed, which carries to the major directories."
+    },
+    {
+      "name": "Four syndication feeds",
+      "description": "RSS, Atom, JSON Feed and Media RSS, filtered by industry and region."
+    },
+    {
+      "name": "IndexNow push",
+      "description": "Your URL pushed to participating engines within minutes of publishing."
+    },
+    {
+      "name": "Social posts",
+      "description": "Published to Bluesky and Mastodon automatically."
+    },
+    {
+      "name": "News site syndication",
+      "description": "Republished on our news property with correct canonical handling."
+    },
+    {
+      "name": "Network placement",
+      "description": "One relevance-matched placement on a site in our network."
+    },
+    {
+      "name": "Business directory profile",
+      "description": "A verified standard listing that collects your release history."
+    },
+    {
+      "name": "Embeddable newsroom",
+      "description": "A press page for your own site that updates itself."
+    },
+    {
+      "name": "Public citation receipt",
+      "description": "A permanent page listing every place your release actually landed."
+    }
+  ],
+  "channels": {
+    "open_to_any_publisher": [
+      {
+        "name": "IndexNow",
+        "reaches": [
+          "Bing",
+          "Yandex",
+          "Naver",
+          "Seznam"
+        ],
+        "note": "Google does not participate in IndexNow."
+      },
+      {
+        "name": "RSS 2.0",
+        "url": "https://distributepressreleases.com/feed.xml"
+      },
+      {
+        "name": "Atom 1.0",
+        "url": "https://distributepressreleases.com/atom.xml"
+      },
+      {
+        "name": "JSON Feed 1.1",
+        "url": "https://distributepressreleases.com/feed.json"
+      },
+      {
+        "name": "Media RSS",
+        "url": "https://distributepressreleases.com/media.xml"
+      },
+      {
+        "name": "Podcast directories",
+        "url": "https://distributepressreleases.com/podcast.xml",
+        "reaches": [
+          "Spotify",
+          "Apple Podcasts",
+          "Amazon Music",
+          "YouTube"
+        ]
+      },
+      {
+        "name": "Bluesky"
+      },
+      {
+        "name": "Mastodon"
+      },
+      {
+        "name": "Publisher embed",
+        "url": "https://distributepressreleases.com/assets/newsroom.js"
+      }
+    ],
+    "we_operate": [
+      "Our news property",
+      "Network placement",
+      "Business directory profile"
+    ],
+    "approval_required_not_promised": [
+      "Google News",
+      "Microsoft Start / MSN"
+    ],
+    "not_available_through_us": [
+      "AP",
+      "Reuters",
+      "financial terminals"
+    ]
+  },
+  "guarantees": {
+    "we_promise": [
+      "the pipeline runs",
+      "every artifact is published",
+      "the receipt records every destination",
+      "factual corrections are free and permanent"
+    ],
+    "we_do_not_promise": [
+      "search rankings",
+      "indexing",
+      "inclusion in any news product",
+      "citation by any AI system",
+      "media pickup",
+      "traffic",
+      "leads or sales"
+    ]
+  },
+  "artifact_url_patterns": {
+    "release": "https://distributepressreleases.com/releases/{slug}/",
+    "markdown_mirror": "https://distributepressreleases.com/releases/{slug}/index.md",
+    "claims": "https://distributepressreleases.com/releases/{slug}/claims.json",
+    "audio": "https://distributepressreleases.com/releases/{slug}/audio.mp3",
+    "receipt": "https://distributepressreleases.com/releases/{slug}/receipt/",
+    "industry_feed": "https://distributepressreleases.com/feeds/industry/{industry}.xml",
+    "region_feed": "https://distributepressreleases.com/feeds/region/{region}.xml",
+    "company_newsroom_json": "https://distributepressreleases.com/newsrooms/{company}/feed.json",
+    "company_newsroom_rss": "https://distributepressreleases.com/newsrooms/{company}/feed.xml"
+  },
+  "free_tools": [
+    {
+      "name": "Release grader",
+      "url": "https://distributepressreleases.com/tools/press-release-grader/"
+    },
+    {
+      "name": "Newsworthiness check",
+      "url": "https://distributepressreleases.com/tools/newsworthiness-check/"
+    },
+    {
+      "name": "Template builder",
+      "url": "https://distributepressreleases.com/tools/press-release-template/"
+    },
+    {
+      "name": "Schema generator",
+      "url": "https://distributepressreleases.com/tools/press-release-schema-generator/"
+    },
+    {
+      "name": "Headline scorer",
+      "url": "https://distributepressreleases.com/tools/headline-scorer/"
+    },
+    {
+      "name": "Cost calculator",
+      "url": "https://distributepressreleases.com/tools/distribution-cost-calculator/"
+    }
+  ],
+  "tool_privacy": "All six tools are deterministic code running in the visitor's browser. No model, no API call, nothing transmitted.",
+  "crawling": {
+    "robots": "https://distributepressreleases.com/robots.txt",
+    "ai_crawlers_welcome": true,
+    "crawl_delay": null,
+    "attribution_request": "Attribute to the canonical release URL, not a syndicated copy."
+  },
+  "contact": {
+    "email": "info@eyetoad.com",
+    "telephone": "+1-800-481-8638",
+    "order_form": "https://distributepressreleases.com/contact/"
+  }
+}

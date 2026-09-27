@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Distribute Press Releases">
+  <rect width="64" height="64" rx="14" fill="#08214A"/>
+  <path d="M30 13h14l8 8v30a4 4 0 0 1-4 4H30a4 4 0 0 1-4-4V17a4 4 0 0 1 4-4z" fill="#fff"/>
+  <path d="M44 13l8 8h-8z" fill="#0284FE"/>
+  <g fill="#08214A">
+    <rect x="31" y="27" width="16" height="3.4" rx="1.7"/>
+    <rect x="31" y="34" width="16" height="3.4" rx="1.7"/>
+    <rect x="31" y="41" width="10" height="3.4" rx="1.7"/>
+  </g>
+  <g fill="#0284FE">
+    <rect x="9" y="23" width="18" height="4.6" rx="2.3"/>
+    <rect x="4" y="31.5" width="23" height="4.6" rx="2.3"/>
+    <rect x="11" y="40" width="16" height="4.6" rx="2.3"/>
+  </g>
+</svg>
