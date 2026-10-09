@@ -49,7 +49,7 @@ up to three, get the release.
 To add a site: add an entry to `network.json`, then paste the module into the
 site:
 
-    <section id="business-news" hidden aria-label="Business news">
+    <section id="business-news" data-dpr-box style="display:none" aria-label="Business news">
       <h2>Business news</h2>
       <div data-dpr-network="site-id" data-limit="4"></div>
     </section>

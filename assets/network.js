@@ -1,7 +1,7 @@
 /* Distribute Press Releases — network module.
    Shows the releases the routing filter matched to this site.
    Usage:
-     <section id="business-news" hidden> ...heading...
+     <section id="business-news" data-dpr-box style="display:none"> ...heading...
        <div data-dpr-network="site-id" data-limit="4"></div>
      </section>
      <script async src="https://distributepressreleases.com/assets/network.js"></script>
@@ -37,7 +37,7 @@
   Array.prototype.forEach.call(hosts, function (host) {
     var id = (host.getAttribute("data-dpr-network") || "").replace(/[^a-z0-9-]/gi, "");
     var limit = parseInt(host.getAttribute("data-limit") || "4", 10);
-    var box = host.closest("[hidden]") || null;
+    var box = host.closest("[data-dpr-box]") || host.closest("[hidden]") || null;
     if (!id) return;
     fetch(BASE + "/syndication/" + id + ".json", {cache: "no-cache"})
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
@@ -56,7 +56,7 @@
         }).join("") + "</ul>" +
           '<p class="dprx-f">Press releases are written by the companies named and published through <a href="' + BASE +
           '/network/" rel="noopener" target="_blank">Distribute Press Releases</a>, which shares ownership with this site. Each is labeled paid or affiliated. Publication is not endorsement.</p>';
-        if (box) box.hidden = false;
+        if (box) { box.hidden = false; box.style.display = ""; }
       })
       .catch(function () { /* stay hidden */ });
   });
