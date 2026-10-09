@@ -271,8 +271,8 @@ def disclosure(r):
 
 def label(r):
     """Short label for feeds, cards and the network module."""
-    return {"operator": "Affiliated: operator’s own release",
-            "common-ownership": "Affiliated: common ownership"}.get(r.get("affiliated"), "Paid press release")
+    return {"operator": "Operator’s own release",
+            "common-ownership": "Affiliated release"}.get(r.get("affiliated"), "Paid press release")
 
 
 def release_html(r, prev_next):

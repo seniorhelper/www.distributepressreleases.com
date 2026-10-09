@@ -30,7 +30,7 @@
       ],
       "_dpr": {
         "slug": "eye-to-ad-media-press-release-routing-network",
-        "label": "Affiliated: operator’s own release",
+        "label": "Operator’s own release",
         "disclosure": "This is a press release from Eye To Ad Media, the company that operates Distribute Press Releases. It was not paid for, it is not independent journalism, and publication here is not verification of any claim it contains. Links in this release are marked sponsored.",
         "affiliated": "operator",
         "company": "Eye To Ad Media",
@@ -67,7 +67,7 @@
       ],
       "_dpr": {
         "slug": "eye-to-ad-media-custom-ai-agents-small-business",
-        "label": "Affiliated: operator’s own release",
+        "label": "Operator’s own release",
         "disclosure": "This is a press release from Eye To Ad Media, the company that operates Distribute Press Releases. It was not paid for, it is not independent journalism, and publication here is not verification of any claim it contains. Links in this release are marked sponsored.",
         "affiliated": "operator",
         "company": "Eye To Ad Media",
@@ -104,7 +104,7 @@
       ],
       "_dpr": {
         "slug": "aging-safely-baths-walk-in-tub-fit-check",
-        "label": "Affiliated: common ownership",
+        "label": "Affiliated release",
         "disclosure": "This is a press release from a company under common ownership with Eye To Ad Media, which operates Distribute Press Releases. It was not paid for, it is not independent journalism, and publication here is not verification of any claim it contains. Links in this release are marked sponsored.",
         "affiliated": "common-ownership",
         "company": "Aging Safely Baths",
@@ -141,7 +141,7 @@
       ],
       "_dpr": {
         "slug": "aging-safely-baths-curbed-vs-barrier-free-shower",
-        "label": "Affiliated: common ownership",
+        "label": "Affiliated release",
         "disclosure": "This is a press release from a company under common ownership with Eye To Ad Media, which operates Distribute Press Releases. It was not paid for, it is not independent journalism, and publication here is not verification of any claim it contains. Links in this release are marked sponsored.",
         "affiliated": "common-ownership",
         "company": "Aging Safely Baths",
