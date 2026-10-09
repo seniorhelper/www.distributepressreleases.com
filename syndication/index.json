@@ -1,7 +1,8 @@
 {
-  "generated": "2026-10-09T03:37:41Z",
+  "generated": "2026-10-09T03:47:33Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
+    "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
     "coloradocampingspots": "https://distributepressreleases.com/syndication/coloradocampingspots.json",
     "bestrestaurantdenver": "https://distributepressreleases.com/syndication/bestrestaurantdenver.json",
     "denvercoloradothingstodo": "https://distributepressreleases.com/syndication/denvercoloradothingstodo.json",
@@ -11,18 +12,22 @@
   "routes": {
     "eye-to-ad-media-press-release-routing-network": [
       "actionglobalnews",
+      "pressreleaseforbusiness",
       "coloradowhatsup"
     ],
     "eye-to-ad-media-custom-ai-agents-small-business": [
       "actionglobalnews",
+      "pressreleaseforbusiness",
       "coloradowhatsup"
     ],
     "aging-safely-baths-walk-in-tub-fit-check": [
       "actionglobalnews",
+      "pressreleaseforbusiness",
       "coloradowhatsup"
     ],
     "aging-safely-baths-curbed-vs-barrier-free-shower": [
       "actionglobalnews",
+      "pressreleaseforbusiness",
       "coloradowhatsup"
     ]
   }

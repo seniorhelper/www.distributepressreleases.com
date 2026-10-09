@@ -512,12 +512,13 @@
       rt.innerHTML = "<li>Loading the routing rules…</li>";
     } else {
       var hits = route(r) || [];
-      var news = NET.news ? ['<li><strong>' + esc(NET.news.name) + '</strong> — news syndication</li>'] : [];
+      var parts = (NET.news ? [NET.news] : []).concat(NET.partners || []);
+      var news = parts.map(function (p) { return '<li><strong>' + esc(p.name) + '</strong> — full-text syndication</li>'; });
       var html = ['<li><strong>Distribute Press Releases</strong> — the original, plus feeds and a company newsroom</li>'].concat(news,
         hits.map(function (s) { return '<li><strong>' + esc(s.name) + '</strong> — network placement</li>'; }));
       if (!hits.length) html.push('<li style="color:var(--slate-2)">No network site matches yet. Local releases about restaurants, events, outdoor recreation or Hawaii travel route further.</li>');
       rt.innerHTML = html.join("");
-      $("rb-hidden-route").value = ["Distribute Press Releases"].concat(NET.news ? [NET.news.name] : [], hits.map(function (s) { return s.name; })).join(", ");
+      $("rb-hidden-route").value = ["Distribute Press Releases"].concat(parts.map(function (p) { return p.name; }), hits.map(function (s) { return s.name; })).join(", ");
     }
     try {
       var o = {}; F.forEach(function (k) { o[k] = v(k); }); localStorage.setItem("dpr-rb", JSON.stringify(o));

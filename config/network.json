@@ -244,5 +244,16 @@
       "require_region": true,
       "min_score": 3
     }
+  ],
+  "partners": [
+    {
+      "id": "pressreleaseforbusiness",
+      "name": "Press Release For Business",
+      "url": "https://pressreleaseforbusiness.com/",
+      "landing": "https://pressreleaseforbusiness.com/releases/",
+      "release_url": "https://pressreleaseforbusiness.com/releases/{slug}/",
+      "beat": "Every release, on the partner wire's release list, with a canonical link back to the original and the same label.",
+      "live": true
+    }
   ]
 }

@@ -1128,14 +1128,22 @@ def route(r):
     return [i for _, i in scored[: net.get("max_network_sites_per_release", 3)]]
 
 
+def partners():
+    """Sites that republish every release in full: the news property and the
+    partner wire."""
+    net = network()
+    return ([net["news"]] if net.get("news") else []) + net.get("partners", [])
+
+
 def placements(r):
-    """Destinations that are real today: the news property plus live network sites."""
+    """Destinations that are real today: the full-text partners plus live network sites."""
     net = network()
     out = []
-    news = net.get("news")
-    if news and news.get("live") and str(r.get("syndicate", "yes")).lower() not in ("no", "false"):
-        out.append({"id": news["id"], "name": news["name"], "kind": "news",
-                    "link": news["release_url"].format(slug=r["slug"])})
+    if str(r.get("syndicate", "yes")).lower() not in ("no", "false"):
+        for p in partners():
+            if p.get("live"):
+                out.append({"id": p["id"], "name": p["name"], "kind": "news",
+                            "link": p["release_url"].format(slug=r["slug"])})
     ids = {s["id"]: s for s in net.get("sites", [])}
     for i in r.get("routes", []):
         s = ids[i]
@@ -1370,16 +1378,16 @@ def newsrooms_index(groups):
 def network_page(releases):
     net = network()
     path = "/network/"
-    news = net.get("news")
     sites = [s for s in net.get("sites", []) if s.get("live")]
     recent = {}
     for r in releases:
         for i in r.get("routes", []):
             recent.setdefault(i, []).append(r)
     rows = []
-    if news:
-        rows.append('<tr><td><a href="{u}" rel="noopener"><strong>{n}</strong></a></td><td>News property</td><td>{b}</td><td>{k}</td></tr>'.format(
-            u=esc(news["landing"]), n=esc(news["name"]), b=esc(news["beat"]), k=len(releases)))
+    for news in partners():
+        rows.append('<tr><td><a href="{u}" rel="noopener"><strong>{n}</strong></a></td><td>{role}</td><td>{b}</td><td>{k}</td></tr>'.format(
+            u=esc(news["landing"]), n=esc(news["name"]), b=esc(news["beat"]), k=len(releases),
+            role="News property" if news is net.get("news") else "Partner wire"))
     for s in sites:
         rows.append('<tr><td><a href="{u}" rel="noopener"><strong>{n}</strong></a></td><td>Network site</td><td>{b}</td><td>{k}</td></tr>'.format(
             u=esc(s["url"]), n=esc(s["name"]), b=esc(s["beat"]), k=len(recent.get(s["id"], []))))
@@ -1391,7 +1399,7 @@ def network_page(releases):
     body = """  <section class="hero"><div class="wrap-narrow">
     <span class="eyebrow">Network</span>
     <h1>Where your release can land</h1>
-    <p class="lede">Every release is republished on our news property. Then a routing filter reads its industry, region and wording and places it on the network sites where it actually fits &mdash; a Denver restaurant opening goes to the restaurant site, a camping gear launch goes to the camping site, a Honolulu hotel goes to the Hawaii site.</p>
+    <p class="lede">Every release is republished in full on our news property and on our partner wire, Press Release For Business. Then a routing filter reads its industry, region and wording and places it on the network sites where it actually fits &mdash; a Denver restaurant opening goes to the restaurant site, a camping gear launch goes to the camping site, a Honolulu hotel goes to the Hawaii site.</p>
   </div></section>
   <section style="padding-top:0"><div class="wrap">
     <div class="table-wrap"><table>
@@ -1456,7 +1464,7 @@ def receipt_rows(r, entry):
     ]
     for d in placements(r):
         if d["kind"] == "news":
-            rows.append(("News syndication", d["name"], "routed " + pub + "; republished on its hourly sync", d["link"]))
+            rows.append(("Full-text syndication", d["name"], "routed " + pub + "; republished on its hourly sync", d["link"]))
         else:
             rows.append(("Network placement", d["name"], "routed " + pub + "; shown in its business-news module", d["link"]))
     rows += [
@@ -1581,10 +1589,10 @@ def main():
     # syndication feeds, one per destination, read by the news property's sync
     # job and by assets/network.js on each network site
     net = network()
-    dests = ([net["news"]] if net.get("news") else []) + net.get("sites", [])
+    dests = partners() + net.get("sites", [])
     for site in dests:
-        if site is net.get("news"):
-            items = [r for r in releases if any(d["kind"] == "news" for d in placements(r))]
+        if site in partners():
+            items = [r for r in releases if any(d["id"] == site["id"] for d in placements(r))]
         else:
             items = [r for r in releases if site["id"] in r["routes"]]
         write("syndication/%s.json" % site["id"], syndication_feed(site, items[:30]))
