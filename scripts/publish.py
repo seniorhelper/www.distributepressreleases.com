@@ -365,7 +365,11 @@ def release_html(r, prev_next):
 
     contact = []
     if r.get("contact_name"): contact.append(esc(r["contact_name"]))
-    if r.get("contact_email"): contact.append(esc(r["contact_email"]))
+    if r.get("contact_email") and "@" in r["contact_email"]:
+        import base64
+        u, d = r["contact_email"].split("@", 1)
+        contact.append('<a class="eml" href="#" data-a="%s" data-b="%s">\u2026</a>'
+                       % (base64.b64encode(u.encode()).decode(), base64.b64encode(d.encode()).decode()))
     if r.get("contact_phone"): contact.append(esc(r["contact_phone"]))
     contact_html = ("<p>" + "<br>".join(contact) + "</p>") if contact else ""
 
