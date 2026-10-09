@@ -5,7 +5,7 @@
     <link>https://distributepressreleases.com/</link>
     <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 03:33:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 03:35:39 +0000</lastBuildDate>
     <atom:link href="https://distributepressreleases.com/newsrooms/eye-to-ad-media/feed.xml" rel="self" type="application/rss+xml"/>
     <copyright>2026 Distribute Press Releases</copyright>
     <item>
@@ -16,6 +16,7 @@
       <dc:creator>Eye To Ad Media</dc:creator>
       <category>marketing-technology</category>
       <description>Every release is now republished on a news site and routed by a public filter to the Colorado and Hawaii sites it fits, with a receipt.</description>
+      <enclosure url="https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/audio.mp3" type="audio/mpeg" length="1857037"/>
     </item>
     <item>
       <title>Eye To Ad Media Begins Custom-Coding AI Agents for Small Businesses, Starting With Lead Response</title>
@@ -25,6 +26,7 @@
       <dc:creator>Eye To Ad Media</dc:creator>
       <category>marketing-technology</category>
       <description>Denver-based Eye To Ad Media now custom-codes AI agents for small businesses, starting with lead response, with a person approving every action.</description>
+      <enclosure url="https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/audio.mp3" type="audio/mpeg" length="1945749"/>
     </item>
   </channel>
 </rss>

@@ -11,6 +11,49 @@
     <itunes:image href="https://distributepressreleases.com/images/distribute-press-releases-share-card.png"/>
     <itunes:owner><itunes:name>Distribute Press Releases</itunes:name><itunes:email>info@eyetoad.com</itunes:email></itunes:owner>
     <atom:link href="https://distributepressreleases.com/podcast.xml" rel="self" type="application/rss+xml"/>
-
+    <item>
+      <title>Eye To Ad Media Opens a Press Release Network That Routes Each Release to the Local Sites It Fits</title>
+      <link>https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/</link>
+      <guid isPermaLink="false">https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/audio.mp3</guid>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+      <description>Every release is now republished on a news site and routed by a public filter to the Colorado and Hawaii sites it fits, with a receipt. This episode is a press release from Eye To Ad Media and uses synthetic narration.</description>
+      <itunes:summary>Every release is now republished on a news site and routed by a public filter to the Colorado and Hawaii sites it fits, with a receipt. Press release. Synthetic narration.</itunes:summary>
+      <itunes:author>Eye To Ad Media</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/audio.mp3" type="audio/mpeg" length="1857037"/>
+    </item>
+    <item>
+      <title>Eye To Ad Media Begins Custom-Coding AI Agents for Small Businesses, Starting With Lead Response</title>
+      <link>https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/</link>
+      <guid isPermaLink="false">https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/audio.mp3</guid>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+      <description>Denver-based Eye To Ad Media now custom-codes AI agents for small businesses, starting with lead response, with a person approving every action. This episode is a press release from Eye To Ad Media and uses synthetic narration.</description>
+      <itunes:summary>Denver-based Eye To Ad Media now custom-codes AI agents for small businesses, starting with lead response, with a person approving every action. Press release. Synthetic narration.</itunes:summary>
+      <itunes:author>Eye To Ad Media</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/audio.mp3" type="audio/mpeg" length="1945749"/>
+    </item>
+    <item>
+      <title>Aging Safely Baths Publishes a Six-Point Fit Check for Families Shopping for a Walk-In Tub</title>
+      <link>https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/</link>
+      <guid isPermaLink="false">https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/audio.mp3</guid>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+      <description>Six measurements to take before requesting a walk-in tub quote, from doorway width to water heater capacity, published by the accessible bathing supplier. This episode is a press release from Aging Safely Baths and uses synthetic narration.</description>
+      <itunes:summary>Six measurements to take before requesting a walk-in tub quote, from doorway width to water heater capacity, published by the accessible bathing supplier. Press release. Synthetic narration.</itunes:summary>
+      <itunes:author>Aging Safely Baths</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/audio.mp3" type="audio/mpeg" length="1993396"/>
+    </item>
+    <item>
+      <title>Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub</title>
+      <link>https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/</link>
+      <guid isPermaLink="false">https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/audio.mp3</guid>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+      <description>When a low curb is enough and when a true zero-threshold shower is worth the floor work, from a Bestbath dealer that has installed both since 2012. This episode is a press release from Aging Safely Baths and uses synthetic narration.</description>
+      <itunes:summary>When a low curb is enough and when a true zero-threshold shower is worth the floor work, from a Bestbath dealer that has installed both since 2012. Press release. Synthetic narration.</itunes:summary>
+      <itunes:author>Aging Safely Baths</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/audio.mp3" type="audio/mpeg" length="2132263"/>
+    </item>
   </channel>
 </rss>

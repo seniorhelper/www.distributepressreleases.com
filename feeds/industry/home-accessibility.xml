@@ -5,7 +5,7 @@
     <link>https://distributepressreleases.com/</link>
     <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 03:33:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 03:35:39 +0000</lastBuildDate>
     <atom:link href="https://distributepressreleases.com/feeds/industry/home-accessibility.xml" rel="self" type="application/rss+xml"/>
     <copyright>2026 Distribute Press Releases</copyright>
     <item>
@@ -16,6 +16,7 @@
       <dc:creator>Aging Safely Baths</dc:creator>
       <category>home-accessibility</category>
       <description>Six measurements to take before requesting a walk-in tub quote, from doorway width to water heater capacity, published by the accessible bathing supplier.</description>
+      <enclosure url="https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/audio.mp3" type="audio/mpeg" length="1993396"/>
     </item>
     <item>
       <title>Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub</title>
@@ -25,6 +26,7 @@
       <dc:creator>Aging Safely Baths</dc:creator>
       <category>home-accessibility</category>
       <description>When a low curb is enough and when a true zero-threshold shower is worth the floor work, from a Bestbath dealer that has installed both since 2012.</description>
+      <enclosure url="https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/audio.mp3" type="audio/mpeg" length="2132263"/>
     </item>
   </channel>
 </rss>
