@@ -15,7 +15,19 @@ Run with no arguments from the repository root:
 Flags:
     --dry-run     build everything, write nothing
     --no-audio    skip narration even if piper is installed
-    --no-ping     skip IndexNow and social posting
+    --no-ping     never announce, even with --announce
+    --announce    after the build, push new URLs to IndexNow and post to
+                  Bluesky and Mastodon, record the results in data/announced.json
+                  and rebuild the receipts. Run this once the pages are live.
+
+Optional front matter beyond the example below:
+    affiliated: operator            the company is Eye To Ad Media itself
+    affiliated: common-ownership    the company shares ownership with the operator
+    network: none                   keep the release off network sites
+    network: site-id, site-id       force specific network sites (config/network.json)
+    syndicate: no                   also keep it off the news property
+    keywords: words, for, routing   extra routing hints, never displayed
+A release dated in the future is held back and publishes on its date.
 
 Every network step is optional and failure there never blocks publishing.
 The site is built first; announcements go out after.
@@ -58,6 +70,13 @@ CONTENT = os.path.join(ROOT, "content", "releases")
 DRY = "--dry-run" in sys.argv
 NO_AUDIO = "--no-audio" in sys.argv
 NO_PING = "--no-ping" in sys.argv
+# Announcing (IndexNow, Bluesky, Mastodon) happens only with --announce, after the
+# pages are live. The workflow builds, pushes, waits for Pages to serve the new
+# release, then runs again with --announce so engines and link cards never hit a 404.
+ANNOUNCE = "--announce" in sys.argv and not NO_PING
+TODAY = datetime.datetime.now(datetime.timezone.utc).date()
+LEDGER = os.path.join(ROOT, "data", "announced.json")
+NETWORK = os.path.join(ROOT, "config", "network.json")
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
@@ -141,6 +160,8 @@ def md_paragraphs(body):
             continue
         if b.startswith("## "):
             out.append(("h2", b[3:].strip()))
+        elif all(re.match(r"^\s*[-*]\s+", ln) for ln in b.split("\n")):
+            out.append(("ul", [re.sub(r"^\s*[-*]\s+", "", ln).strip() for ln in b.split("\n")]))
         elif b.startswith("> "):
             out.append(("quote", re.sub(r"^> ?", "", b, flags=re.M).strip()))
         else:
@@ -195,6 +216,17 @@ def load_releases():
         if missing:
             log("SKIP %s - missing %s" % (os.path.basename(path), ", ".join(missing)))
             continue
+        try:
+            if datetime.date.fromisoformat(str(meta["date"])) > TODAY:
+                log("HOLD %s - dated %s, publishes on that day" % (os.path.basename(path), meta["date"]))
+                continue
+        except ValueError:
+            log("SKIP %s - date must be YYYY-MM-DD" % os.path.basename(path))
+            continue
+        aff = str(meta.get("affiliated") or "").strip().lower()
+        meta["affiliated"] = ("operator" if aff in ("operator", "self")
+                              else "common-ownership" if aff in ("yes", "true", "common-ownership", "common ownership")
+                              else "")
         meta["slug"] = meta.get("slug") or slugify(meta["title"])[:80]
         meta["company_slug"] = meta.get("company_slug") or slugify(meta["company"])
         meta["industry"] = slugify(meta.get("industry") or "general")
@@ -218,6 +250,29 @@ DISCLOSURE = (
     "journalism, and publication here is not verification of any claim it contains. "
     "Links in this release are marked sponsored."
 )
+DISCLOSURE_OPERATOR = (
+    "This is a press release from Eye To Ad Media, the company that operates "
+    "Distribute Press Releases. It was not paid for, it is not independent journalism, "
+    "and publication here is not verification of any claim it contains. "
+    "Links in this release are marked sponsored."
+)
+DISCLOSURE_COMMON = (
+    "This is a press release from a company under common ownership with Eye To Ad Media, "
+    "which operates Distribute Press Releases. It was not paid for, it is not independent "
+    "journalism, and publication here is not verification of any claim it contains. "
+    "Links in this release are marked sponsored."
+)
+
+
+def disclosure(r):
+    return {"operator": DISCLOSURE_OPERATOR,
+            "common-ownership": DISCLOSURE_COMMON}.get(r.get("affiliated"), DISCLOSURE)
+
+
+def label(r):
+    """Short label for feeds, cards and the network module."""
+    return {"operator": "Affiliated: operator’s own release",
+            "common-ownership": "Affiliated: common ownership"}.get(r.get("affiliated"), "Paid press release")
 
 
 def release_html(r, prev_next):
@@ -229,7 +284,9 @@ def release_html(r, prev_next):
         blocks = blocks[1:]
     paras = []
     for kind, text in blocks:
-        if kind == "h2":
+        if kind == "ul":
+            paras.append("      <ul>%s</ul>" % "".join("<li>%s</li>" % inline_md(t) for t in text))
+        elif kind == "h2":
             paras.append("      <h2>%s</h2>" % esc(text))
         elif kind == "quote":
             paras.append('      <blockquote style="border-left:3px solid var(--signal);'
@@ -265,7 +322,7 @@ def release_html(r, prev_next):
                 **({"url": r["company_url"], "sameAs": [r["company_url"]]}
                    if r.get("company_url") else {}),
             },
-            "creditText": "Paid press release",
+            "creditText": label(r),
             "isBasedOn": r["url"] + "claims.json",
         },
         {
@@ -394,7 +451,8 @@ def release_html(r, prev_next):
           <a class="btn btn-ghost" href="{url}index.md">Markdown</a>
           <a class="btn btn-ghost" href="{url}claims.json">Claims file</a>
           <a class="btn btn-ghost" href="{url}receipt/">Distribution receipt</a>
-        </div>
+          <a class="btn btn-ghost" href="/newsrooms/{cslug}/">{company} newsroom</a>
+        </div>{carried}
         <h2 style="margin-top:2.4rem;font-size:1.15rem">Media contact</h2>
         {contact}
         <div class="note note-caution" style="margin-top:2rem">
@@ -430,18 +488,31 @@ def release_html(r, prev_next):
         img=r.get("image") or SITE + "/images/distribute-press-releases-share-card.png",
         date=str(r["date"]), graph=json.dumps({"@context": "https://schema.org", "@graph": graph},
                                               indent=2, ensure_ascii=False),
-        disclosure=DISCLOSURE, long_date=long_date(r["date"]),
+        disclosure=disclosure(r), long_date=long_date(r["date"]),
         company_line=(" by " + esc(r["company"])) if r.get("company") else "",
         city_state=("%s, %s, " % (esc(r.get("city", "")).upper(), esc(r.get("state", "")))
                     if r.get("city") else ""),
         first=lede, body=body_html, audio=audio_block, contact=contact_html,
         nav=" ".join(nav) or '<a href="/releases/">All releases</a>',
+        cslug=r["company_slug"], company=esc(r["company"]), carried=carried_html(r),
     )
+
+
+def carried_html(r):
+    """Where the routing engine sent this release, shown under the actions."""
+    dests = placements(r)
+    if not dests:
+        return ""
+    links = ", ".join('<a href="%s" rel="noopener">%s</a>' % (esc(d["link"]), esc(d["name"]))
+                      for d in dests)
+    return ('\n        <p style="margin-top:1.2rem;font-size:.92rem;color:var(--slate)">'
+            "Also carried on %s. Each carries this same label and points back here as the original."
+            "</p>" % links)
 
 
 def release_markdown(r):
     lines = ["# " + r["title"], ""]
-    lines.append("> %s" % DISCLOSURE)
+    lines.append("> %s" % disclosure(r))
     lines.append("")
     lines.append("- Published: %s" % long_date(r["date"]))
     lines.append("- Company: %s%s" % (r["company"],
@@ -481,7 +552,7 @@ def release_claims(r):
         "published": str(r["date"]),
         "modified": str(r.get("modified") or r["date"]),
         "publisher": NAME,
-        "disclosure": "paid placement",
+        "disclosure": "affiliated, not paid" if r.get("affiliated") else "paid placement",
         "verification": "Statements are attributed to the subject. Publication is not verification.",
         "subject": {
             "name": r["company"], "type": "Organization",
@@ -557,8 +628,8 @@ def rss(items, self_url, title_suffix=""):
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
     entries = []
     for r in items:
-        enc = ('\n      <enclosure url="%saudio.mp3" type="audio/mpeg" length="0"/>'
-               % r["url"]) if r.get("has_audio") else ""
+        enc = ('\n      <enclosure url="%saudio.mp3" type="audio/mpeg" length="%d"/>'
+               % (r["url"], audio_len(r))) if r.get("has_audio") else ""
         media = ('\n      <media:content url="%s" medium="image"/>' % esc(r["image"])) \
             if r.get("image") else ""
         entries.append("""    <item>
@@ -577,7 +648,7 @@ def rss(items, self_url, title_suffix=""):
   <channel>
     <title>{n}{sfx}</title>
     <link>{s}/</link>
-    <description>Press releases published and syndicated by {n}. Every item is a paid placement, labeled as such, and publication is not verification.</description>
+    <description>Press releases published and syndicated by {n}. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
     <language>en-us</language>
     <lastBuildDate>{now}</lastBuildDate>
     <atom:link href="{self}" rel="self" type="application/rss+xml"/>
@@ -598,9 +669,9 @@ def atom(items):
     <updated>{d}T12:00:00Z</updated>
     <author><name>{c}</name></author>
     <summary>{s}</summary>
-    <rights>Paid placement</rights>
+    <rights>{lab}</rights>
   </entry>""".format(t=esc(r["title"]), u=r["url"], d=str(r["date"]),
-                     c=esc(r["company"]), s=esc(r["summary"])) for r in items)
+                     c=esc(r["company"]), s=esc(r["summary"]), lab=esc(label(r))) for r in items)
     return """<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{n}</title>
@@ -620,7 +691,7 @@ def jsonfeed(items, url=None):
         "title": NAME,
         "home_page_url": SITE + "/",
         "feed_url": url or SITE + "/feed.json",
-        "description": "Press releases published and syndicated by %s. Every item is a paid placement." % NAME,
+        "description": "Press releases published and syndicated by %s. Every item is labeled as a paid or affiliated placement." % NAME,
         "language": "en-US",
         "authors": [{"name": NAME, "url": SITE + "/"}],
         "items": [{
@@ -631,12 +702,17 @@ def jsonfeed(items, url=None):
             "content_text": re.sub(r"\s+", " ", r["body"])[:1200],
             "date_published": "%sT12:00:00Z" % r["date"],
             "authors": [{"name": r["company"]}],
-            "tags": [r["industry"], r["region"], "paid placement"],
+            "tags": [r["industry"], r["region"], label(r).lower()],
             **({"image": r["image"]} if r.get("image") else {}),
             **({"attachments": [{"url": r["url"] + "audio.mp3",
                                  "mime_type": "audio/mpeg"}]} if r.get("has_audio") else {}),
         } for r in items],
     }, indent=2, ensure_ascii=False) + "\n"
+
+
+def audio_len(r):
+    p = os.path.join(ROOT, "releases", r["slug"], "audio.mp3")
+    return os.path.getsize(p) if os.path.exists(p) else 0
 
 
 def podcast(items):
@@ -645,20 +721,20 @@ def podcast(items):
       <link>{u}</link>
       <guid isPermaLink="false">{u}audio.mp3</guid>
       <pubDate>{d}</pubDate>
-      <description>{s} This episode is a paid press release from {c} and uses synthetic narration.</description>
-      <itunes:summary>{s} Paid press release. Synthetic narration.</itunes:summary>
+      <description>{s} This episode is a press release from {c} and uses synthetic narration.</description>
+      <itunes:summary>{s} Press release. Synthetic narration.</itunes:summary>
       <itunes:author>{c}</itunes:author>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="{u}audio.mp3" type="audio/mpeg" length="0"/>
+      <enclosure url="{u}audio.mp3" type="audio/mpeg" length="{n}"/>
     </item>""".format(t=esc(r["title"]), u=r["url"], d=rfc2822(r["date"]),
-                      s=esc(r["summary"]), c=esc(r["company"]))
+                      s=esc(r["summary"]), c=esc(r["company"]), n=audio_len(r))
                     for r in items if r.get("has_audio"))
     return """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Distribute Press Releases \u2014 Announcements</title>
     <link>{s}/podcast/</link>
-    <description>Business announcements, read aloud. Every episode is a paid press release and uses synthetic narration, disclosed in each episode.</description>
+    <description>Business announcements, read aloud. Every episode is a press release, labeled paid or affiliated on its page, and uses synthetic narration, disclosed in each episode.</description>
     <language>en-us</language>
     <itunes:author>Distribute Press Releases</itunes:author>
     <itunes:explicit>false</itunes:explicit>
@@ -720,6 +796,8 @@ STATIC_PAGES = [
     ("/press-release-seo/", "0.8", "monthly"),
     ("/ai-press-release/", "0.8", "monthly"),
     ("/how-to-write-a-press-release/", "0.8", "monthly"),
+    ("/tools/release-builder/", "0.8", "monthly"),
+    ("/network/", "0.7", "weekly"), ("/newsrooms/", "0.6", "weekly"),
     ("/agents/", "0.6", "monthly"), ("/about/", "0.5", "yearly"),
     ("/contact/", "0.8", "yearly"), ("/faq/", "0.7", "monthly"),
     ("/editorial-standards/", "0.4", "yearly"), ("/corrections/", "0.4", "yearly"),
@@ -728,8 +806,8 @@ STATIC_PAGES = [
 ]
 
 
-def sitemap(items):
-    today = datetime.date.today().isoformat()
+def sitemap(items, newsrooms=()):
+    today = TODAY.isoformat()
     rows = ['  <url>\n    <loc>%s%s</loc>\n    <lastmod>%s</lastmod>\n'
             '    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>'
             % (SITE, p, today, c, pr) for p, pr, c in STATIC_PAGES]
@@ -740,6 +818,10 @@ def sitemap(items):
         rows.append('  <url>\n    <loc>%sreceipt/</loc>\n    <lastmod>%s</lastmod>\n'
                     '    <changefreq>yearly</changefreq>\n    <priority>0.3</priority>\n  </url>'
                     % (r["url"], str(r.get("modified") or r["date"])))
+    for cs in newsrooms:
+        rows.append('  <url>\n    <loc>%s/newsrooms/%s/</loc>\n    <lastmod>%s</lastmod>\n'
+                    '    <changefreq>weekly</changefreq>\n    <priority>0.5</priority>\n  </url>'
+                    % (SITE, cs, today))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             + "\n".join(rows) + "\n</urlset>\n")
@@ -758,7 +840,7 @@ def releases_index(items):
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="{gsc}">
 <title>Published Press Releases | Distribute Press Releases</title>
-<meta name="description" content="Every press release published through Distribute Press Releases, newest first. All items are paid placements and labeled as such.">
+<meta name="description" content="Every press release published through Distribute Press Releases, newest first. Every item is labeled as a paid or affiliated placement.">
 <link rel="canonical" href="{s}/releases/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta property="og:type" content="website">
@@ -796,7 +878,7 @@ def releases_index(items):
 <main id="main">
   <section class="hero"><div class="wrap-narrow">
     <h1>Published releases</h1>
-    <p class="lede">Everything published through this service, newest first. Every item is a paid placement, and publication here is not verification of any claim a release contains.</p>
+    <p class="lede">Everything published through this service, newest first. Every item is labeled as a paid or affiliated placement, and publication here is not verification of any claim a release contains.</p>
   </div></section>
   <section style="padding-top:0"><div class="wrap">
       <h2 class="sr-only">All published releases</h2>
@@ -821,7 +903,7 @@ def releases_index(items):
                     "@id": SITE + "/releases/#page",
                     "url": SITE + "/releases/",
                     "name": "Published press releases",
-                    "description": "Every press release published through Distribute Press Releases, newest first. All items are paid placements.",
+                    "description": "Every press release published through Distribute Press Releases, newest first. Every item is labeled as a paid or affiliated placement.",
                     "inLanguage": "en-US",
                     "isPartOf": {"@id": SITE + "/#website"},
                     "dateModified": datetime.date.today().isoformat(),
@@ -863,8 +945,9 @@ def make_audio(r):
     text = "%s. %s, %s. %s %s" % (
         r["title"], r.get("city", ""), long_date(r["date"]),
         re.sub(r"\s+", " ", re.sub(r"[#>*\[\]()]|https?://\S+", " ", r["body"]))[:4000],
-        "This has been a paid press release from %s, published by Distribute Press Releases "
-        "and read by a synthetic voice." % r["company"])
+        "This has been a %s from %s, published by Distribute Press Releases "
+        "and read by a synthetic voice." % ("press release" if r.get("affiliated") else "paid press release",
+                                            r["company"]))
     if DRY:
         log("would narrate", r["slug"], "(%d chars)" % len(text))
         return False
@@ -894,8 +977,22 @@ def make_audio(r):
 
 # ---------------------------------------------------------------- network
 
+def indexnow_key():
+    """The INDEXNOW_KEY secret wins; otherwise the key file committed at the root.
+    The key is public by design: engines fetch the file to confirm the domain."""
+    key = os.environ.get("INDEXNOW_KEY", "").strip()
+    if key:
+        return key
+    for f in sorted(glob.glob(os.path.join(ROOT, "*.txt"))):
+        name = os.path.basename(f)[:-4]
+        if re.fullmatch(r"[0-9a-f]{32,128}", name):
+            if open(f, encoding="utf-8").read().strip() == name:
+                return name
+    return ""
+
+
 def indexnow(urls):
-    key = os.environ.get("INDEXNOW_KEY", "")
+    key = indexnow_key()
     if NO_PING or DRY or not key or not urls:
         return "skipped", ""
     import urllib.request
@@ -974,28 +1071,480 @@ def post_bluesky(r):
         return ("not posted (%s)" % e), ""
 
 
+# ---------------------------------------------------------------- routing
+
+_NET = None
+
+
+def network():
+    global _NET
+    if _NET is None:
+        try:
+            _NET = json.load(open(NETWORK, encoding="utf-8"))
+        except Exception as e:
+            log("no usable config/network.json (%s) - routing off" % e)
+            _NET = {"sites": [], "news": None}
+    return _NET
+
+
+def _split(v):
+    if isinstance(v, list):
+        return [slugify(x) for x in v if str(x).strip()]
+    return [slugify(x) for x in str(v or "").split(",") if x.strip()]
+
+
+def route(r):
+    """Score the release against every network site. Returns site ids, best first.
+    The filter: industry match, region match, and keyword hits in the title,
+    summary, body and any `keywords:` front matter."""
+    net = network()
+    sc = net.get("scoring", {})
+    override = _split(r.get("network"))
+    if override == ["none"]:
+        return []
+    ids = {s["id"]: s for s in net.get("sites", [])}
+    if override:
+        return [i for i in override if i in ids]
+    text = " ".join([r["title"], r["summary"], r["body"], str(r.get("keywords") or "")]).lower()
+    region = r["region"]
+    city = slugify(r.get("city") or "")
+    scored = []
+    for s in net.get("sites", []):
+        regions = s.get("regions") or []
+        in_region = region in regions or city in regions
+        if s.get("require_region") and not in_region:
+            continue
+        score = 0
+        if r["industry"] in (s.get("industries") or []):
+            score += sc.get("industry", 3)
+        if in_region and regions:
+            score += sc.get("region", 2)
+        hits = sum(1 for k in (s.get("keywords") or [])
+                   if re.search(r"(?<![a-z])%s(?![a-z])" % re.escape(k.lower()), text))
+        score += min(hits, sc.get("keyword_cap", 3)) * sc.get("keyword", 1)
+        if score >= s.get("min_score", 3):
+            scored.append((score, s["id"]))
+    scored.sort(key=lambda x: -x[0])
+    return [i for _, i in scored[: net.get("max_network_sites_per_release", 3)]]
+
+
+def placements(r):
+    """Destinations that are real today: the news property plus live network sites."""
+    net = network()
+    out = []
+    news = net.get("news")
+    if news and news.get("live") and str(r.get("syndicate", "yes")).lower() not in ("no", "false"):
+        out.append({"id": news["id"], "name": news["name"], "kind": "news",
+                    "link": news["release_url"].format(slug=r["slug"])})
+    ids = {s["id"]: s for s in net.get("sites", [])}
+    for i in r.get("routes", []):
+        s = ids[i]
+        if s.get("live"):
+            out.append({"id": i, "name": s["name"], "kind": "network", "link": s["landing"]})
+    return out
+
+
+def body_html(r):
+    """Release body as clean HTML for syndication partners. Links stay sponsored."""
+    out = []
+    for i, (kind, text) in enumerate(md_paragraphs(r["body"])):
+        if i == 0 and kind == "p":
+            dl = ("%s, %s, " % (r.get("city", "").upper(), r.get("state", ""))) if r.get("city") else ""
+            out.append("<p><strong>%s%s</strong> — %s</p>" % (esc(dl), long_date(r["date"]), inline_md(text)))
+        elif kind == "ul":
+            out.append("<ul>%s</ul>" % "".join("<li>%s</li>" % inline_md(t) for t in text))
+        elif kind == "h2":
+            out.append("<h2>%s</h2>" % esc(text))
+        elif kind == "quote":
+            out.append("<blockquote>%s</blockquote>" % inline_md(text))
+        else:
+            out.append("<p>%s</p>" % inline_md(text))
+    return "\n".join(out)
+
+
+def syndication_feed(site, items):
+    return json.dumps({
+        "version": "https://jsonfeed.org/version/1.1",
+        "title": "%s — releases routed to %s" % (NAME, site["name"]),
+        "home_page_url": SITE + "/network/",
+        "feed_url": "%s/syndication/%s.json" % (SITE, site["id"]),
+        "description": "Press releases the %s routing engine matched to %s. %s" % (NAME, site["name"], site.get("beat", "")),
+        "language": "en-US",
+        "_dpr": {"site": site["id"], "rules": "https://distributepressreleases.com/config/network.json",
+                 "terms": "Republish with rel=canonical to item.url, keep the label and disclosure, "
+                          "keep links rel=sponsored."},
+        "items": [{
+            "id": r["url"],
+            "url": r["url"],
+            "title": r["title"],
+            "summary": r["summary"],
+            "content_html": body_html(r),
+            "date_published": "%sT12:00:00Z" % r["date"],
+            "authors": [{"name": r["company"], **({"url": r["company_url"]} if r.get("company_url") else {})}],
+            "tags": [r["industry"], r["region"]],
+            **({"image": r["image"]} if r.get("image") else {}),
+            "_dpr": {
+                "slug": r["slug"], "label": label(r), "disclosure": disclosure(r),
+                "affiliated": r.get("affiliated") or None,
+                "company": r["company"], "company_url": r.get("company_url") or None,
+                "city": r.get("city") or None, "state": r.get("state") or None,
+                "industry": r["industry"], "region": r["region"],
+                "receipt": r["url"] + "receipt/", "newsroom": "%s/newsrooms/%s/" % (SITE, r["company_slug"]),
+                "contact": {k[8:]: r[k] for k in ("contact_name", "contact_email", "contact_phone") if r.get(k)},
+            },
+        } for r in items],
+    }, indent=2, ensure_ascii=False) + "\n"
+
+
+# ---------------------------------------------------------------- shared chrome
+
+HEAD = """<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="{gsc}">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{url}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{site}/images/distribute-press-releases-share-card.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08214A">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/images/distribute-press-releases-apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+{alt}<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/dpr.css">
+<script type="application/ld+json">
+{graph}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap head-in">
+  <a class="brand" href="/"><img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38"><span>Distribute Press Releases</span></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="/releases/">Releases</a>
+    <a href="/press-release-distribution-service/">Distribution</a>
+    <a href="/tools/">Free tools</a>
+    <a href="/pricing/">Pricing</a>
+    <a class="nav-cta" href="/contact/">Start a release</a>
+  </nav>
+</div></header>
+<main id="main">
+"""
+
+FOOT = """</main>
+<footer class="site-foot"><div class="wrap"><div class="foot-legal" style="border-top:0;margin-top:0">
+  <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/">Eye To Ad Media</a>.</span>
+  <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/ai-disclosure/">AI disclosure</a>
+  <a href="/network/">Network</a><a href="/newsrooms/">Newsroom directory</a>
+</div></div><div class="stamp"><a href="https://eyetoad.com/" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
+<script src="/assets/dpr.js" defer></script>
+</body></html>
+"""
+
+
+def page(path, title, desc, graph, body, alt=""):
+    url = SITE + path
+    return HEAD.format(gsc=GSC, title=esc(title), desc=esc(desc), url=url, site=SITE, alt=alt,
+                       graph=json.dumps({"@context": "https://schema.org", "@graph": graph},
+                                        indent=2, ensure_ascii=False)) + body + FOOT
+
+
+def crumbs(*pairs):
+    return {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + p}
+        for i, (n, p) in enumerate((("Home", "/"),) + pairs)]}
+
+
+def card(r):
+    return ('        <a class="card card-link" href="{u}"><div class="card-kicker">{d} · {lab}</div>'
+            '<h3 style="font-size:1.08rem">{t}</h3><p style="font-size:.93rem">{s}</p></a>').format(
+        u=r["url"], d=long_date(r["date"]), lab=esc(label(r)), t=esc(r["title"]), s=esc(r["summary"]))
+
+
+# ---------------------------------------------------------------- newsroom directory
+
+def newsroom_page(items):
+    r0 = items[0]
+    path = "/newsrooms/%s/" % r0["company_slug"]
+    loc = ", ".join(x for x in (r0.get("city"), r0.get("state")) if x)
+    title = "%s Newsroom" % r0["company"]
+    if len(title) < 46:
+        title += " | Press Releases"
+    desc = ("Press releases from %s, newest first, with RSS and JSON feeds and an embed "
+            "for the company's own website." % r0["company"])[:158]
+    org = {"@type": "Organization", "@id": SITE + path + "#org", "name": r0["company"]}
+    if r0.get("company_url"):
+        org.update({"url": r0["company_url"], "sameAs": [r0["company_url"]]})
+    if loc:
+        org["address"] = {"@type": "PostalAddress", "addressLocality": r0.get("city", ""),
+                          "addressRegion": r0.get("state", ""), "addressCountry": "US"}
+    graph = [
+        {"@type": "CollectionPage", "@id": SITE + path + "#page", "url": SITE + path, "name": title,
+         "description": desc, "inLanguage": "en-US", "about": {"@id": org["@id"]},
+         "mainEntity": {"@type": "ItemList", "numberOfItems": len(items), "itemListElement": [
+             {"@type": "ListItem", "position": i + 1, "name": r["title"], "url": r["url"]}
+             for i, r in enumerate(items[:50])]}},
+        org, crumbs(("Newsroom directory", "/newsrooms/"), (r0["company"], path)),
+    ]
+    site_line = ('<p style="margin:0"><a href="%s" rel="sponsored noopener">%s</a></p>'
+                 % (esc(r0["company_url"]), esc(re.sub(r"^https?://(www\.)?", "", r0["company_url"]).rstrip("/")))
+                 if r0.get("company_url") else "")
+    body = """  <section class="hero"><div class="wrap-narrow">
+    <span class="eyebrow">Company newsroom</span>
+    <h1>{name}</h1>
+    <p class="lede">{n} press release{pl} published{loc}. The list updates itself whenever a new one goes out.</p>
+    {site_line}
+  </div></section>
+  <section style="padding-top:0"><div class="wrap">
+    <h2 class="sr-only">Releases from {name}</h2>
+    <div class="grid g-3">
+{cards}
+    </div>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap-narrow">
+    <h2 style="font-size:1.15rem">Feeds and embed</h2>
+    <p><a href="{s}/newsrooms/{cs}/feed.xml">RSS feed</a> &middot; <a href="{s}/newsrooms/{cs}/feed.json">JSON Feed</a></p>
+    <p>Put this list on your own site with one line. It updates when you publish and passes no ranking credit either way.</p>
+    <pre class="mono-out" style="white-space:pre-wrap">&lt;div id="dpr-newsroom" data-company="{cs}"&gt;&lt;/div&gt;
+&lt;script async src="{s}/assets/newsroom.js"&gt;&lt;/script&gt;</pre>
+    <p style="font-size:.9rem;color:var(--slate)">Releases are labeled paid or affiliated on their own pages. Publication is not verification. <a href="/newsrooms/">Browse every company newsroom</a>.</p>
+  </div></section>
+""".format(name=esc(r0["company"]), n=len(items), pl="" if len(items) == 1 else "s",
+           loc=(" by this " + esc(loc) + " company") if loc else "", site_line=site_line,
+           cards="\n".join(card(r) for r in items[:60]), s=SITE, cs=r0["company_slug"])
+    alt = ('<link rel="alternate" type="application/rss+xml" title="%s" href="%s/newsrooms/%s/feed.xml">\n'
+           % (esc(r0["company"]), SITE, r0["company_slug"]))
+    return page(path, title, desc, graph, body, alt)
+
+
+def newsrooms_index(groups):
+    path = "/newsrooms/"
+    by_state = {}
+    for items in groups:
+        st = items[0].get("state") or "National"
+        by_state.setdefault(st, []).append(items)
+    blocks = []
+    for st in sorted(by_state, key=lambda x: (x == "National", x)):
+        rows = "\n".join(
+            '        <a class="card card-link" href="/newsrooms/{cs}/"><div class="card-kicker">{ind} · {city}</div>'
+            '<h3 style="font-size:1.05rem">{n}</h3><p style="font-size:.9rem">{k} release{pl} · latest {d}</p></a>'.format(
+                cs=g[0]["company_slug"], ind=esc(g[0]["industry"].replace("-", " ")),
+                city=esc(g[0].get("city") or "United States"), n=esc(g[0]["company"]), k=len(g),
+                pl="" if len(g) == 1 else "s", d=long_date(g[0]["date"]))
+            for g in sorted(by_state[st], key=lambda g: g[0]["company"].lower()))
+        blocks.append('    <h2 style="font-size:1.2rem;margin-top:2rem">%s</h2>\n    <div class="grid g-3">\n%s\n    </div>'
+                      % (esc(st), rows))
+    desc = ("A directory of US companies with a press newsroom on Distribute Press Releases, grouped by state, "
+            "each with its full release history, feeds and an embed.")
+    graph = [{"@type": "CollectionPage", "@id": SITE + path + "#page", "url": SITE + path,
+              "name": "Company newsroom directory", "description": desc, "inLanguage": "en-US",
+              "mainEntity": {"@type": "ItemList", "numberOfItems": len(groups), "itemListElement": [
+                  {"@type": "ListItem", "position": i + 1, "name": g[0]["company"],
+                   "url": "%s/newsrooms/%s/" % (SITE, g[0]["company_slug"])} for i, g in enumerate(groups)]}},
+             crumbs(("Newsroom directory", path))]
+    body = """  <section class="hero"><div class="wrap-narrow">
+    <span class="eyebrow">Directory</span>
+    <h1>Company newsroom directory</h1>
+    <p class="lede">Every company that has published here gets a permanent newsroom: its release history, feeds, and an embed for its own site. Listed by state.</p>
+    <p><a class="btn btn-primary" href="/contact/">Get your company listed</a> <a class="btn btn-ghost" href="/newsroom/">How newsrooms work</a></p>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap">
+{blocks}
+  </div></section>
+""".format(blocks="\n".join(blocks) or '    <p>No newsrooms yet.</p>')
+    return page(path, "Company Newsroom Directory | Distribute Press Releases", desc, graph, body)
+
+
+def network_page(releases):
+    net = network()
+    path = "/network/"
+    news = net.get("news")
+    sites = [s for s in net.get("sites", []) if s.get("live")]
+    recent = {}
+    for r in releases:
+        for i in r.get("routes", []):
+            recent.setdefault(i, []).append(r)
+    rows = []
+    if news:
+        rows.append('<tr><td><a href="{u}" rel="noopener"><strong>{n}</strong></a></td><td>News property</td><td>{b}</td><td>{k}</td></tr>'.format(
+            u=esc(news["landing"]), n=esc(news["name"]), b=esc(news["beat"]), k=len(releases)))
+    for s in sites:
+        rows.append('<tr><td><a href="{u}" rel="noopener"><strong>{n}</strong></a></td><td>Network site</td><td>{b}</td><td>{k}</td></tr>'.format(
+            u=esc(s["url"]), n=esc(s["name"]), b=esc(s["beat"]), k=len(recent.get(s["id"], []))))
+    desc = ("Where a release can land: our news site, plus the local network sites a public "
+            "filter matches by industry, region and topic.")
+    graph = [{"@type": "WebPage", "@id": SITE + path + "#page", "url": SITE + path,
+              "name": "Our publishing network", "description": desc, "inLanguage": "en-US"},
+             crumbs(("Network", path))]
+    body = """  <section class="hero"><div class="wrap-narrow">
+    <span class="eyebrow">Network</span>
+    <h1>Where your release can land</h1>
+    <p class="lede">Every release is republished on our news property. Then a routing filter reads its industry, region and wording and places it on the network sites where it actually fits &mdash; a Denver restaurant opening goes to the restaurant site, a camping gear launch goes to the camping site, a Honolulu hotel goes to the Hawaii site.</p>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap">
+    <div class="table-wrap"><table>
+      <thead><tr><th>Site</th><th>Role</th><th>What it takes</th><th>Releases carried</th></tr></thead>
+      <tbody>
+      {rows}
+      </tbody>
+      <caption>These sites share ownership with Distribute Press Releases; all are operated by or affiliated with Eye To Ad Media. A release only appears where the filter matches it, and every placement keeps the paid or affiliated label and points back to the original as canonical.</caption>
+    </table></div>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap-narrow">
+    <h2 style="font-size:1.2rem">How the filter decides</h2>
+    <p>Each site has a list of industries, regions and topic words. A release scores points for a matching industry, a matching region and topic words in its text; local sites also require the release to be local. The best matches win, up to three network sites per release. The rules are public: <a href="/config/network.json">network.json</a>.</p>
+    <p>Publishers outside our network can take the same filtered feeds for free: <a href="/feeds/">industry and region feeds</a>.</p>
+    <p><a class="btn btn-primary" href="/tools/release-builder/">Build your release and preview its routing</a></p>
+  </div></section>
+""".format(rows="\n      ".join(rows))
+    return page(path, "Press Release Network | Distribute Press Releases", desc, graph, body)
+
+
+# ---------------------------------------------------------------- ledger
+
+def load_ledger():
+    try:
+        return json.load(open(LEDGER, encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def save_ledger(ledger):
+    write("data/announced.json", json.dumps(ledger, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
+
+
+SOCIAL_OFF = "not posted — account not connected yet"
+
+
+def receipt_rows(r, entry):
+    pub = entry.get("published", TODAY.isoformat())
+
+    def ann(key, fallback):
+        v = entry.get(key)
+        return (v[0], v[1]) if v else (fallback, "")
+    idx = ann("indexnow", "queued — sent once the page is live")
+    bs = ann("bluesky", "queued")
+    md = ann("mastodon", "queued")
+    rows = [
+        ("Canonical release page", "distributepressreleases.com", "published " + pub, r["url"]),
+        ("Markdown mirror", "plain text for machines", "published " + pub, r["url"] + "index.md"),
+        ("Claims file", "attributed facts as JSON", "published " + pub, r["url"] + "claims.json"),
+        ("Company newsroom", r["company"], "listed " + pub, "%s/newsrooms/%s/" % (SITE, r["company_slug"])),
+        ("RSS 2.0", "site-wide feed", "included " + pub, SITE + "/feed.xml"),
+        ("Atom 1.0", "site-wide feed", "included " + pub, SITE + "/atom.xml"),
+        ("JSON Feed 1.1", "site-wide feed", "included " + pub, SITE + "/feed.json"),
+        ("Media RSS", "feed-ingesting publishers", "included " + pub, SITE + "/media.xml"),
+        ("Industry feed", r["industry"].replace("-", " "), "included " + pub,
+         "%s/feeds/industry/%s.xml" % (SITE, r["industry"])),
+        ("Region feed", r["region"].replace("-", " "), "included " + pub,
+         "%s/feeds/region/%s.xml" % (SITE, r["region"])),
+        ("Company feed", r["company"], "included " + pub,
+         "%s/newsrooms/%s/feed.xml" % (SITE, r["company_slug"])),
+        ("News sitemap", "48-hour window", "included " + pub, SITE + "/news-sitemap.xml"),
+    ]
+    for d in placements(r):
+        if d["kind"] == "news":
+            rows.append(("News syndication", d["name"], "routed " + pub + "; republished on its hourly sync", d["link"]))
+        else:
+            rows.append(("Network placement", d["name"], "routed " + pub + "; shown in its business-news module", d["link"]))
+    rows += [
+        ("IndexNow", "Bing, Yandex, Naver, Seznam", idx[0], idx[1]),
+        ("Podcast RSS", "listening apps that subscribe to our feed",
+         ("episode published " + pub) if r.get("has_audio") else "no audio for this release",
+         SITE + "/podcast.xml" if r.get("has_audio") else ""),
+        ("Bluesky", "open social protocol", bs[0], bs[1]),
+        ("Mastodon", "open social protocol", md[0], md[1]),
+    ]
+    return rows
+
+
+def wait_live(url, minutes=10):
+    import urllib.request, time
+    end = time.time() + minutes * 60
+    while time.time() < end:
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "dpr-publish"}),
+                                        timeout=20) as resp:
+                if resp.status == 200:
+                    return True
+        except Exception:
+            pass
+        time.sleep(20)
+    return False
+
+
+def announce(releases, ledger):
+    """Push and post anything not yet announced. Social posts are only retried for a
+    week, so connecting an account later does not flood it with old releases."""
+    todo = [r for r in releases if "indexnow" not in ledger.get(r["slug"], {})]
+    retry = []
+    for r in releases:
+        e = ledger.get(r["slug"], {})
+        try:
+            fresh = (TODAY - datetime.date.fromisoformat(e.get("published", ""))).days <= 7
+        except ValueError:
+            fresh = False
+        if fresh and any(e.get(k, [SOCIAL_OFF])[0] in (SOCIAL_OFF, "queued") for k in ("bluesky", "mastodon")):
+            retry.append(r)
+    if not todo and not retry:
+        log("nothing to announce")
+        return
+    if todo and not wait_live(todo[0]["url"]):
+        log("release page not live yet - announcements left queued for the next run")
+        return
+    if todo:
+        urls = []
+        for r in todo:
+            urls += [r["url"], r["url"] + "receipt/", "%s/newsrooms/%s/" % (SITE, r["company_slug"])]
+        urls += [SITE + "/releases/", SITE + "/newsrooms/"]
+        state, link = indexnow(urls)
+        if state == "skipped":
+            state = "not sent — no IndexNow key configured"
+        for r in todo:
+            ledger.setdefault(r["slug"], {})["indexnow"] = [state + " " + TODAY.isoformat(), link]
+    for r in {x["slug"]: x for x in todo + retry}.values():
+        e = ledger.setdefault(r["slug"], {})
+        for key, fn in (("bluesky", post_bluesky), ("mastodon", post_mastodon)):
+            if key in e and e[key][0] not in (SOCIAL_OFF, "queued"):
+                continue
+            state, link = fn(r)
+            e[key] = [SOCIAL_OFF if state == "skipped" else state + " " + TODAY.isoformat(), link]
+
+
 # ---------------------------------------------------------------- main
 
 def main():
     releases = load_releases()
     log("found %d release file(s)" % len(releases))
+    ledger = load_ledger()
 
     for r in releases:
         r["has_audio"] = os.path.exists(os.path.join(ROOT, "releases", r["slug"], "audio.mp3")) \
             or make_audio(r)
+        r["routes"] = route(r)
+        ledger.setdefault(r["slug"], {}).setdefault("published", TODAY.isoformat())
+        log("route %s -> %s" % (r["slug"], ", ".join(d["name"] for d in placements(r)) or "nowhere"))
 
     # per-release artifacts
-    new_urls = []
     for i, r in enumerate(releases):
         prev_url = releases[i + 1]["url"] if i + 1 < len(releases) else None
         next_url = releases[i - 1]["url"] if i > 0 else None
         base = "releases/%s/" % r["slug"]
-        existed = os.path.exists(os.path.join(ROOT, base, "index.html"))
         write(base + "index.html", release_html(r, (prev_url, next_url)))
         write(base + "index.md", release_markdown(r))
         write(base + "claims.json", release_claims(r))
-        if not existed:
-            new_urls.append(r["url"])
 
     # feeds and indexes
     write("releases/index.html", releases_index(releases))
@@ -1005,60 +1554,56 @@ def main():
     write("feed.json", jsonfeed(releases[:50]))
     write("podcast.xml", podcast(releases[:100]))
     write("news-sitemap.xml", news_sitemap(releases))
-    write("sitemap.xml", sitemap(releases))
 
     by = {}
     for r in releases:
         by.setdefault(("industry", r["industry"]), []).append(r)
         by.setdefault(("region", r["region"]), []).append(r)
         by.setdefault(("newsroom", r["company_slug"]), []).append(r)
+    newsroom_groups = []
     for (kind, slug), items in by.items():
         if kind == "newsroom":
+            newsroom_groups.append(items)
+            write("newsrooms/%s/index.html" % slug, newsroom_page(items))
             write("newsrooms/%s/feed.json" % slug,
                   jsonfeed(items[:50], "%s/newsrooms/%s/feed.json" % (SITE, slug)))
             write("newsrooms/%s/feed.xml" % slug,
                   rss(items[:50], "%s/newsrooms/%s/feed.xml" % (SITE, slug),
-                      " \u2014 " + items[0]["company"]))
+                      " — " + items[0]["company"]))
         else:
             write("feeds/%s/%s.xml" % (kind, slug),
                   rss(items[:50], "%s/feeds/%s/%s.xml" % (SITE, kind, slug),
-                      " \u2014 " + slug.replace("-", " ")))
+                      " — " + slug.replace("-", " ")))
+    write("newsrooms/index.html", newsrooms_index(newsroom_groups))
+    write("network/index.html", network_page(releases))
     log("wrote %d filtered feed group(s)" % len(by))
 
-    # announce, then record what happened
-    today = datetime.date.today().isoformat()
-    idx_state, idx_link = indexnow(new_urls) if new_urls else ("nothing new", "")
-    for r in releases:
-        base = "releases/%s/" % r["slug"]
-        if os.path.exists(os.path.join(ROOT, base, "receipt", "index.html")):
-            continue
-        bs_state, bs_link = post_bluesky(r)
-        md_state, md_link = post_mastodon(r)
-        results = [
-            ("Canonical release page", "distributepressreleases.com", "published " + today, r["url"]),
-            ("Markdown mirror", "plain text for machines", "published " + today, r["url"] + "index.md"),
-            ("Claims file", "attributed facts as JSON", "published " + today, r["url"] + "claims.json"),
-            ("RSS 2.0", "site-wide feed", "included " + today, SITE + "/feed.xml"),
-            ("Atom 1.0", "site-wide feed", "included " + today, SITE + "/atom.xml"),
-            ("JSON Feed 1.1", "site-wide feed", "included " + today, SITE + "/feed.json"),
-            ("Media RSS", "feed-ingesting publishers", "included " + today, SITE + "/media.xml"),
-            ("Industry feed", r["industry"].replace("-", " "), "included " + today,
-             "%s/feeds/industry/%s.xml" % (SITE, r["industry"])),
-            ("Region feed", r["region"].replace("-", " "), "included " + today,
-             "%s/feeds/region/%s.xml" % (SITE, r["region"])),
-            ("Company newsroom", r["company"], "included " + today,
-             "%s/newsrooms/%s/feed.xml" % (SITE, r["company_slug"])),
-            ("News sitemap", "48-hour window", "included " + today, SITE + "/news-sitemap.xml"),
-            ("IndexNow", "Bing, Yandex, Naver, Seznam", idx_state, idx_link),
-            ("Podcast feed", "Spotify, Apple, Amazon, YouTube",
-             ("published " + today) if r.get("has_audio") else "no audio for this release",
-             SITE + "/podcast.xml" if r.get("has_audio") else ""),
-            ("Bluesky", "open social protocol", bs_state, bs_link),
-            ("Mastodon", "open social protocol", md_state, md_link),
-        ]
-        write(base + "receipt/index.html", receipt_html(r, results))
+    # syndication feeds, one per destination, read by the news property's sync
+    # job and by assets/network.js on each network site
+    net = network()
+    dests = ([net["news"]] if net.get("news") else []) + net.get("sites", [])
+    for site in dests:
+        if site is net.get("news"):
+            items = [r for r in releases if any(d["kind"] == "news" for d in placements(r))]
+        else:
+            items = [r for r in releases if site["id"] in r["routes"]]
+        write("syndication/%s.json" % site["id"], syndication_feed(site, items[:30]))
+    write("syndication/index.json", json.dumps({
+        "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "feeds": {s["id"]: "%s/syndication/%s.json" % (SITE, s["id"]) for s in dests},
+        "routes": {r["slug"]: [d["id"] for d in placements(r)] for r in releases},
+    }, indent=2) + "\n")
 
-    log("done. %d release(s), %d newly published." % (len(releases), len(new_urls)))
+    if ANNOUNCE and not DRY:
+        announce(releases, ledger)
+
+    for r in releases:
+        write("releases/%s/receipt/index.html" % r["slug"],
+              receipt_html(r, receipt_rows(r, ledger.get(r["slug"], {}))))
+    if not DRY:
+        save_ledger(ledger)
+    write("sitemap.xml", sitemap(releases, [g[0]["company_slug"] for g in newsroom_groups]))
+    log("done. %d release(s)." % len(releases))
 
 
 if __name__ == "__main__":

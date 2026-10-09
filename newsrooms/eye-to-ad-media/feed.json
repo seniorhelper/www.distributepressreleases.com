@@ -1,0 +1,52 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/eye-to-ad-media/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "url": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "title": "Eye To Ad Media Opens a Press Release Network That Routes Each Release to the Local Sites It Fits",
+      "summary": "Every release is now republished on a news site and routed by a public filter to the Colorado and Hawaii sites it fits, with a receipt.",
+      "content_text": "Distribute Press Releases, the press release service operated by Denver-based Eye To Ad Media, now sends every release it publishes through a routing network. Each release is republished on the news site Action Global News with a canonical link back to the original. A filter then reads the release's industry, location and wording and places it on up to three sites where it fits. The network launches with five sites covering Colorado camping, Denver restaurants, Denver things to do, Colorado community news and Hawaii hotels. The filter's rules are public. A Denver restaurant opening goes to the Denver restaurant site, a camping gear launch goes to the camping site, and a Honolulu hotel announcement goes to the Hawaii site. Local sites only take local releases. Every placement keeps the original's paid or affiliated label, and every release gets a public receipt listing where it went, with a working link for each destination. > Most small companies pay for a press release and never find out where it went. We built this so every release lands somewhere it belongs, and the receipt shows you exactly where. If a release doesn't fit a site, it doesn't go there. Zach Wennstedt, founder of ",
+      "date_published": "2026-10-09T12:00:00Z",
+      "authors": [
+        {
+          "name": "Eye To Ad Media"
+        }
+      ],
+      "tags": [
+        "marketing-technology",
+        "colorado",
+        "affiliated: operator’s own release"
+      ]
+    },
+    {
+      "id": "https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/",
+      "url": "https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/",
+      "title": "Eye To Ad Media Begins Custom-Coding AI Agents for Small Businesses, Starting With Lead Response",
+      "summary": "Denver-based Eye To Ad Media now custom-codes AI agents for small businesses, starting with lead response, with a person approving every action.",
+      "content_text": "Eye To Ad Media, the Denver marketing firm founded in 2012, now custom-codes AI agents for small businesses. The first builds cover three jobs: answering new inquiries within minutes, running sales-trained assistants on company websites, and handling research and content workflows. Every build is restricted to information the business has approved, and a person signs off before anything reaches a customer. Off-the-shelf agents have become cheap or free this year, and the firm says that is the reason for the narrow focus. General-purpose tools work well when a business runs on mainstream software. The time a small company actually loses tends to sit between its own systems: a field-service CRM, a scheduling tool, a phone line and a spreadsheet that do not talk to each other. A custom agent is built to work in those gaps. > The free agents are good at common work on popular platforms. Most of the small businesses we talk to lose their time somewhere else, in the handoff between a form, a phone and a calendar. That handoff is what we build for, and nothing goes out without a person approving it. Zach Wennstedt, founder of Eye To Ad Media. ## How the builds work Each project starts wit",
+      "date_published": "2026-10-09T12:00:00Z",
+      "authors": [
+        {
+          "name": "Eye To Ad Media"
+        }
+      ],
+      "tags": [
+        "marketing-technology",
+        "colorado",
+        "affiliated: operator’s own release"
+      ]
+    }
+  ]
+}

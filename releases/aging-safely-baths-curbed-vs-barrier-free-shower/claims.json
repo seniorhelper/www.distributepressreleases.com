@@ -1,0 +1,47 @@
+{
+  "release": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+  "title": "Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub",
+  "published": "2026-10-09",
+  "modified": "2026-10-09",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Aging Safely Baths",
+    "type": "Organization",
+    "sameAs": [
+      "https://agingsafelybaths.com/"
+    ]
+  },
+  "industry": "home-accessibility",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "A true zero-threshold shower requires the shower pan to sit at or below the surrounding floor.",
+      "type": "guidance",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "In wood-framed construction a zero-threshold shower usually means modifying the subfloor, and on slab-on-grade it can mean cutting the slab.",
+      "type": "guidance",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths is an authorized Bestbath dealer supplying barrier-free and curbed showers, shower pans, Crestline wall systems, tub-shower combinations and walk-in tubs.",
+      "type": "fact",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+      "attributedTo": "Aging Safely Baths"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+    "markdown": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/index.md",
+    "claims": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/receipt/"
+  }
+}

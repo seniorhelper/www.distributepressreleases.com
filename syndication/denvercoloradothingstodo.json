@@ -1,0 +1,14 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases — releases routed to Denver Colorado Things To Do",
+  "home_page_url": "https://distributepressreleases.com/network/",
+  "feed_url": "https://distributepressreleases.com/syndication/denvercoloradothingstodo.json",
+  "description": "Press releases the Distribute Press Releases routing engine matched to Denver Colorado Things To Do. Denver events, attractions, tours, venues, festivals, museums and places to go.",
+  "language": "en-US",
+  "_dpr": {
+    "site": "denvercoloradothingstodo",
+    "rules": "https://distributepressreleases.com/config/network.json",
+    "terms": "Republish with rel=canonical to item.url, keep the label and disclosure, keep links rel=sponsored."
+  },
+  "items": []
+}

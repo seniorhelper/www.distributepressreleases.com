@@ -1,0 +1,29 @@
+{
+  "generated": "2026-10-09T03:33:20Z",
+  "feeds": {
+    "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
+    "coloradocampingspots": "https://distributepressreleases.com/syndication/coloradocampingspots.json",
+    "bestrestaurantdenver": "https://distributepressreleases.com/syndication/bestrestaurantdenver.json",
+    "denvercoloradothingstodo": "https://distributepressreleases.com/syndication/denvercoloradothingstodo.json",
+    "coloradowhatsup": "https://distributepressreleases.com/syndication/coloradowhatsup.json",
+    "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
+  },
+  "routes": {
+    "eye-to-ad-media-press-release-routing-network": [
+      "actionglobalnews",
+      "coloradowhatsup"
+    ],
+    "eye-to-ad-media-custom-ai-agents-small-business": [
+      "actionglobalnews",
+      "coloradowhatsup"
+    ],
+    "aging-safely-baths-walk-in-tub-fit-check": [
+      "actionglobalnews",
+      "coloradowhatsup"
+    ],
+    "aging-safely-baths-curbed-vs-barrier-free-shower": [
+      "actionglobalnews",
+      "coloradowhatsup"
+    ]
+  }
+}

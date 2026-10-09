@@ -1,0 +1,102 @@
+name: Publish releases
+
+# Builds every release page, feed, newsroom, receipt and syndication feed from
+# content/releases/*.md, commits the result, waits for GitHub Pages to serve it,
+# then announces (IndexNow, Bluesky, Mastodon) and records that on the receipts.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/releases/**"
+      - "config/**"
+      - "scripts/publish.py"
+      - ".github/workflows/publish.yml"
+  schedule:
+    # daily, 07:07 Denver (MDT): publishes releases dated today and refreshes
+    # the 48-hour news sitemap
+    - cron: "7 13 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_audio:
+        description: "Skip narration"
+        type: boolean
+        default: false
+      skip_announce:
+        description: "Skip IndexNow and social posts"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+env:
+  PIPER_URL: https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz
+  VOICE_BASE: https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/en/en_US/lessac/medium/en_US-lessac-medium.onnx
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Narration tools
+        if: ${{ !inputs.skip_audio }}
+        continue-on-error: true
+        run: |
+          command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          mkdir -p "$RUNNER_TEMP/tts"
+          cd "$RUNNER_TEMP/tts"
+          curl -fsSL "$PIPER_URL" | tar -xz
+          curl -fsSL -o voice.onnx "$VOICE_BASE"
+          curl -fsSL -o voice.onnx.json "$VOICE_BASE.json"
+          echo "$RUNNER_TEMP/tts/piper" >> "$GITHUB_PATH"
+          echo "PIPER_VOICE=$RUNNER_TEMP/tts/voice.onnx" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: python3 scripts/publish.py ${{ inputs.skip_audio && '--no-audio' || '' }}
+
+      - name: Verify
+        run: python3 scripts/verify.py
+
+      - name: Commit build
+        id: build
+        run: |
+          git config user.name "dpr-publisher"
+          git config user.email "dpr-publisher@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -q -m "Publish: build releases, feeds and receipts"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Announce once live
+        if: ${{ !inputs.skip_announce }}
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_HOST: ${{ secrets.MASTODON_HOST }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+        run: python3 scripts/publish.py --no-audio --announce
+
+      - name: Commit receipts
+        if: ${{ !inputs.skip_announce }}
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Publish: record announcements on receipts"
+            git pull -q --rebase
+            git push
+          fi

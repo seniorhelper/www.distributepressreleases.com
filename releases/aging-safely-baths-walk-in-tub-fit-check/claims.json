@@ -1,0 +1,47 @@
+{
+  "release": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+  "title": "Aging Safely Baths Publishes a Six-Point Fit Check for Families Shopping for a Walk-In Tub",
+  "published": "2026-10-09",
+  "modified": "2026-10-09",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Aging Safely Baths",
+    "type": "Organization",
+    "sameAs": [
+      "https://agingsafelybaths.com/"
+    ]
+  },
+  "industry": "home-accessibility",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Aging Safely Baths has supplied and installed walk-in tubs and barrier-free showers since 2012.",
+      "type": "fact",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths recommends checking alcove size, path to the bathroom, door swing, seat height, water heater capacity and floor loading before ordering a walk-in tub.",
+      "type": "guidance",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths is an authorized dealer for Bestbath and ANZZI walk-in tubs.",
+      "type": "fact",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+      "attributedTo": "Aging Safely Baths"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+    "markdown": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/index.md",
+    "claims": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/receipt/"
+  }
+}

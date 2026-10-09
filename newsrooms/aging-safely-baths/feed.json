@@ -1,0 +1,52 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/aging-safely-baths/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+      "url": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/",
+      "title": "Aging Safely Baths Publishes a Six-Point Fit Check for Families Shopping for a Walk-In Tub",
+      "summary": "Six measurements to take before requesting a walk-in tub quote, from doorway width to water heater capacity, published by the accessible bathing supplier.",
+      "content_text": "Aging Safely Baths, a walk-in tub and barrier-free shower supplier operating since 2012, has published a six-point fit check for families shopping for a walk-in tub. The check covers the measurements and household details that decide whether a model will work. The company says most quote requests stall because one of them comes up after a model has been chosen. The fit check is aimed at the adult children and spouses who usually do the research. In the company's experience, they often start from a product photo rather than the bathroom. > People fall in love with a tub online and then find out it won't go through the bathroom door. Ten minutes with a tape measure saves weeks. Measure first, then shop. Zach Wennstedt, founder of Aging Safely Baths. ## The six-point fit check **1. The alcove.** Measure the length, width and height of the space the current tub occupies. Many walk-in tubs are sized for a standard alcove, which can let the existing plumbing stay where it is. **2. The path in.** Measure every doorway and hallway turn between the front door and the bathroom. The tub has to travel that route in one piece. **3. Door swing.** Inward-opening doors suit some layouts and mobili",
+      "date_published": "2026-10-09T12:00:00Z",
+      "authors": [
+        {
+          "name": "Aging Safely Baths"
+        }
+      ],
+      "tags": [
+        "home-accessibility",
+        "colorado",
+        "affiliated: common ownership"
+      ]
+    },
+    {
+      "id": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+      "url": "https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/",
+      "title": "Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub",
+      "summary": "When a low curb is enough and when a true zero-threshold shower is worth the floor work, from a Bestbath dealer that has installed both since 2012.",
+      "content_text": "Aging Safely Baths, an authorized Bestbath dealer that has supplied accessible bathing products since 2012, has published guidance for households replacing a bathtub with a shower. The guidance covers the choice between a low-curb shower and a true barrier-free, zero-threshold shower. It explains what each requires underneath the floor and who each one suits. Replacing a tub with a shower is one of the most common accessibility projects in the home. The company says the decision is often made on looks, when the deciding factors are how the person bathing gets in and what the floor will allow. > A low curb is fine for someone who walks in steadily. A wheelchair or a rolling shower chair needs no curb at all, and that is a floor question before it is a product question. Find out what your floor will let you do, then pick the shower. Zach Wennstedt, founder of Aging Safely Baths. ## When a low curb works A curbed shower with a low threshold suits people who walk on their own or with a cane, especially with a grab bar at the entry. It usually installs without structural work. It can often go into the footprint the old tub occupied, which keeps cost and disruption down. ## When to go ba",
+      "date_published": "2026-10-09T12:00:00Z",
+      "authors": [
+        {
+          "name": "Aging Safely Baths"
+        }
+      ],
+      "tags": [
+        "home-accessibility",
+        "colorado",
+        "affiliated: common ownership"
+      ]
+    }
+  ]
+}

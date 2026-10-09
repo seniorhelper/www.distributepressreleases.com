@@ -1,0 +1,54 @@
+{
+  "release": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+  "title": "Eye To Ad Media Opens a Press Release Network That Routes Each Release to the Local Sites It Fits",
+  "published": "2026-10-09",
+  "modified": "2026-10-09",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Eye To Ad Media",
+    "type": "Organization",
+    "sameAs": [
+      "https://distributepressreleases.com/network/"
+    ]
+  },
+  "industry": "marketing-technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Distribute Press Releases, operated by Eye To Ad Media, republishes every release on Action Global News with a canonical link to the original.",
+      "type": "event",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "A routing filter places each release on up to three matching network sites based on industry, region and topic words.",
+      "type": "feature",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "The network launched with five sites covering Colorado camping, Denver restaurants, Denver things to do, Colorado community news and Hawaii hotels.",
+      "type": "metric",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "Single releases are priced at $99 and include writing, publishing, feeds and a public distribution receipt.",
+      "type": "price",
+      "date": "2026-10-09",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+      "attributedTo": "Eye To Ad Media"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/",
+    "markdown": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/index.md",
+    "claims": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/receipt/"
+  }
+}

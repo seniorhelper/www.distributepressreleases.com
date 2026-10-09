@@ -3,5 +3,48 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <!-- Only releases from the last 48 hours appear here, per the news sitemap
        specification. Regenerated on every publish. -->
-
+  <url>
+    <loc>https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-09</news:publication_date>
+      <news:title>Eye To Ad Media Opens a Press Release Network That Routes Each Release to the Local Sites It Fits</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-09</news:publication_date>
+      <news:title>Eye To Ad Media Begins Custom-Coding AI Agents for Small Businesses, Starting With Lead Response</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-09</news:publication_date>
+      <news:title>Aging Safely Baths Publishes a Six-Point Fit Check for Families Shopping for a Walk-In Tub</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-09</news:publication_date>
+      <news:title>Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub</news:title>
+    </news:news>
+  </url>
 </urlset>

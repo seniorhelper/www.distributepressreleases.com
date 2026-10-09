@@ -1,0 +1,14 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases — releases routed to Colorado Camping Spots",
+  "home_page_url": "https://distributepressreleases.com/network/",
+  "feed_url": "https://distributepressreleases.com/syndication/coloradocampingspots.json",
+  "description": "Press releases the Distribute Press Releases routing engine matched to Colorado Camping Spots. Outdoor gear, campgrounds, RV and overlanding, trails and outdoor recreation businesses.",
+  "language": "en-US",
+  "_dpr": {
+    "site": "coloradocampingspots",
+    "rules": "https://distributepressreleases.com/config/network.json",
+    "terms": "Republish with rel=canonical to item.url, keep the label and disclosure, keep links rel=sponsored."
+  },
+  "items": []
+}

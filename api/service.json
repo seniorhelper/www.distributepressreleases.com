@@ -126,11 +126,11 @@
     },
     {
       "name": "Network placement",
-      "description": "One relevance-matched placement on a site in our network."
+      "description": "Placement on the network sites a release matches by industry, region and topic."
     },
     {
       "name": "Business directory profile",
-      "description": "A verified standard listing that collects your release history."
+      "description": "A listing in the company newsroom directory that collects your release history."
     },
     {
       "name": "Embeddable newsroom",

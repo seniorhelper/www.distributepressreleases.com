@@ -3,8 +3,43 @@
   <title>Distribute Press Releases</title>
   <link href="https://distributepressreleases.com/"/>
   <link href="https://distributepressreleases.com/atom.xml" rel="self"/>
-  <updated>2026-09-27T20:23:22Z</updated>
+  <updated>2026-10-09T03:33:20Z</updated>
   <id>https://distributepressreleases.com/</id>
   <subtitle>Paid press releases, published and syndicated.</subtitle>
-
+  <entry>
+    <title>Eye To Ad Media Opens a Press Release Network That Routes Each Release to the Local Sites It Fits</title>
+    <link href="https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/"/>
+    <id>https://distributepressreleases.com/releases/eye-to-ad-media-press-release-routing-network/</id>
+    <updated>2026-10-09T12:00:00Z</updated>
+    <author><name>Eye To Ad Media</name></author>
+    <summary>Every release is now republished on a news site and routed by a public filter to the Colorado and Hawaii sites it fits, with a receipt.</summary>
+    <rights>Affiliated: operator’s own release</rights>
+  </entry>
+  <entry>
+    <title>Eye To Ad Media Begins Custom-Coding AI Agents for Small Businesses, Starting With Lead Response</title>
+    <link href="https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/"/>
+    <id>https://distributepressreleases.com/releases/eye-to-ad-media-custom-ai-agents-small-business/</id>
+    <updated>2026-10-09T12:00:00Z</updated>
+    <author><name>Eye To Ad Media</name></author>
+    <summary>Denver-based Eye To Ad Media now custom-codes AI agents for small businesses, starting with lead response, with a person approving every action.</summary>
+    <rights>Affiliated: operator’s own release</rights>
+  </entry>
+  <entry>
+    <title>Aging Safely Baths Publishes a Six-Point Fit Check for Families Shopping for a Walk-In Tub</title>
+    <link href="https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/"/>
+    <id>https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-fit-check/</id>
+    <updated>2026-10-09T12:00:00Z</updated>
+    <author><name>Aging Safely Baths</name></author>
+    <summary>Six measurements to take before requesting a walk-in tub quote, from doorway width to water heater capacity, published by the accessible bathing supplier.</summary>
+    <rights>Affiliated: common ownership</rights>
+  </entry>
+  <entry>
+    <title>Aging Safely Baths Explains Curbed vs. Barrier-Free Showers for Households Replacing a Bathtub</title>
+    <link href="https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/"/>
+    <id>https://distributepressreleases.com/releases/aging-safely-baths-curbed-vs-barrier-free-shower/</id>
+    <updated>2026-10-09T12:00:00Z</updated>
+    <author><name>Aging Safely Baths</name></author>
+    <summary>When a low curb is enough and when a true zero-threshold shower is worth the floor work, from a Bestbath dealer that has installed both since 2012.</summary>
+    <rights>Affiliated: common ownership</rights>
+  </entry>
 </feed>
