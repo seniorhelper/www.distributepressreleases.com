@@ -1,0 +1,40 @@
+{
+  "release": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+  "title": "allofus.one Opens Its Free Social Platform in Beta: One Account for a Chronological Feed, 3D Worlds and VR in the Browser",
+  "published": "2026-10-11",
+  "modified": "2026-10-11",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "allofus.one",
+    "type": "Organization",
+    "sameAs": [
+      "https://allofus.one/"
+    ]
+  },
+  "industry": "technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "allofus.one is open to the public in beta at allofus.one.",
+      "type": "event",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+      "attributedTo": "allofus.one"
+    },
+    {
+      "statement": "One allofus.one account works in a chronological feed, a browser 3D world and VR on Meta Quest headsets.",
+      "type": "offering",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+      "attributedTo": "allofus.one"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+    "markdown": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/index.md",
+    "claims": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/receipt/"
+  }
+}

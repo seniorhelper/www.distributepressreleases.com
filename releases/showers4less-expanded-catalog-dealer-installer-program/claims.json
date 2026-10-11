@@ -1,0 +1,40 @@
+{
+  "release": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+  "title": "Showers4Less Expands Its Online Shower Catalog Past 400 Products and Opens Applications for Dealers and Installers",
+  "published": "2026-10-11",
+  "modified": "2026-10-11",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Showers4Less",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.showers4less.com/"
+    ]
+  },
+  "industry": "home-accessibility",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Showers4Less refreshed its online catalog to more than 400 shower products between Sept. 25 and 27, 2026.",
+      "type": "event",
+      "date": "2026-09-27",
+      "source": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+      "attributedTo": "Showers4Less"
+    },
+    {
+      "statement": "Showers4Less accepts dealer and installer applications through its website contact form.",
+      "type": "offering",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+      "attributedTo": "Showers4Less"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+    "markdown": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/index.md",
+    "claims": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/receipt/"
+  }
+}

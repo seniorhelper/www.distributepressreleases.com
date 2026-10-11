@@ -1,0 +1,34 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/showers4less/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+      "url": "https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/",
+      "title": "Showers4Less Expands Its Online Shower Catalog Past 400 Products and Opens Applications for Dealers and Installers",
+      "summary": "Showers4Less refreshed its online catalog to more than 400 shower products, including ANZZI, and is now taking applications from dealers and installers.",
+      "content_text": "Showers4Less, the online shower store at [showers4less.com](https://www.showers4less.com), has refreshed its catalog to more than 400 shower products and is now accepting applications from contractors who want to become Showers4Less dealers or installers. The refresh ran from September 25 to 27, 2026, and added a line of ANZZI shower products. The store runs on Shopify, and Shop Pay checkout is active. Showers4Less belongs to the same family of companies as Aging Safely Baths, the Denver-area walk-in tub and accessible shower company. Quote requests on the USABusinessSearch.com directory are labeled \"Aging Safely Baths / Showers4Less.\" ## A dealer and installer program, open to applications Contractors can apply through the contact form on showers4less.com by choosing the \"Showers4Less Dealer Application\" option. Applications are already coming in from contractors. The program is meant for remodelers, plumbers, accessibility contractors and installers who already quote bathroom projects and want one online catalog to specify from. A contractor can send a homeowner to a product page, confirm the configuration together and check out on the same site, instead of trading spec sheets be",
+      "date_published": "2026-10-11T12:00:00Z",
+      "authors": [
+        {
+          "name": "Showers4Less"
+        }
+      ],
+      "tags": [
+        "home-accessibility",
+        "colorado",
+        "affiliated release"
+      ]
+    }
+  ]
+}

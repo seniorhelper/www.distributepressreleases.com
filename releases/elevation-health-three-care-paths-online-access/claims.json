@@ -1,0 +1,40 @@
+{
+  "release": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+  "title": "Elevation Health Lays Out Three Care Paths for Metabolic Health, With Online Access Around the Clock",
+  "published": "2026-10-11",
+  "modified": "2026-10-11",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "paid placement",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Elevation Health",
+    "type": "Organization",
+    "sameAs": [
+      "https://elevationhealth.co/"
+    ]
+  },
+  "industry": "health-wellness",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Elevation Health offers three programs, Essential Peptide Care, Personalized Strategy and The 90-Day Optimization Experience.",
+      "type": "offering",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+      "attributedTo": "Elevation Health"
+    },
+    {
+      "statement": "Prescription eligibility is determined by a licensed provider.",
+      "type": "fact",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+      "attributedTo": "Elevation Health"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+    "markdown": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/index.md",
+    "claims": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/receipt/"
+  }
+}

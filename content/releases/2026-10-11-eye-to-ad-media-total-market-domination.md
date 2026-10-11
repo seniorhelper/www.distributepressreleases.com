@@ -10,7 +10,6 @@ date: 2026-10-11
 industry: marketing
 region: colorado
 affiliated: operator
-syndicate: no
 keywords: directory advertising, exclusive advertising, local service businesses, banner ads, statewide advertising
 summary: One business per industry per state gets the pop-up and large banner placements on USABusinessSearch.com, plus COBusinessList.com for Colorado slots.
 contact_name: Eye To Ad Media

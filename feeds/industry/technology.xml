@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Distribute Press Releases — technology</title>
+    <link>https://distributepressreleases.com/</link>
+    <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Oct 2026 13:41:44 +0000</lastBuildDate>
+    <atom:link href="https://distributepressreleases.com/feeds/industry/technology.xml" rel="self" type="application/rss+xml"/>
+    <copyright>2026 Distribute Press Releases</copyright>
+    <item>
+      <title>allofus.one Opens Its Free Social Platform in Beta: One Account for a Chronological Feed, 3D Worlds and VR in the Browser</title>
+      <link>https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/</link>
+      <guid isPermaLink="true">https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>allofus.one</dc:creator>
+      <category>technology</category>
+      <description>allofus.one opens its free beta: one account for a chronological feed, a 3D world in the browser and VR on Quest, plus free tools.</description>
+    </item>
+  </channel>
+</rss>

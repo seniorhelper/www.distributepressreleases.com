@@ -10,7 +10,6 @@ date: 2026-10-11
 industry: home-accessibility
 region: colorado
 affiliated: common-ownership
-syndicate: no
 keywords: walk-in tub, ella's bubbles, walk-in tub brands, aging in place, bathroom safety
 summary: Aging Safely Baths is an Ella's Bubbles dealer, so families can compare Ella's Bubbles, Hydro Dimensions, Bestbath and Meditub tubs with one BBB-accredited company.
 contact_name: Aging Safely Baths
