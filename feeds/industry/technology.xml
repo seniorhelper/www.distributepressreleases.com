@@ -5,7 +5,7 @@
     <link>https://distributepressreleases.com/</link>
     <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2026 13:41:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 13:44:28 +0000</lastBuildDate>
     <atom:link href="https://distributepressreleases.com/feeds/industry/technology.xml" rel="self" type="application/rss+xml"/>
     <copyright>2026 Distribute Press Releases</copyright>
     <item>
@@ -16,6 +16,7 @@
       <dc:creator>allofus.one</dc:creator>
       <category>technology</category>
       <description>allofus.one opens its free beta: one account for a chronological feed, a 3D world in the browser and VR on Quest, plus free tools.</description>
+      <enclosure url="https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/audio.mp3" type="audio/mpeg" length="2590869"/>
     </item>
   </channel>
 </rss>

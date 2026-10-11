@@ -5,7 +5,7 @@
     <link>https://distributepressreleases.com/</link>
     <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2026 13:41:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 13:44:28 +0000</lastBuildDate>
     <atom:link href="https://distributepressreleases.com/newsrooms/showers4less/feed.xml" rel="self" type="application/rss+xml"/>
     <copyright>2026 Distribute Press Releases</copyright>
     <item>
@@ -16,6 +16,7 @@
       <dc:creator>Showers4Less</dc:creator>
       <category>home-accessibility</category>
       <description>Showers4Less refreshed its online catalog to more than 400 shower products, including ANZZI, and is now taking applications from dealers and installers.</description>
+      <enclosure url="https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/audio.mp3" type="audio/mpeg" length="2405922"/>
     </item>
   </channel>
 </rss>

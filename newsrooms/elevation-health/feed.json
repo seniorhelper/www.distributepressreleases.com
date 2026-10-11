@@ -28,6 +28,12 @@
         "health-wellness",
         "colorado",
         "paid press release"
+      ],
+      "attachments": [
+        {
+          "url": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/audio.mp3",
+          "mime_type": "audio/mpeg"
+        }
       ]
     }
   ]
