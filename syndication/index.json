@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T17:48:58Z",
+  "generated": "2026-10-11T05:29:04Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,14 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "eye-to-ad-media-total-market-domination-directory-network": [
+      "coloradowhatsup",
+      "denvercoloradothingstodo"
+    ],
+    "aging-safely-baths-ellas-bubbles-dealer-four-brands": [
+      "denvercoloradothingstodo",
+      "coloradowhatsup"
+    ],
     "eye-to-ad-media-press-release-routing-network": [
       "actionglobalnews",
       "pressreleaseforbusiness",
