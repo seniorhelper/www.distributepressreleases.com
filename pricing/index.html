@@ -198,7 +198,7 @@
           "name": "How do I pay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We invoice directly at the moment. Send your details through the order form and you will get an invoice with payment instructions. Nothing is charged until you have approved the scope."
+            "text": "Two ways. Pay upfront by card with the buy buttons on this page (secure checkout by Authorize.net), then send us the facts. Or send your release first through the order form and we will send a payment link after you approve the draft; on that path nothing is charged until you approve."
           }
         },
         {
@@ -276,6 +276,11 @@
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free newsroom for your own site</span></li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No add-on charges</span></li>
           </ul>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="50173f92-93d8-48df-82bd-56a060ddfe7e">
+            <button type="submit" class="btn btn-primary">Buy now: $99</button>
+          </form>
+          <p class="pay-price">$99, one release, paid once today</p>
           <a class="btn btn-ghost" href="/contact/">Start one release</a>
         </div>
         <div class="plan plan-best">
@@ -290,7 +295,12 @@
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Release credits do not expire within the year</span></li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>One planning session to map the year</span></li>
           </ul>
-          <a class="btn btn-primary" href="/contact/">Start the annual plan</a>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="054256b9-e1b8-459e-a1c3-6fee9a50f647">
+            <button type="submit" class="btn btn-primary">Buy now: $890</button>
+          </form>
+          <p class="pay-price">$890 for 12 releases, billed yearly</p>
+          <a class="btn btn-ghost" href="/contact/">Start the annual plan</a>
         </div>
         <div class="plan">
           <h3>Monthly</h3>
@@ -303,8 +313,20 @@
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pause or stop any month</span></li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Priority in the drafting queue</span></li>
           </ul>
+          <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <input type="hidden" name="LinkId" value="813f1c59-b3a0-4d23-b19c-284ae4373151">
+            <button type="submit" class="btn btn-primary">Buy now: $89/mo</button>
+          </form>
+          <p class="pay-price">$89 per month, billed monthly</p>
+          <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
           <a class="btn btn-ghost" href="/contact/">Start monthly</a>
         </div>
+      </div>
+      <div class="pay-foot">
+        <p><strong>Pay upfront with the buy buttons above.</strong> After checkout you send us the facts and we write the release; nothing publishes until you approve the draft.</p>
+        <p><strong>Prefer to send your release first?</strong> <a href="/contact/">Submit it</a> and we&rsquo;ll send a payment link after you approve the draft.</p>
+        <p class="pay-call"><a href="tel:+18004818638">Prefer to talk first? Book a free intro call: <span class="nowrap">1-800-481-8638</span></a></p>
+        <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
       </div>
       <div class="note" style="margin-top:2rem">
         <p><strong>Agencies and volume.</strong> Twenty-five releases for $1,495, white-labeled, usable across as many client companies as you like. <a href="/contact/">Tell us what you need</a> and we will put it together.</p>
@@ -371,7 +393,7 @@
   <section class="band-ink">
     <div class="wrap-narrow" style="text-align:center">
       <h2>Ready when you are</h2>
-      <p class="lede" style="margin-inline:auto;color:#BFD0E9">Send the facts and we will come back with a draft. Nothing is charged until you approve the scope.</p>
+      <p class="lede" style="margin-inline:auto;color:#BFD0E9">Send the facts and we will come back with a draft. Pay upfront with a buy button above, or send it first and pay after you approve the draft.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn-primary btn-lg" href="/contact/">Start a release</a>
         <a class="btn btn-ghost btn-lg" href="/tools/newsworthiness-check/">Check if it is newsworthy</a>
@@ -405,7 +427,7 @@
       </details>
       <details>
         <summary>How do I pay?</summary>
-        <div><p>We invoice directly at the moment. Send your details through the order form and you will get an invoice with payment instructions. Nothing is charged until you have approved the scope.</p></div>
+        <div><p>Two ways. Pay upfront by card with the buy buttons on this page (secure checkout by Authorize.net), then send us the facts. Or send your release first through the order form and we will send a payment link after you approve the draft; on that path nothing is charged until you approve.</p></div>
       </details>
       <details>
         <summary>Can I get a refund?</summary>

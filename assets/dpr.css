@@ -421,3 +421,16 @@ input:focus,select:focus,textarea:focus{border-color:var(--signal);background:va
   font-weight:700;letter-spacing:.01em;line-height:1.2;
 }
 .answer-lead{scroll-margin-top:90px}
+
+/* payment buttons (Authorize.net Simple Checkout) */
+.pay-form{margin:0}
+.pay-form .btn{width:100%}
+.pay-price{font-size:.86rem;color:var(--slate);font-weight:600;text-align:center;margin:.45rem 0 .7rem}
+.pay-note{font-size:.8rem;color:var(--slate-2);text-align:center;margin:-.3rem 0 .7rem;line-height:1.45}
+.pay-foot{margin:1.6rem auto 0;max-width:62ch;text-align:center;font-size:.94rem}
+.pay-foot p{margin:0 0 .55rem}
+.pay-call{font-weight:650}
+.pay-secure{font-size:.82rem;color:var(--slate-2)}
+.pay-card .pay-item{margin-top:.9rem}
+.pay-card .pay-call,.pay-card .pay-secure{margin-top:.8rem;font-size:.86rem}
+.pay-call .nowrap{white-space:nowrap}
