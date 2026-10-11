@@ -82,6 +82,14 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 
 
+# Header trust pair (BBB + Authorize.Net seal). The seal script injects its
+# image where it sits, so the header and the mobile menu each carry a copy.
+HDR_TRUST_CSS = '<style id="anet-seal-css">.anet-seal .AuthorizeNetSeal{margin:0;padding:0}.anet-seal .AuthorizeNetSeal a{display:block;border:0;padding:0;background:none}.anet-seal .AuthorizeNetSeal img{display:block;width:90px!important;height:72px!important;max-width:none!important;margin:0!important;padding:0;border:0;background:none}</style><style id="hdr-trust-css">.hdr-trust{display:flex;align-items:center;gap:10px;flex:none;margin-left:.5rem}.hdr-trust .hdr-bbb,.nav-trust .hdr-bbb{display:inline-block;line-height:0;flex:none}.hdr-trust .hdr-bbb img,.nav-trust .hdr-bbb img{width:150px;height:49px;max-width:none;display:block;margin:0}.hdr-trust .anet-seal,.nav-trust .anet-seal{display:inline-block;flex:none;min-width:63px;min-height:50px}.hdr-trust .anet-seal .AuthorizeNetSeal img,.nav-trust .anet-seal .AuthorizeNetSeal img{width:63px!important;height:50px!important}.nav-trust{display:none}@media(min-width:1001px) and (max-width:1169px){.head-in .hdr-trust .hdr-bbb{display:none}}@media(max-width:1000px){.head-in .hdr-trust{margin-left:auto}.head-in .hdr-trust~.burger{margin-left:.7rem}}@media(max-width:620px){.head-in .hdr-trust{display:none}.head-in .hdr-trust~.burger{margin-left:auto}.nav .nav-trust{display:flex;justify-content:center;align-items:center;gap:12px;padding:.3rem 0 .9rem;margin:0 0 .3rem;border-bottom:1px solid var(--edge-2,#e5e7eb)}.nav .nav-trust a{padding:0!important;border:0!important;background:none!important;line-height:0;border-radius:0}}</style>'
+HDR_TRUST = '<div class="hdr-trust"><a class="hdr-bbb" href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="150" height="49" alt="Search Converts LLC BBB Business Review" loading="eager" fetchpriority="low" decoding="async"></a><div class="anet-seal hdr-anet" style="flex:none;box-sizing:content-box;vertical-align:middle;line-height:0"><!-- (c) 2005, 2026. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="2c88f8ff-07b2-4257-8917-e75f99310417";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script> </div></div></div>'
+NAV_TRUST = '<div class="nav-trust"><a class="hdr-bbb" href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="150" height="49" alt="Search Converts LLC BBB Business Review" loading="eager" fetchpriority="low" decoding="async"></a><div class="anet-seal nav-anet" style="flex:none;box-sizing:content-box;vertical-align:middle;line-height:0"><!-- (c) 2005, 2026. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="2c88f8ff-07b2-4257-8917-e75f99310417";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script> </div></div></div>'
+TRUST = {"hdr_css": HDR_TRUST_CSS, "hdr_trust": HDR_TRUST, "nav_trust": NAV_TRUST}
+
+
 def log(*a):
     print("[publish]", *a, flush=True)
 
@@ -411,6 +419,7 @@ def release_html(r, prev_next):
 <script type="application/ld+json">
 {graph}
 </script>
+{hdr_css}
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -420,10 +429,12 @@ def release_html(r, prev_next):
       <img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38">
       <span>Distribute Press Releases</span>
     </a>
+    {hdr_trust}
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
+    {nav_trust}
       <a href="/releases/">Releases</a>
       <a href="/press-release-distribution-service/">Distribution</a>
       <a href="/tools/">Free tools</a>
@@ -499,7 +510,7 @@ def release_html(r, prev_next):
         first=lede, body=body_html, audio=audio_block, contact=contact_html,
         nav=" ".join(nav) or '<a href="/releases/">All releases</a>',
         cslug=r["company_slug"], company=esc(r["company"]), carried=carried_html(r),
-    )
+        **TRUST)
 
 
 def carried_html(r):
@@ -597,10 +608,12 @@ def receipt_html(r, results):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/dpr.css">
+{hdr_css}
 </head>
 <body>
 <header class="site-head"><div class="wrap head-in">
   <a class="brand" href="/"><img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38"><span>Distribute Press Releases</span></a>
+  {hdr_trust}
 </div></header>
 <main id="main"><section class="hero"><div class="wrap-narrow">
   <span class="eyebrow">Distribution receipt</span>
@@ -623,7 +636,7 @@ def receipt_html(r, results):
   <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a>
 </div></div><div class="stamp"><a href="https://eyetoad.com/" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
 </body></html>
-""".format(gsc=GSC, url=r["url"], title=esc(r["title"]), rows=rows)
+""".format(gsc=GSC, url=r["url"], title=esc(r["title"]), rows=rows, **TRUST)
 
 
 # ---------------------------------------------------------------- feeds
@@ -868,11 +881,14 @@ def releases_index(items):
 <script type="application/ld+json">
 {graph}
 </script>
+{hdr_css}
 </head><body>
 <header class="site-head"><div class="wrap head-in">
   <a class="brand" href="/"><img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38"><span>Distribute Press Releases</span></a>
+  {hdr_trust}
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   <nav class="nav" id="nav" aria-label="Main">
+    {nav_trust}
     <a href="/press-release-distribution-service/">Distribution</a>
     <a href="/tools/">Free tools</a>
     <a href="/pricing/">Pricing</a>
@@ -898,7 +914,7 @@ def releases_index(items):
 <script src="/assets/dpr.js" defer></script>
 <script src="/assets/wire-bot.js" defer></script>
 </body></html>
-""".format(gsc=GSC, s=SITE, cards=cards or
+""".format(gsc=GSC, s=SITE, **TRUST, cards=cards or
            '<p style="color:var(--slate)">No releases published yet.</p>',
            graph=json.dumps({
                "@context": "https://schema.org",
@@ -1238,13 +1254,16 @@ HEAD = """<!DOCTYPE html>
 <script type="application/ld+json">
 {graph}
 </script>
+{hdr_css}
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
 <header class="site-head"><div class="wrap head-in">
   <a class="brand" href="/"><img src="/images/distribute-press-releases-mark.png" alt="" width="52" height="38"><span>Distribute Press Releases</span></a>
+  {hdr_trust}
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   <nav class="nav" id="nav" aria-label="Main">
+    {nav_trust}
     <a href="/releases/">Releases</a>
     <a href="/press-release-distribution-service/">Distribution</a>
     <a href="/tools/">Free tools</a>
@@ -1268,7 +1287,7 @@ FOOT = """</main>
 
 def page(path, title, desc, graph, body, alt=""):
     url = SITE + path
-    return HEAD.format(gsc=GSC, title=esc(title), desc=esc(desc), url=url, site=SITE, alt=alt,
+    return HEAD.format(gsc=GSC, title=esc(title), desc=esc(desc), url=url, site=SITE, alt=alt, **TRUST,
                        graph=json.dumps({"@context": "https://schema.org", "@graph": graph},
                                         indent=2, ensure_ascii=False)) + body + FOOT
 
