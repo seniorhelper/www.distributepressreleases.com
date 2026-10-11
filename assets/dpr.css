@@ -434,3 +434,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--signal);background:va
 .pay-card .pay-item{margin-top:.9rem}
 .pay-card .pay-call,.pay-card .pay-secure{margin-top:.8rem;font-size:.86rem}
 .pay-call .nowrap{white-space:nowrap}
+
+/* trust row: BBB seal + secure checkout */
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.6rem 1.1rem;margin:1rem auto 0;max-width:680px;text-align:center}
+.trust-seal{display:inline-block;flex:none;line-height:0;border-radius:10px}
+.trust-seal a{display:block;line-height:0;border:0}
+.trust-seal img{display:block;width:200px;height:65px;max-width:none;margin:0}
+.trust-row .trust-txt{flex:0 1 430px;min-width:200px}
+.trust-row .trust-txt p{margin:0;text-align:center;text-wrap:balance}
+.trust-row .trust-txt p.pay-secure{margin:0;font-size:.82rem;line-height:1.5;color:var(--slate-2)}
+.trust-row .trust-txt .trust-cap{margin:.25rem 0 0;font-size:.78rem;line-height:1.45;color:var(--slate-2)}
+.pay-card .trust-row{margin-top:.9rem}
+.pay-card .trust-row .trust-txt p.pay-secure{font-size:.86rem}
+.trust-foot{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;margin:1.1rem 0 0}
+.site-foot .trust-seal{background:#fff;padding:6px 10px}
+.site-foot .trust-seal img{width:200px;height:65px;margin:0}
+.trust-foot .trust-cap{font-size:.8rem;line-height:1.45;color:#93A9CC}
