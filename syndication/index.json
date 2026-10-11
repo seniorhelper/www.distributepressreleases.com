@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T17:48:58Z",
+  "generated": "2026-10-11T13:41:44Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,34 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "showers4less-expanded-catalog-dealer-installer-program": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup"
+    ],
+    "eye-to-ad-media-total-market-domination-directory-network": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup",
+      "denvercoloradothingstodo"
+    ],
+    "elevation-health-three-care-paths-online-access": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup"
+    ],
+    "allofus-one-open-beta-feed-3d-vr-one-account": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "denvercoloradothingstodo",
+      "coloradowhatsup"
+    ],
+    "aging-safely-baths-ellas-bubbles-dealer-four-brands": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "denvercoloradothingstodo",
+      "coloradowhatsup"
+    ],
     "eye-to-ad-media-press-release-routing-network": [
       "actionglobalnews",
       "pressreleaseforbusiness",

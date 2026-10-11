@@ -1,0 +1,34 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/allofus-one/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+      "url": "https://distributepressreleases.com/releases/allofus-one-open-beta-feed-3d-vr-one-account/",
+      "title": "allofus.one Opens Its Free Social Platform in Beta: One Account for a Chronological Feed, 3D Worlds and VR in the Browser",
+      "summary": "allofus.one opens its free beta: one account for a chronological feed, a 3D world in the browser and VR on Quest, plus free tools.",
+      "content_text": "allofus.one, a free social platform built in Denver, is now open to the public in beta at [allofus.one](https://allofus.one). One account works three ways. There is a regular social feed. There is a 3D world that runs in a phone or laptop browser. And the same world opens in virtual reality on a Meta Quest headset through the headset’s web browser, with nothing to install. The feed is chronological. Posts from the people and groups a member chooses appear in the order they were made, with no ranking algorithm deciding what to show first. Members can download their data or delete their account from the Control panel at any time. Sponsored posts in the feed are labeled, and members can switch them off in their ad settings. ## One account, three ways in - **Feed.** Personal pages, connections, groups, reactions, comments, photo and video posts, polls and buy, sell and trade groups, at allofus.one. - **3D.** A browser-based world at allofus.one/world/ with avatars, homes members can claim and build, live rooms, games and places to explore. - **VR.** The same world in WebXR on a Quest 3 headset, with controller movement, teleport, a laser pointer and a wrist menu. Members switch between",
+      "date_published": "2026-10-11T12:00:00Z",
+      "authors": [
+        {
+          "name": "allofus.one"
+        }
+      ],
+      "tags": [
+        "technology",
+        "colorado",
+        "operator’s own release"
+      ]
+    }
+  ]
+}

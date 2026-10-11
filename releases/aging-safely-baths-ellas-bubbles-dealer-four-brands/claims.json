@@ -1,0 +1,47 @@
+{
+  "release": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/",
+  "title": "Aging Safely Baths Confirms Ella’s Bubbles Dealership, Putting Four Walk-In Tub Brands Under One BBB-Accredited Roof",
+  "published": "2026-10-11",
+  "modified": "2026-10-11",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Aging Safely Baths",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.agingsafelybaths.com/"
+    ]
+  },
+  "industry": "home-accessibility",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Aging Safely Baths is a dealer for Ella's Bubbles walk-in tubs.",
+      "type": "fact",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths offers walk-in tubs and accessible bathing products from four brands, Hydro Dimensions, Ella's Bubbles, Bestbath (including RANE by Bestbath) and Meditub.",
+      "type": "offering",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths, listed by the Better Business Bureau as Aging Safely Walk in Tubs, is BBB Accredited.",
+      "type": "fact",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/",
+      "attributedTo": "Aging Safely Baths"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/",
+    "markdown": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/index.md",
+    "claims": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/aging-safely-baths-ellas-bubbles-dealer-four-brands/receipt/"
+  }
+}

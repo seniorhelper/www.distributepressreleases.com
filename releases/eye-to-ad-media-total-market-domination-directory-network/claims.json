@@ -1,0 +1,54 @@
+{
+  "release": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+  "title": "Eye To Ad Media Opens Total Market Domination, Selling One Exclusive Industry Slot Per State on Its Business Directory Network",
+  "published": "2026-10-11",
+  "modified": "2026-10-11",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Eye To Ad Media",
+    "type": "Organization",
+    "sameAs": [
+      "https://eyetoad.com/total-market-domination/"
+    ]
+  },
+  "industry": "marketing",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Total Market Domination gives one business per industry, per state, the pop-up and large banner placements on matching searches across the business directory network Eye To Ad Media owns.",
+      "type": "offering",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "The network includes USABusinessSearch.com nationwide and COBusinessList.com for Colorado.",
+      "type": "fact",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "The normal rate is $2,500 per industry, per month, per state, and lower launch rates are available on request.",
+      "type": "price",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+      "attributedTo": "Eye To Ad Media"
+    },
+    {
+      "statement": "Total Market Domination is advertising on directories Eye To Ad Media owns. It is not Google Ads and does not guarantee rankings, visitors or calls.",
+      "type": "policy",
+      "date": "2026-10-11",
+      "source": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+      "attributedTo": "Eye To Ad Media"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/",
+    "markdown": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/index.md",
+    "claims": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/receipt/"
+  }
+}

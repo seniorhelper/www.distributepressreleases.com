@@ -1,0 +1,34 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/elevation-health/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+      "url": "https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/",
+      "title": "Elevation Health Lays Out Three Care Paths for Metabolic Health, With Online Access Around the Clock",
+      "summary": "Denver telehealth provider Elevation Health names its three care paths and explains how licensed providers handle prescriptions. Online 24/7.",
+      "content_text": "Elevation Health, a Denver-based online telehealth provider, has set out the three care paths it offers people working on their metabolic health: Essential Peptide Care, Personalized Strategy, and The 90-Day Optimization Experience. Its services are available online 24 hours a day, seven days a week, so people can start the process from home on their own schedule. The company's model combines prescription GLP-1 therapy and peptide-based metabolic care with oversight from registered dietitians, and prescriptions are filled through licensed pharmacy partners. Prescription eligibility is determined by a licensed provider. Not everyone who applies will be a candidate for medication, and Elevation Health does not promise any particular result. ## Three ways to start - **Essential Peptide Care** - **Personalized Strategy** - **The 90-Day Optimization Experience** Elevation Health says it names the three paths openly because people arrive at different starting points. Some want to understand their options before committing to anything. Others are ready for a longer, structured program. Seeing the choices side by side lets a person ask about the level of support that fits instead of guessi",
+      "date_published": "2026-10-11T12:00:00Z",
+      "authors": [
+        {
+          "name": "Elevation Health"
+        }
+      ],
+      "tags": [
+        "health-wellness",
+        "colorado",
+        "paid press release"
+      ]
+    }
+  ]
+}

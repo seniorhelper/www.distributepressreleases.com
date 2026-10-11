@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Distribute Press Releases — health wellness</title>
+    <link>https://distributepressreleases.com/</link>
+    <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Oct 2026 13:41:44 +0000</lastBuildDate>
+    <atom:link href="https://distributepressreleases.com/feeds/industry/health-wellness.xml" rel="self" type="application/rss+xml"/>
+    <copyright>2026 Distribute Press Releases</copyright>
+    <item>
+      <title>Elevation Health Lays Out Three Care Paths for Metabolic Health, With Online Access Around the Clock</title>
+      <link>https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/</link>
+      <guid isPermaLink="true">https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Elevation Health</dc:creator>
+      <category>health-wellness</category>
+      <description>Denver telehealth provider Elevation Health names its three care paths and explains how licensed providers handle prescriptions. Online 24/7.</description>
+    </item>
+  </channel>
+</rss>
