@@ -482,7 +482,7 @@ def release_html(r, prev_next):
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-legal" style="border-top:0;margin-top:0">
-      <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/">Eye To Ad Media</a>.</span>
+      <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/" rel="nofollow">Eye To Ad Media</a>.</span>
       <a href="/editorial-standards/">Editorial standards</a>
       <a href="/corrections/">Corrections</a>
       <a href="/ai-disclosure/">AI disclosure</a>
@@ -490,7 +490,7 @@ def release_html(r, prev_next):
       <a href="/privacy/">Privacy</a>
     </div>
   </div>
-  <div class="stamp"><a href="https://eyetoad.com/" aria-label="Built by Eye To Ad Media" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div>
+  <div class="stamp"><a href="https://eyetoad.com/" rel="nofollow" aria-label="Built by Eye To Ad Media" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div>
 </footer>
 <script src="/assets/dpr.js" defer></script>
 <script src="/assets/wire-bot.js" defer></script>
@@ -634,7 +634,7 @@ def receipt_html(r, results):
 <footer class="site-foot"><div class="wrap"><div class="foot-legal" style="border-top:0;margin-top:0">
   <span>&copy; 2026 Distribute Press Releases.</span>
   <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a>
-</div></div><div class="stamp"><a href="https://eyetoad.com/" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
+</div></div><div class="stamp"><a href="https://eyetoad.com/" rel="nofollow" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
 </body></html>
 """.format(gsc=GSC, url=r["url"], title=esc(r["title"]), rows=rows, **TRUST)
 
@@ -910,7 +910,7 @@ def releases_index(items):
 <footer class="site-foot"><div class="wrap"><div class="foot-legal" style="border-top:0;margin-top:0">
   <span>&copy; 2026 Distribute Press Releases.</span>
   <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/ai-disclosure/">AI disclosure</a>
-</div></div><div class="stamp"><a href="https://eyetoad.com/" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
+</div></div><div class="stamp"><a href="https://eyetoad.com/" rel="nofollow" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
 <script src="/assets/dpr.js" defer></script>
 <script src="/assets/wire-bot.js" defer></script>
 </body></html>
@@ -1276,10 +1276,10 @@ HEAD = """<!DOCTYPE html>
 
 FOOT = """</main>
 <footer class="site-foot"><div class="wrap"><div class="foot-legal" style="border-top:0;margin-top:0">
-  <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/">Eye To Ad Media</a>.</span>
+  <span>&copy; 2026 Distribute Press Releases. Powered by <a href="https://eyetoad.com/" rel="nofollow">Eye To Ad Media</a>.</span>
   <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/ai-disclosure/">AI disclosure</a>
   <a href="/network/">Network</a><a href="/newsrooms/">Newsroom directory</a>
-</div></div><div class="stamp"><a href="https://eyetoad.com/" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
+</div></div><div class="stamp"><a href="https://eyetoad.com/" rel="nofollow" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
 <script src="/assets/dpr.js" defer></script>
 </body></html>
 """
