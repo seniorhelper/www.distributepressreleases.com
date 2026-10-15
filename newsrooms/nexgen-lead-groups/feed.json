@@ -1,0 +1,41 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/nexgen-lead-groups/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+      "url": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+      "title": "NexGen Lead Groups Opens Free Referral Groups in Denver Metro, Colorado Springs and Fort Collins and Is Now Accepting New Members",
+      "summary": "NexGen Lead Groups is accepting members for free referral groups in Denver Metro, Colorado Springs and Fort Collins: one seat per trade, no dues.",
+      "content_text": "NexGen Lead Groups, a free referral network headquartered in Denver, is now accepting new members for its first three Colorado groups: Denver Metro, Colorado Springs and Fort Collins. Membership costs nothing. Each group holds one seat per trade, meets online for 45 minutes every week and offers an optional in-person meetup once a month. Business owners can request a seat at [nexgenleadgroups.com/join](https://www.nexgenleadgroups.com/join/). The network is built for owners who want referrals without the dues, breakfasts and rehearsed pitches of a traditional leads group. Instead of a round-the-table sales speech, each meeting is spent on specific asks, real introductions and follow-up between paired members. ## Three Colorado groups, one seat per trade - **Denver Metro:** Denver, Aurora, Lakewood and the surrounding metro area - **Colorado Springs:** Monument to Fountain - **Fort Collins:** Loveland, Windsor and Northern Colorado Because each group holds one seat per trade, the first business in a trade to join a group takes that trade's seat. New groups can form as membership grows. Colorado is the first state with live groups, and every other state is open for a founding leader ",
+      "date_published": "2026-10-14T12:00:00Z",
+      "authors": [
+        {
+          "name": "NexGen Lead Groups"
+        }
+      ],
+      "tags": [
+        "business-services",
+        "colorado",
+        "operator’s own release"
+      ],
+      "image": "https://www.nexgenleadgroups.com/images/og.png",
+      "attachments": [
+        {
+          "url": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/audio.mp3",
+          "mime_type": "audio/mpeg"
+        }
+      ]
+    }
+  ]
+}

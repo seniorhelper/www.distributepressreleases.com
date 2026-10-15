@@ -1,0 +1,48 @@
+{
+  "release": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+  "title": "NexGen Lead Groups Opens Free Referral Groups in Denver Metro, Colorado Springs and Fort Collins and Is Now Accepting New Members",
+  "published": "2026-10-14",
+  "modified": "2026-10-14",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "NexGen Lead Groups",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.nexgenleadgroups.com/"
+    ]
+  },
+  "industry": "business-services",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "NexGen Lead Groups began accepting members on Oct. 14, 2026, for referral groups in Denver Metro, Colorado Springs and Fort Collins.",
+      "type": "event",
+      "date": "2026-10-14",
+      "source": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+      "attributedTo": "NexGen Lead Groups"
+    },
+    {
+      "statement": "NexGen Lead Groups membership is free and donation based, with no membership dues and no application fee.",
+      "type": "offering",
+      "date": "2026-10-14",
+      "source": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+      "attributedTo": "NexGen Lead Groups"
+    },
+    {
+      "statement": "Each NexGen Lead Groups group holds one seat per trade and meets online for 45 minutes each week, with an optional in-person meetup once a month.",
+      "type": "offering",
+      "date": "2026-10-14",
+      "source": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+      "attributedTo": "NexGen Lead Groups"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/",
+    "markdown": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/index.md",
+    "claims": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/receipt/",
+    "audio": "https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/audio.mp3"
+  }
+}
