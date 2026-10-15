@@ -1,0 +1,62 @@
+{
+  "release": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+  "title": "My AI Agent Army Opens an AI Agent Factory and Publishes the Real Output of 17 Built-and-Tested Agents",
+  "published": "2026-10-15",
+  "modified": "2026-10-15",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "My AI Agent Army",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.myaiagentarmy.com/"
+    ]
+  },
+  "industry": "marketing-technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "My AI Agent Army opened at myaiagentarmy.com in October 2026 as an AI agent factory operated by Eye To Ad Media of Denver.",
+      "type": "event",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "attributedTo": "My AI Agent Army"
+    },
+    {
+      "statement": "My AI Agent Army published reports and drafts from 17 built-and-tested agents, run on a sample business, at myaiagentarmy.com/see-them-work/.",
+      "type": "event",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "attributedTo": "My AI Agent Army"
+    },
+    {
+      "statement": "Ready-made My AI Agent Army agents start at $1,500 to own, or $149 a month plus a $500 one-time setup on its Subscribe-to-Own plan.",
+      "type": "offering",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "attributedTo": "My AI Agent Army"
+    },
+    {
+      "statement": "Custom-built My AI Agent Army agents start at $4,000 for a single workflow.",
+      "type": "offering",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "attributedTo": "My AI Agent Army"
+    },
+    {
+      "statement": "My AI Agent Army agents draft work and wait for a person to approve it before anything is sent, posted or moved.",
+      "type": "policy",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "attributedTo": "My AI Agent Army"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+    "markdown": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/index.md",
+    "claims": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/receipt/",
+    "audio": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/audio.mp3"
+  }
+}

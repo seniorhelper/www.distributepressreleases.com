@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15T03:23:11Z",
+  "generated": "2026-10-15T15:08:11Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,18 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "my-ai-agent-army-launch-17-agents": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup",
+      "denvercoloradothingstodo"
+    ],
+    "allofus-one-member-controlled-social": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "denvercoloradothingstodo",
+      "coloradowhatsup"
+    ],
     "nexgen-lead-groups-colorado-accepting-new-members": [
       "actionglobalnews",
       "pressreleaseforbusiness",

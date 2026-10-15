@@ -181,6 +181,30 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/receipt/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/allofus-one-member-controlled-social/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/allofus-one-member-controlled-social/receipt/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://distributepressreleases.com/releases/nexgen-lead-groups-colorado-accepting-new-members/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
@@ -301,6 +325,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://distributepressreleases.com/newsrooms/my-ai-agent-army/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/newsrooms/allofus-one/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://distributepressreleases.com/newsrooms/nexgen-lead-groups/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -320,12 +356,6 @@
   </url>
   <url>
     <loc>https://distributepressreleases.com/newsrooms/elevation-health/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://distributepressreleases.com/newsrooms/allofus-one/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

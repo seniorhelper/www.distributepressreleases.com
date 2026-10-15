@@ -1,0 +1,41 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/my-ai-agent-army/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "url": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/",
+      "title": "My AI Agent Army Opens an AI Agent Factory and Publishes the Real Output of 17 Built-and-Tested Agents",
+      "summary": "My AI Agent Army opens an AI agent factory for businesses and publishes real reports and drafts from 17 agents it has already built and tested.",
+      "content_text": "My AI Agent Army, an AI agent factory operated by Denver's Eye To Ad Media, is now taking orders at [myaiagentarmy.com](https://www.myaiagentarmy.com/). Businesses can order a single agent or hundreds, either ready-made from the company's agent templates or custom-built from scratch. With the launch, the company published the actual reports and drafts from 17 agents it has already built and tested, run on a sample plumbing company, at [myaiagentarmy.com/see-them-work](https://www.myaiagentarmy.com/see-them-work/). Most AI agent offers today are demos or chat windows. The sample-output page is meant to show what the agents produce before anyone buys: a morning briefing that caught a double booking, replies drafted to three overnight leads, a three-month profit and loss built from raw bank exports, a renewal report that flagged an expired insurance policy, and an AI-readiness audit with the fix files it wrote. The business and its customers are made up; the output is not edited. ## The 17 agents already built - **Operations:** Daily Briefing, Meeting to Actions (transcripts into tasks with owners and due dates), Desktop Organizer. - **Sales and service:** Speed-to-Lead Responder, Rev",
+      "date_published": "2026-10-15T12:00:00Z",
+      "authors": [
+        {
+          "name": "My AI Agent Army"
+        }
+      ],
+      "tags": [
+        "marketing-technology",
+        "colorado",
+        "operator’s own release"
+      ],
+      "image": "https://www.myaiagentarmy.com/assets/og.png",
+      "attachments": [
+        {
+          "url": "https://distributepressreleases.com/releases/my-ai-agent-army-launch-17-agents/audio.mp3",
+          "mime_type": "audio/mpeg"
+        }
+      ]
+    }
+  ]
+}

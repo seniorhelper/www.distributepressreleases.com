@@ -1,0 +1,48 @@
+{
+  "release": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/",
+  "title": "allofus.one Puts Members in Control of Their Social Network: Their Feed, Their Ads Setting and Their Data",
+  "published": "2026-10-15",
+  "modified": "2026-10-15",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "allofus.one",
+    "type": "Organization",
+    "sameAs": [
+      "https://allofus.one/"
+    ]
+  },
+  "industry": "technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "allofus.one is a free social platform built in Denver and open to the public in beta at allofus.one.",
+      "type": "event",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/",
+      "attributedTo": "allofus.one"
+    },
+    {
+      "statement": "The allofus.one feed shows posts from people and groups a member chooses, newest first, with no ranking algorithm.",
+      "type": "policy",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/",
+      "attributedTo": "allofus.one"
+    },
+    {
+      "statement": "allofus.one members can switch sponsored posts off in their ad settings and can download their data or delete their account from the Control panel.",
+      "type": "policy",
+      "date": "2026-10-15",
+      "source": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/",
+      "attributedTo": "allofus.one"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/",
+    "markdown": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/index.md",
+    "claims": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/receipt/",
+    "audio": "https://distributepressreleases.com/releases/allofus-one-member-controlled-social/audio.mp3"
+  }
+}
