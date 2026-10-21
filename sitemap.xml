@@ -217,6 +217,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://distributepressreleases.com/releases/three-ways-to-access-glp1-care-online/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/three-ways-to-access-glp1-care-online/receipt/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://distributepressreleases.com/releases/showers4less-expanded-catalog-dealer-installer-program/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
@@ -236,18 +248,6 @@
   </url>
   <url>
     <loc>https://distributepressreleases.com/releases/eye-to-ad-media-total-market-domination-directory-network/receipt/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://distributepressreleases.com/releases/elevation-health-three-care-paths-online-access/receipt/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -350,12 +350,6 @@
   </url>
   <url>
     <loc>https://distributepressreleases.com/newsrooms/eye-to-ad-media/</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://distributepressreleases.com/newsrooms/elevation-health/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

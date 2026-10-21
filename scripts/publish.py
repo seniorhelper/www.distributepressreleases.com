@@ -23,6 +23,8 @@ Flags:
 Optional front matter beyond the example below:
     affiliated: operator            the company is Eye To Ad Media itself
     affiliated: common-ownership    the company shares ownership with the operator
+    affiliated: editorial           an educational article by the site's own staff, not a
+                                    press release: staff byline, no company newsroom
     network: none                   keep the release off network sites
     network: site-id, site-id       force specific network sites (config/network.json)
     syndicate: no                   also keep it off the news property
@@ -234,7 +236,10 @@ def load_releases():
         aff = str(meta.get("affiliated") or "").strip().lower()
         meta["affiliated"] = ("operator" if aff in ("operator", "self")
                               else "common-ownership" if aff in ("yes", "true", "common-ownership", "common ownership")
+                              else "editorial" if aff in ("editorial", "staff", "article")
                               else "")
+        if meta["affiliated"] == "editorial":
+            meta["company"] = meta.get("company") or STAFF
         meta["slug"] = meta.get("slug") or slugify(meta["title"])[:80]
         meta["company_slug"] = meta.get("company_slug") or slugify(meta["company"])
         meta["industry"] = slugify(meta.get("industry") or "general")
@@ -272,15 +277,30 @@ DISCLOSURE_COMMON = (
 )
 
 
+DISCLOSURE_EDITORIAL = (
+    "This is an educational article written by the Distribute Press Releases staff. "
+    "It is not a press release, nobody paid for it, and it does not describe, endorse "
+    "or promote any company or provider. It is general information, not advice for "
+    "any individual situation."
+)
+STAFF = "Distribute Press Releases staff"
+
+
+def editorial(r):
+    return r.get("affiliated") == "editorial"
+
+
 def disclosure(r):
     return {"operator": DISCLOSURE_OPERATOR,
-            "common-ownership": DISCLOSURE_COMMON}.get(r.get("affiliated"), DISCLOSURE)
+            "common-ownership": DISCLOSURE_COMMON,
+            "editorial": DISCLOSURE_EDITORIAL}.get(r.get("affiliated"), DISCLOSURE)
 
 
 def label(r):
     """Short label for feeds, cards and the network module."""
     return {"operator": "Operator’s own release",
-            "common-ownership": "Affiliated release"}.get(r.get("affiliated"), "Paid press release")
+            "common-ownership": "Affiliated release",
+            "editorial": "Educational article"}.get(r.get("affiliated"), "Paid press release")
 
 
 def release_html(r, prev_next):
@@ -361,6 +381,12 @@ def release_html(r, prev_next):
     ]
     if r.get("image"):
         graph[0]["image"] = [r["image"]]
+    if editorial(r):
+        graph[0]["author"] = {"@type": "Organization", "name": STAFF, "url": SITE + "/about/"}
+        graph[0].pop("about", None)
+        graph[0]["articleSection"] = "Explainer"
+        if r.get("keywords"):
+            graph[0]["keywords"] = str(r["keywords"])
 
     audio_block = ""
     if r.get("has_audio"):
@@ -380,6 +406,11 @@ def release_html(r, prev_next):
                        % (base64.b64encode(u.encode()).decode(), base64.b64encode(d.encode()).decode()))
     if r.get("contact_phone"): contact.append(esc(r["contact_phone"]))
     contact_html = ("<p>" + "<br>".join(contact) + "</p>") if contact else ""
+    contact_block = ('<h2 style="margin-top:2.4rem;font-size:1.15rem">Media contact</h2>\n        '
+                     + contact_html) if contact_html or not editorial(r) else ""
+    newsroom_btn = "" if editorial(r) else (
+        '\n          <a class="btn btn-ghost" href="/newsrooms/%s/">%s newsroom</a>'
+        % (r["company_slug"], esc(r["company"])))
 
     prev_link, next_link = prev_next
     nav = []
@@ -465,14 +496,12 @@ def release_html(r, prev_next):
           <button class="btn btn-ghost" type="button" data-speak=".release-body" data-label="Listen">Listen</button>
           <a class="btn btn-ghost" href="{url}index.md">Markdown</a>
           <a class="btn btn-ghost" href="{url}claims.json">Claims file</a>
-          <a class="btn btn-ghost" href="{url}receipt/">Distribution receipt</a>
-          <a class="btn btn-ghost" href="/newsrooms/{cslug}/">{company} newsroom</a>
+          <a class="btn btn-ghost" href="{url}receipt/">Distribution receipt</a>{newsroom_btn}
         </div>{carried}
-        <h2 style="margin-top:2.4rem;font-size:1.15rem">Media contact</h2>
         {contact}
         <div class="note note-caution" style="margin-top:2rem">
           <p>{disclosure}</p>
-          <p style="margin-bottom:0"><a href="/corrections/">Report an error in this release</a> &mdash; corrections are free and we make them regardless of who reports them.</p>
+          <p style="margin-bottom:0"><a href="/corrections/">Report an error in this {kind}</a> &mdash; corrections are free and we make them regardless of who reports them.</p>
         </div>
         <p style="margin-top:2rem;display:flex;gap:1.4rem;flex-wrap:wrap">{nav}</p>
       </div>
@@ -507,10 +536,10 @@ def release_html(r, prev_next):
         company_line=(" by " + esc(r["company"])) if r.get("company") else "",
         city_state=("%s, %s, " % (esc(r.get("city", "")).upper(), esc(r.get("state", "")))
                     if r.get("city") else ""),
-        first=lede, body=body_html, audio=audio_block, contact=contact_html,
+        first=lede, body=body_html, audio=audio_block, contact=contact_block,
         nav=" ".join(nav) or '<a href="/releases/">All releases</a>',
-        cslug=r["company_slug"], company=esc(r["company"]), carried=carried_html(r),
-        **TRUST)
+        newsroom_btn=newsroom_btn, kind="article" if editorial(r) else "release",
+        carried=carried_html(r), **TRUST)
 
 
 def carried_html(r):
@@ -530,8 +559,8 @@ def release_markdown(r):
     lines.append("> %s" % disclosure(r))
     lines.append("")
     lines.append("- Published: %s" % long_date(r["date"]))
-    lines.append("- Company: %s%s" % (r["company"],
-                                      " (%s)" % r["company_url"] if r.get("company_url") else ""))
+    lines.append("- %s: %s%s" % ("Author" if editorial(r) else "Company", r["company"],
+                                 " (%s)" % r["company_url"] if r.get("company_url") else ""))
     if r.get("city"):
         lines.append("- Dateline: %s, %s" % (r["city"], r.get("state", "")))
     lines.append("- Canonical: %s" % r["url"])
@@ -567,7 +596,8 @@ def release_claims(r):
         "published": str(r["date"]),
         "modified": str(r.get("modified") or r["date"]),
         "publisher": NAME,
-        "disclosure": "affiliated, not paid" if r.get("affiliated") else "paid placement",
+        "disclosure": ("editorial, not paid" if editorial(r) else
+                       "affiliated, not paid" if r.get("affiliated") else "paid placement"),
         "verification": "Statements are attributed to the subject. Publication is not verification.",
         "subject": {
             "name": r["company"], "type": "Organization",
@@ -738,13 +768,15 @@ def podcast(items):
       <link>{u}</link>
       <guid isPermaLink="false">{u}audio.mp3</guid>
       <pubDate>{d}</pubDate>
-      <description>{s} This episode is a press release from {c} and uses synthetic narration.</description>
-      <itunes:summary>{s} Press release. Synthetic narration.</itunes:summary>
+      <description>{s} This episode is {kind} from {c} and uses synthetic narration.</description>
+      <itunes:summary>{s} {k2}. Synthetic narration.</itunes:summary>
       <itunes:author>{c}</itunes:author>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="{u}audio.mp3" type="audio/mpeg" length="{n}"/>
     </item>""".format(t=esc(r["title"]), u=r["url"], d=rfc2822(r["date"]),
-                      s=esc(r["summary"]), c=esc(r["company"]), n=audio_len(r))
+                      s=esc(r["summary"]), c=esc(r["company"]), n=audio_len(r),
+                      kind="an educational article" if editorial(r) else "a press release",
+                      k2="Educational article" if editorial(r) else "Press release")
                     for r in items if r.get("has_audio"))
     return """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -966,7 +998,8 @@ def make_audio(r):
         r["title"], r.get("city", ""), long_date(r["date"]),
         re.sub(r"\s+", " ", re.sub(r"[#>*\[\]()]|https?://\S+", " ", r["body"]))[:4000],
         "This has been a %s from %s, published by Distribute Press Releases "
-        "and read by a synthetic voice." % ("press release" if r.get("affiliated") else "paid press release",
+        "and read by a synthetic voice." % ("educational article" if editorial(r)
+                                            else "press release" if r.get("affiliated") else "paid press release",
                                             r["company"]))
     if DRY:
         log("would narrate", r["slug"], "(%d chars)" % len(text))
@@ -1217,7 +1250,8 @@ def syndication_feed(site, items):
                 "company": r["company"], "company_url": r.get("company_url") or None,
                 "city": r.get("city") or None, "state": r.get("state") or None,
                 "industry": r["industry"], "region": r["region"],
-                "receipt": r["url"] + "receipt/", "newsroom": "%s/newsrooms/%s/" % (SITE, r["company_slug"]),
+                "receipt": r["url"] + "receipt/",
+                "newsroom": None if editorial(r) else "%s/newsrooms/%s/" % (SITE, r["company_slug"]),
                 "contact": {k[8:]: r[k] for k in ("contact_name", "contact_email", "contact_phone") if r.get(k)},
             },
         } for r in items],
@@ -1485,6 +1519,8 @@ def receipt_rows(r, entry):
          "%s/newsrooms/%s/feed.xml" % (SITE, r["company_slug"])),
         ("News sitemap", "48-hour window", "included " + pub, SITE + "/news-sitemap.xml"),
     ]
+    if editorial(r):
+        rows = [x for x in rows if x[0] not in ("Company newsroom", "Company feed")]
     for d in placements(r):
         if d["kind"] == "news":
             rows.append(("Full-text syndication", d["name"], "routed " + pub + "; republished on its hourly sync", d["link"]))
@@ -1538,7 +1574,9 @@ def announce(releases, ledger):
     if todo:
         urls = []
         for r in todo:
-            urls += [r["url"], r["url"] + "receipt/", "%s/newsrooms/%s/" % (SITE, r["company_slug"])]
+            urls += [r["url"], r["url"] + "receipt/"]
+            if not editorial(r):
+                urls.append("%s/newsrooms/%s/" % (SITE, r["company_slug"]))
         urls += [SITE + "/releases/", SITE + "/newsrooms/"]
         state, link = indexnow(urls)
         if state == "skipped":
@@ -1590,7 +1628,8 @@ def main():
     for r in releases:
         by.setdefault(("industry", r["industry"]), []).append(r)
         by.setdefault(("region", r["region"]), []).append(r)
-        by.setdefault(("newsroom", r["company_slug"]), []).append(r)
+        if not editorial(r):
+            by.setdefault(("newsroom", r["company_slug"]), []).append(r)
     newsroom_groups = []
     for (kind, slug), items in by.items():
         if kind == "newsroom":

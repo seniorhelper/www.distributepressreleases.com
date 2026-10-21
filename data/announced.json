@@ -74,21 +74,6 @@
     ],
     "published": "2026-10-11"
   },
-  "elevation-health-three-care-paths-online-access": {
-    "bluesky": [
-      "not posted — account not connected yet",
-      ""
-    ],
-    "indexnow": [
-      "accepted (HTTP 200) 2026-10-11",
-      "https://www.indexnow.org/"
-    ],
-    "mastodon": [
-      "not posted — account not connected yet",
-      ""
-    ],
-    "published": "2026-10-11"
-  },
   "eye-to-ad-media-custom-ai-agents-small-business": {
     "bluesky": [
       "not posted — account not connected yet",
@@ -175,6 +160,17 @@
     ],
     "mastodon": [
       "not posted — account not connected yet",
+      ""
+    ],
+    "published": "2026-10-11"
+  },
+  "three-ways-to-access-glp1-care-online": {
+    "bluesky": [
+      "not posted — educational rewrite of an earlier item",
+      ""
+    ],
+    "mastodon": [
+      "not posted — educational rewrite of an earlier item",
       ""
     ],
     "published": "2026-10-11"

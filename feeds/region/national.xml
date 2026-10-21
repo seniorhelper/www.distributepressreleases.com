@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Distribute Press Releases — national</title>
+    <link>https://distributepressreleases.com/</link>
+    <description>Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement, and publication is not verification.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Oct 2026 19:49:48 +0000</lastBuildDate>
+    <atom:link href="https://distributepressreleases.com/feeds/region/national.xml" rel="self" type="application/rss+xml"/>
+    <copyright>2026 Distribute Press Releases</copyright>
+    <item>
+      <title>Three Ways Patients Access GLP-1 Care Online</title>
+      <link>https://distributepressreleases.com/releases/three-ways-to-access-glp1-care-online/</link>
+      <guid isPermaLink="true">https://distributepressreleases.com/releases/three-ways-to-access-glp1-care-online/</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Distribute Press Releases staff</dc:creator>
+      <category>health-wellness</category>
+      <description>Online GLP-1 care usually comes in three formats: a one-time evaluation, ongoing prescription management or a structured multi-month program. What each involves.</description>
+    </item>
+  </channel>
+</rss>

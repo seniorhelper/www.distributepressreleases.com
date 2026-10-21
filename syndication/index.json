@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T18:00:28Z",
+  "generated": "2026-10-21T19:49:48Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -27,6 +27,10 @@
       "pressreleaseforbusiness",
       "coloradowhatsup"
     ],
+    "three-ways-to-access-glp1-care-online": [
+      "actionglobalnews",
+      "pressreleaseforbusiness"
+    ],
     "showers4less-expanded-catalog-dealer-installer-program": [
       "actionglobalnews",
       "pressreleaseforbusiness",
@@ -37,11 +41,6 @@
       "pressreleaseforbusiness",
       "coloradowhatsup",
       "denvercoloradothingstodo"
-    ],
-    "elevation-health-three-care-paths-online-access": [
-      "actionglobalnews",
-      "pressreleaseforbusiness",
-      "coloradowhatsup"
     ],
     "allofus-one-open-beta-feed-3d-vr-one-account": [
       "actionglobalnews",
