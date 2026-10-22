@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T20:49:20Z",
+  "generated": "2026-10-22T12:02:12Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,9 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "painter-hotline-25-percent-off-labor-through-nov-15": [
+      "coloradowhatsup"
+    ],
     "my-ai-agent-army-launch-17-agents": [
       "actionglobalnews",
       "pressreleaseforbusiness",
