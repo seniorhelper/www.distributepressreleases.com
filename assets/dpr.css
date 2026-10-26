@@ -450,3 +450,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--signal);background:va
 .site-foot .trust-seal{background:#fff;padding:6px 10px}
 .site-foot .trust-seal img{width:200px;height:65px;margin:0}
 .trust-foot .trust-cap{font-size:.8rem;line-height:1.45;color:#93A9CC}
+
+/* ---------- order-request forms (replace public pay buttons) ---------- */
+.order-req{margin:0}
+.order-req>summary{list-style:none;width:100%;text-align:center}
+.order-req>summary::-webkit-details-marker{display:none}
+.order-req[open]>summary{margin-bottom:.8rem}
+.order-form{text-align:left;padding:1rem;border:1px solid var(--edge);border-radius:var(--r-m);background:var(--surface);margin:0 0 .7rem}
+.order-form .field{margin-bottom:.8rem}
+.order-form .btn{width:100%}
+.order-form .form-status{margin-top:.6rem}
+.order-note{font-size:.86rem;color:var(--slate);margin:0 0 .9rem;line-height:1.45}

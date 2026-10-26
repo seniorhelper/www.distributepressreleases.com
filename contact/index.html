@@ -170,7 +170,6 @@
           <form data-guard data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" novalidate>
             <input type="hidden" name="_subject" value="New release inquiry — distributepressreleases.com">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
             <div style="display:none" aria-hidden="true">
               <label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
             </div>
@@ -226,35 +225,80 @@
             </dl>
           </div>
           <div class="card pay-card" style="margin-top:1.1rem">
-            <h3>Prefer to pay upfront?</h3>
-            <p>Buy your plan now, then send the facts with the form. Nothing publishes until you approve the draft.</p>
+            <h3>Want to order upfront?</h3>
+            <p>Request your plan here and we&rsquo;ll email you a secure invoice. Then send the facts with the form. Nothing publishes until you approve the draft.</p>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="50173f92-93d8-48df-82bd-56a060ddfe7e">
-            <button type="submit" class="btn btn-primary">Buy now: $99</button>
-          </form>
-            <p class="pay-price">Single release, $99 paid once today</p>
+            <details class="order-req">
+              <summary class="btn btn-primary">Request this: $99</summary>
+              <form class="order-form" method="post" data-order data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=">
+                <input type="hidden" name="_subject" value="Order request — Single release ($99) — distributepressreleases.com">
+                <input type="hidden" name="_next" value="https://distributepressreleases.com/thank-you/">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="Plan" value="Single release">
+                <input type="hidden" name="Price" value="$99">
+                <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+                <p class="order-note">No card needed now. We'll email you a secure invoice within 1 business day.</p>
+                <div class="field"><label for="o-single-name">Your name</label><input id="o-single-name" name="Your name" type="text" required autocomplete="name"></div>
+                <div class="field"><label for="o-single-email">Email</label><input id="o-single-email" name="Email" type="email" required autocomplete="email"></div>
+                <div class="field"><label for="o-single-phone">Phone</label><input id="o-single-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+                <div class="field"><label for="o-single-company">Company or website</label><input id="o-single-company" name="Company or website" type="text" required autocomplete="organization"></div>
+                <button class="btn btn-primary" type="submit">Send order request</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <noscript><p class="order-note">This form needs JavaScript. Call 1-800-481-8638 to order.</p></noscript>
+              </form>
+            </details>
+            <p class="pay-price">Single release, $99, one invoice</p>
             </div>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="054256b9-e1b8-459e-a1c3-6fee9a50f647">
-            <button type="submit" class="btn btn-primary">Buy now: $890</button>
-          </form>
+            <details class="order-req">
+              <summary class="btn btn-primary">Request this: $890</summary>
+              <form class="order-form" method="post" data-order data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=">
+                <input type="hidden" name="_subject" value="Order request — Annual plan, 12 releases ($890) — distributepressreleases.com">
+                <input type="hidden" name="_next" value="https://distributepressreleases.com/thank-you/">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="Plan" value="Annual plan, 12 releases">
+                <input type="hidden" name="Price" value="$890">
+                <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+                <p class="order-note">No card needed now. We'll email you a secure invoice within 1 business day.</p>
+                <div class="field"><label for="o-annual-name">Your name</label><input id="o-annual-name" name="Your name" type="text" required autocomplete="name"></div>
+                <div class="field"><label for="o-annual-email">Email</label><input id="o-annual-email" name="Email" type="email" required autocomplete="email"></div>
+                <div class="field"><label for="o-annual-phone">Phone</label><input id="o-annual-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+                <div class="field"><label for="o-annual-company">Company or website</label><input id="o-annual-company" name="Company or website" type="text" required autocomplete="organization"></div>
+                <button class="btn btn-primary" type="submit">Send order request</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <noscript><p class="order-note">This form needs JavaScript. Call 1-800-481-8638 to order.</p></noscript>
+              </form>
+            </details>
             <p class="pay-price">Annual plan, $890 for 12 releases, one payment upfront</p>
             </div>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="813f1c59-b3a0-4d23-b19c-284ae4373151">
-            <button type="submit" class="btn btn-primary">Buy now: $89/mo</button>
-          </form>
+            <details class="order-req">
+              <summary class="btn btn-primary">Request this: $89/mo</summary>
+              <form class="order-form" method="post" data-order data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=">
+                <input type="hidden" name="_subject" value="Order request — Monthly plan ($89/mo) — distributepressreleases.com">
+                <input type="hidden" name="_next" value="https://distributepressreleases.com/thank-you/">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="Plan" value="Monthly plan">
+                <input type="hidden" name="Price" value="$89/mo">
+                <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+                <p class="order-note">No card needed now. We'll email you a secure invoice within 1 business day.</p>
+                <div class="field"><label for="o-monthly-name">Your name</label><input id="o-monthly-name" name="Your name" type="text" required autocomplete="name"></div>
+                <div class="field"><label for="o-monthly-email">Email</label><input id="o-monthly-email" name="Email" type="email" required autocomplete="email"></div>
+                <div class="field"><label for="o-monthly-phone">Phone</label><input id="o-monthly-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+                <div class="field"><label for="o-monthly-company">Company or website</label><input id="o-monthly-company" name="Company or website" type="text" required autocomplete="organization"></div>
+                <button class="btn btn-primary" type="submit">Send order request</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <noscript><p class="order-note">This form needs JavaScript. Call 1-800-481-8638 to order.</p></noscript>
+              </form>
+            </details>
             <p class="pay-price">Monthly plan, $89 per month, billed monthly</p>
-            <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
+            <p class="pay-note">We&rsquo;ll email your first monthly invoice and confirm ongoing billing on your intro call.</p>
             </div>
             <p class="pay-call"><a href="tel:+18004818638">Prefer to talk first? Book a free intro call: <span class="nowrap">1-800-481-8638</span></a></p>
             <div class="trust-row">
               <span class="trust-seal"><a href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Search Converts LLC BBB Business Review (opens BBB profile)"><img src="https://seal-alaskaoregonwesternwashington.bbb.org/seals/blue-seal-200-65-bbb-90228702.png" width="200" height="65" alt="Search Converts LLC BBB Business Review" loading="lazy" decoding="async"></a></span>
               <div class="trust-txt">
-                <p class="pay-secure">Secure checkout by Authorize.net. We never see your card number.</p>
+                <p class="pay-secure">Invoices are paid on Authorize.net&rsquo;s secure page. We never see your card number.</p>
                 <p class="trust-cap">BBB Accredited Business, listed as Search Converts LLC.</p>
               </div>
               <div class="anet-seal" style="display:inline-block;flex:none;box-sizing:content-box;min-width:90px;min-height:72px;vertical-align:middle"><!-- (c) 2005, 2026. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="2c88f8ff-07b2-4257-8917-e75f99310417";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net:443/anetseal/seal.js" ></script> </div></div>
