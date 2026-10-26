@@ -131,7 +131,8 @@ def main():
     for root, dirs, files in os.walk(BUILD):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for fn in files:
-            if fn.endswith(".html"):
+            # Google Search Console verification files are not pages
+            if fn.endswith(".html") and not re.match(r"google[0-9a-f]+\.html$", fn):
                 full = os.path.join(root, fn)
                 rel = "/" + os.path.relpath(full, BUILD).replace("\\", "/")
                 pages.append(rel)
