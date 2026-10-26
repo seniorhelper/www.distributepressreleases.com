@@ -37,9 +37,16 @@
       {
         "id": "single",
         "name": "Single release",
-        "price": 99,
+        "price": 129,
         "unit": "release",
         "includes": "all fifteen deliverables, writing and one editorial pass"
+      },
+      {
+        "id": "5pack",
+        "name": "5-pack",
+        "price": 399,
+        "unit": "5 releases",
+        "includes": "five releases, each with all fifteen deliverables, writing and one editorial pass"
       },
       {
         "id": "monthly",

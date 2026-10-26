@@ -129,6 +129,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFKB23X85"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NXFKB23X85');</script>
 <script>(function(){function s(n,p){try{gtag('event',n,p)}catch(e){}}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a)s('phone_click',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,60)})},true);document.addEventListener('submit',function(e){var f=e.target;if(!f||f.getAttribute('role')==='search'||/search/i.test(f.id+' '+f.className+' '+(f.action||'')))return;var id=f.id||f.getAttribute('name')||f.className||'form';if(/estimat|calc/i.test(id+' '+(f.action||'')))s('estimator_use',{form_id:id});s('generate_lead',{form_id:id})},true);window.etAB=function(n,v){var k='etab_'+n,x;try{x=localStorage.getItem(k)}catch(e){}if(!x||v.indexOf(x)<0){x=v[Math.floor(Math.random()*v.length)];try{localStorage.setItem(k,x)}catch(e){}}s('ab_view',{experiment:n,variant:x});try{gtag('set','user_properties',{['ab_'+n]:x})}catch(e){}document.documentElement.setAttribute('data-ab-'+n,x);return x}})();</script>
+<script src="https://usabusinesssearch.com/secure-checkout/checkout.js" defer></script>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -229,26 +230,21 @@
             <h3>Prefer to pay upfront?</h3>
             <p>Buy your plan now, then send the facts with the form. Nothing publishes until you approve the draft.</p>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="50173f92-93d8-48df-82bd-56a060ddfe7e">
-            <button type="submit" class="btn btn-primary">Buy now: $99</button>
-          </form>
-            <p class="pay-price">Single release, $99 paid once today</p>
+            <button type="button" class="btn btn-primary sc-buy" data-sku="DPR-SINGLE" data-site="distributepressreleases.com">Buy one release: $129</button>
+            <p class="pay-price">Single release, $129 paid once today</p>
             </div>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="054256b9-e1b8-459e-a1c3-6fee9a50f647">
-            <button type="submit" class="btn btn-primary">Buy now: $890</button>
-          </form>
+            <button type="button" class="btn btn-primary sc-buy" data-sku="DPR-5PACK" data-site="distributepressreleases.com">Buy the 5-pack: $399</button>
+            <p class="pay-price">5 releases, $399 paid once today</p>
+            </div>
+            <div class="pay-item">
+            <button type="button" class="btn btn-primary sc-buy" data-sku="DPR-ANNUAL" data-site="distributepressreleases.com">Buy annual: $890/yr</button>
             <p class="pay-price">Annual plan, $890 for 12 releases, one payment upfront</p>
             </div>
             <div class="pay-item">
-            <form class="pay-form" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-            <input type="hidden" name="LinkId" value="813f1c59-b3a0-4d23-b19c-284ae4373151">
-            <button type="submit" class="btn btn-primary">Buy now: $89/mo</button>
-          </form>
+            <button type="button" class="btn btn-primary sc-buy" data-sku="DPR-MONTHLY" data-site="distributepressreleases.com">Start monthly: $89/mo</button>
             <p class="pay-price">Monthly plan, $89 per month, billed monthly</p>
-            <p class="pay-note">First month charged today. We&rsquo;ll confirm your ongoing monthly billing during your intro call.</p>
+            <p class="pay-note">First month charged today, then monthly until you cancel. Cancel anytime online.</p>
             </div>
             <p class="pay-call"><a href="tel:+18004818638">Prefer to talk first? Book a free intro call: <span class="nowrap">1-800-481-8638</span></a></p>
             <div class="trust-row">
