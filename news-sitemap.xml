@@ -3,5 +3,15 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <!-- Only releases from the last 48 hours appear here, per the news sitemap
        specification. Regenerated on every publish. -->
-
+  <url>
+    <loc>https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-26</news:publication_date>
+      <news:title>AI Speed to Leads Launches to Answer Every Web Lead in About 60 Seconds With a Consent-Only AI Voice Call</news:title>
+    </news:news>
+  </url>
 </urlset>

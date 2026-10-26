@@ -1,0 +1,62 @@
+{
+  "release": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+  "title": "AI Speed to Leads Launches to Answer Every Web Lead in About 60 Seconds With a Consent-Only AI Voice Call",
+  "published": "2026-10-26",
+  "modified": "2026-10-26",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "AI Speed to Leads",
+    "type": "Organization",
+    "sameAs": [
+      "https://aispeedtoleads.com/"
+    ]
+  },
+  "industry": "marketing-technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "AI Speed to Leads launched at aispeedtoleads.com in October 2026 as a product of Eye To Ad Media of Denver.",
+      "type": "event",
+      "date": "2026-10-26",
+      "source": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+      "attributedTo": "AI Speed to Leads"
+    },
+    {
+      "statement": "AI Speed to Leads sends an instant email reply to each new web lead and, for leads who checked the business's consent box, places an AI voice call within about 60 seconds.",
+      "type": "feature",
+      "date": "2026-10-26",
+      "source": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+      "attributedTo": "AI Speed to Leads"
+    },
+    {
+      "statement": "The AI Speed to Leads voice assistant, Lily, says she is an AI on every call, asks the business's qualifying questions and scores each lead A, B or C.",
+      "type": "feature",
+      "date": "2026-10-26",
+      "source": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+      "attributedTo": "AI Speed to Leads"
+    },
+    {
+      "statement": "AI Speed to Leads calls and texts only between 8 a.m. and 8 p.m. in the lead's local time zone, and never cold calls or dials lists.",
+      "type": "policy",
+      "date": "2026-10-26",
+      "source": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+      "attributedTo": "AI Speed to Leads"
+    },
+    {
+      "statement": "AI Speed to Leads does not publish plan prices; plans are quoted on a 15-minute call based on lead volume and the forms connected.",
+      "type": "offering",
+      "date": "2026-10-26",
+      "source": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+      "attributedTo": "AI Speed to Leads"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/",
+    "markdown": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/index.md",
+    "claims": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/receipt/",
+    "audio": "https://distributepressreleases.com/releases/ai-speed-to-leads-launch-60-second-lead-response/audio.mp3"
+  }
+}
