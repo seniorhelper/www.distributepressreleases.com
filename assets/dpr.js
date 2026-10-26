@@ -97,39 +97,6 @@
     });
   });
 
-
-  /* ---------- order-request forms ----------
-     No public payment buttons. Visitors request a plan, we email a private invoice.
-     Native POST (not AJAX) so FormSubmit's CAPTCHA page runs. Endpoint is set at submit time. */
-  Array.prototype.forEach.call(document.querySelectorAll("form[data-order]"), function (form) {
-    var started = 0;
-    var status = form.querySelector(".form-status");
-    function mark() { if (!started) started = Date.now(); }
-    form.addEventListener("focusin", mark);
-    form.addEventListener("input", mark);
-    form.addEventListener("submit", function (e) {
-      var hp = form.querySelector('input[name="_honey"]');
-      var msg = "";
-      var addr = joinAddr(form);
-      if (hp && hp.value) msg = "Could not send.";
-      else if (!started || Date.now() - started < 3000) msg = "Give the form a moment, then send again.";
-      else if (!addr) msg = "Could not send. Please call 1-800-481-8638.";
-      if (msg) {
-        e.preventDefault();
-        if (status) { status.textContent = msg; status.className = "form-status err"; }
-        return;
-      }
-      if (status) { status.textContent = ""; status.className = "form-status"; }
-      form.setAttribute("action", "https://formsubmit.co/" + addr);
-      var b = form.querySelector("[type=submit]");
-      if (b) { setTimeout(function () { b.disabled = true; b.textContent = "Sending\u2026"; }, 0); }
-    });
-    window.addEventListener("pageshow", function () {
-      var b = form.querySelector("[type=submit]");
-      if (b && b.disabled) { b.disabled = false; b.textContent = "Send order request"; }
-    });
-  });
-
   /* ---------- live board ---------- */
   var board = document.getElementById("board");
   if (board && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
