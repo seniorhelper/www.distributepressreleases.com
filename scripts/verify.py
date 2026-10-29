@@ -104,7 +104,7 @@ def check(path, rel):
     for m in re.finditer(r"<details>\s*<summary>(.*?)</summary>\s*<div><p>(.*?)</p></div>",
                          body, re.S):
         vis.append((html.unescape(m.group(1)).strip(),
-                    html.unescape(m.group(2)).strip()))
+                    html.unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip()))  # links in an answer are fine; compare the words
     if faq_schema or vis:
         if len(faq_schema) != len(vis):
             errors.append("%s: FAQ parity count %d schema vs %d visible"
