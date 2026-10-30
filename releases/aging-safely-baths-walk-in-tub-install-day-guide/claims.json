@@ -1,0 +1,62 @@
+{
+  "release": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+  "title": "Aging Safely Baths Publishes an Hour-by-Hour Guide to Walk-In Tub Installation Day, From the 7 a.m. Arrival to the 20-Minute Fill Test",
+  "published": "2026-10-30",
+  "modified": "2026-10-30",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Aging Safely Baths",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.agingsafelybaths.com/walk-in-tub-installation-day/"
+    ]
+  },
+  "industry": "home-accessibility",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Aging Safely Baths published an hour-by-hour guide to walk-in tub and roll-in shower installation day in October 2026.",
+      "type": "event",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths says a standard walk-in tub or roll-in shower install in an existing alcove takes one working day, roughly 7 a.m. to 4 p.m., with two installers.",
+      "type": "metric",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Every Aging Safely Baths walk-in tub install ends with a 20-minute fill test with the door closed before the crew leaves.",
+      "type": "policy",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths says about one job in six runs into a second day, usually a half day, and tells the customer at the quote if that is likely.",
+      "type": "metric",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+      "attributedTo": "Aging Safely Baths"
+    },
+    {
+      "statement": "Aging Safely Baths has sold and installed walk-in tubs and roll-in showers in all 50 states since 2012.",
+      "type": "fact",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+      "attributedTo": "Aging Safely Baths"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/",
+    "markdown": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/index.md",
+    "claims": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/receipt/",
+    "audio": "https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/audio.mp3"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29T23:16:06Z",
+  "generated": "2026-10-30T18:35:08Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,20 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "distribute-press-releases-15-deliverables-from-74": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup"
+    ],
+    "bogota-seo-launch-seo-websites-ai-agents-bogota": [
+      "actionglobalnews",
+      "pressreleaseforbusiness"
+    ],
+    "aging-safely-baths-walk-in-tub-install-day-guide": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup"
+    ],
     "ai-speed-to-leads-launch-60-second-lead-response": [
       "actionglobalnews",
       "pressreleaseforbusiness",

@@ -3,5 +3,37 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <!-- Only releases from the last 48 hours appear here, per the news sitemap
        specification. Regenerated on every publish. -->
-
+  <url>
+    <loc>https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-30</news:publication_date>
+      <news:title>Distribute Press Releases Prices Every Release at $99 or Less, With 15 Deliverables Included and No Add-On Menu</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/bogota-seo-launch-seo-websites-ai-agents-bogota/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-30</news:publication_date>
+      <news:title>Bogotá SEO Opens in Colombia, Bringing Google Rankings, WhatsApp-Ready Websites and AI Agents to Bogotá Businesses in Their Own Spanish</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/aging-safely-baths-walk-in-tub-install-day-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Distribute Press Releases</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-30</news:publication_date>
+      <news:title>Aging Safely Baths Publishes an Hour-by-Hour Guide to Walk-In Tub Installation Day, From the 7 a.m. Arrival to the 20-Minute Fill Test</news:title>
+    </news:news>
+  </url>
 </urlset>

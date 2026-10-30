@@ -1,0 +1,62 @@
+{
+  "release": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+  "title": "Distribute Press Releases Prices Every Release at $99 or Less, With 15 Deliverables Included and No Add-On Menu",
+  "published": "2026-10-30",
+  "modified": "2026-10-30",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Distribute Press Releases",
+    "type": "Organization",
+    "sameAs": [
+      "https://distributepressreleases.com/pricing/"
+    ]
+  },
+  "industry": "marketing-technology",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Distribute Press Releases sells a single press release for $99, a 5-pack for $399, a monthly plan at $89 per month and an annual plan of 12 releases for $890.",
+      "type": "offering",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+      "attributedTo": "Distribute Press Releases"
+    },
+    {
+      "statement": "Every Distribute Press Releases release includes the same 15 deliverables, with no per-word charges, image fees or upgrade menu.",
+      "type": "feature",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+      "attributedTo": "Distribute Press Releases"
+    },
+    {
+      "statement": "Distribute Press Releases writes each release from the client's facts, runs one editorial pass, and publishes nothing until the client approves the final draft.",
+      "type": "policy",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+      "attributedTo": "Distribute Press Releases"
+    },
+    {
+      "statement": "Each release gets a permanent canonical URL, NewsArticle and Organization structured data, a claims file, a markdown copy, narrated audio, a podcast episode and transcript, four syndication feeds, an IndexNow push and posts to Bluesky and Mastodon.",
+      "type": "feature",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+      "attributedTo": "Distribute Press Releases"
+    },
+    {
+      "statement": "Distribute Press Releases is operated by Eye To Ad Media of Denver.",
+      "type": "fact",
+      "date": "2026-10-30",
+      "source": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+      "attributedTo": "Distribute Press Releases"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/",
+    "markdown": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/index.md",
+    "claims": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/receipt/",
+    "audio": "https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/audio.mp3"
+  }
+}

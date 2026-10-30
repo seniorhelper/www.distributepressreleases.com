@@ -1,0 +1,40 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Distribute Press Releases",
+  "home_page_url": "https://distributepressreleases.com/",
+  "feed_url": "https://distributepressreleases.com/newsrooms/bogota-seo/feed.json",
+  "description": "Press releases published and syndicated by Distribute Press Releases. Every item is labeled as a paid or affiliated placement.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Distribute Press Releases",
+      "url": "https://distributepressreleases.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://distributepressreleases.com/releases/bogota-seo-launch-seo-websites-ai-agents-bogota/",
+      "url": "https://distributepressreleases.com/releases/bogota-seo-launch-seo-websites-ai-agents-bogota/",
+      "title": "Bogotá SEO Opens in Colombia, Bringing Google Rankings, WhatsApp-Ready Websites and AI Agents to Bogotá Businesses in Their Own Spanish",
+      "summary": "Bogotá SEO now offers SEO, Google Maps profiles, WhatsApp-ready websites, ads and AI agents to Bogotá businesses, with a free SEO audit and service in Colombian Spanish.",
+      "content_text": "Bogotá SEO has opened at bogotaseo.com to help businesses in Bogotá and across Colombia get found on Google, Google Maps and AI assistants, turn website visits into WhatsApp conversations, and hand repetitive work to AI agents. The agency serves clients in Colombian Spanish, mostly over WhatsApp, and starts every engagement with a free SEO audit. Bogotá has no shortage of good businesses. According to the Bogotá Chamber of Commerce, the Bogotá region had 496,686 active companies in 2025, and 81,372 new ones were created between January and November of that year. Bogotá SEO's pitch is that quality alone no longer gets a business found: the bakery with the best pan de bono in the neighborhood still loses the customer if a competitor shows up first on Google Maps or answers WhatsApp faster. The agency works in four steps it calls found, impress, convert and free time. It handles technical SEO and content written in Colombian Spanish, local SEO for neighborhoods such as Usaquén, Chapinero, Suba and Kennedy, and Google Business Profile setup, verification and weekly posting. It builds fast, mobile-first websites with WhatsApp one tap away, runs Google, Facebook and Instagram ads, and se",
+      "date_published": "2026-10-30T12:00:00Z",
+      "authors": [
+        {
+          "name": "Bogotá SEO"
+        }
+      ],
+      "tags": [
+        "marketing",
+        "national",
+        "operator’s own release"
+      ],
+      "attachments": [
+        {
+          "url": "https://distributepressreleases.com/releases/bogota-seo-launch-seo-websites-ai-agents-bogota/audio.mp3",
+          "mime_type": "audio/mpeg"
+        }
+      ]
+    }
+  ]
+}
