@@ -181,6 +181,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/receipt/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://distributepressreleases.com/releases/distribute-press-releases-15-deliverables-from-74/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
@@ -383,6 +395,12 @@
     <lastmod>2026-10-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://distributepressreleases.com/newsrooms/madwackd-studio/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://distributepressreleases.com/newsrooms/distribute-press-releases/</loc>

@@ -1,0 +1,69 @@
+{
+  "release": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+  "title": "Madwackd Studio Opens the Custom Creator Studio Founding Beta at $99 a Month for the First 100 Creators",
+  "published": "2026-11-08",
+  "modified": "2026-11-08",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Madwackd Studio",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.madwackd.ai/"
+    ]
+  },
+  "industry": "film-and-entertainment",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "Madwackd Studio launched the Custom Creator Studio at https://www.madwackd.ai/custom-creator-studio/ on November 8, 2026.",
+      "type": "event",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    },
+    {
+      "statement": "The Founding Creator beta plan costs $99 a month, locked for 12 months, then renews at the regular price of $299 a month, and can be cancelled anytime with a 14-day money-back guarantee on the first payment.",
+      "type": "offering",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    },
+    {
+      "statement": "The founding rate is open to the first 100 founding creators or through November 22, 2026, whichever comes first.",
+      "type": "offering",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    },
+    {
+      "statement": "The Founding Creator plan includes every studio tool, a personalized dashboard, a human producer review within one business day, 120 Fast render credits a month, 3 Talking Z minutes, one published press release and a Creator Spotlight on madwackd.ai.",
+      "type": "feature",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    },
+    {
+      "statement": "The Custom Creator Studio exports and shares to platforms with one tap today; direct posting to each platform rolls out only after that platform approves the Madwackd app.",
+      "type": "fact",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    },
+    {
+      "statement": "Madwackd Studio is operated by Madwackd Productions of Denver, Colorado, founded by Zach Wennstedt.",
+      "type": "fact",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+      "attributedTo": "Madwackd Studio"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/",
+    "markdown": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/index.md",
+    "claims": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/receipt/",
+    "audio": "https://distributepressreleases.com/releases/madwackd-studio-custom-creator-studio-founding-beta/audio.mp3"
+  }
+}

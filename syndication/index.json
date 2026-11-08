@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-08T18:19:41Z",
+  "generated": "2026-11-08T20:02:24Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,11 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "madwackd-studio-custom-creator-studio-founding-beta": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "coloradowhatsup"
+    ],
     "distribute-press-releases-15-deliverables-from-74": [
       "actionglobalnews",
       "pressreleaseforbusiness",
