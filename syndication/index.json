@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-08T20:02:26Z",
+  "generated": "2026-11-09T08:54:41Z",
   "feeds": {
     "actionglobalnews": "https://distributepressreleases.com/syndication/actionglobalnews.json",
     "pressreleaseforbusiness": "https://distributepressreleases.com/syndication/pressreleaseforbusiness.json",
@@ -10,6 +10,12 @@
     "besthotelshawaii": "https://distributepressreleases.com/syndication/besthotelshawaii.json"
   },
   "routes": {
+    "madwackd-productions-the-earth-movie-official-trailer-presale": [
+      "actionglobalnews",
+      "pressreleaseforbusiness",
+      "denvercoloradothingstodo",
+      "coloradowhatsup"
+    ],
     "madwackd-studio-custom-creator-studio-founding-beta": [
       "actionglobalnews",
       "pressreleaseforbusiness",

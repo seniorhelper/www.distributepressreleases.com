@@ -1,0 +1,69 @@
+{
+  "release": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+  "title": "Madwackd Productions Releases the Official Trailer for THE EARTH MOVIE and Opens $2.99 Presale Tickets",
+  "published": "2026-11-09",
+  "modified": "2026-11-09",
+  "publisher": "Distribute Press Releases",
+  "disclosure": "affiliated, not paid",
+  "verification": "Statements are attributed to the subject. Publication is not verification.",
+  "subject": {
+    "name": "Madwackd Productions",
+    "type": "Organization",
+    "sameAs": [
+      "https://www.madwackd.com/"
+    ]
+  },
+  "industry": "film-and-entertainment",
+  "region": "colorado",
+  "claims": [
+    {
+      "statement": "The official trailer for THE EARTH MOVIE, running 4 minutes 4 seconds, is published at https://www.theearthmovie.com/#trailer and https://www.madwackd.com/earth/.",
+      "type": "event",
+      "date": "2026-11-08",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    },
+    {
+      "statement": "THE EARTH MOVIE is a satirical, family-friendly feature film that uses AI-generated characters, voices and imagery, directed and produced by Zach Wennstedt at Madwackd Productions.",
+      "type": "fact",
+      "date": "2026-11-09",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    },
+    {
+      "statement": "The film is targeted for Summer 2027 at watchvrmovie.com, with no fixed premiere date yet.",
+      "type": "fact",
+      "date": "2026-11-09",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    },
+    {
+      "statement": "Presale tickets cost $2.99; the regular price at release will be $4.99; buyers can get a full refund on request any time before release.",
+      "type": "offering",
+      "date": "2026-11-09",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    },
+    {
+      "statement": "1.5% of all ticket sales goes to carbon removal through Stripe Climate, paid from Madwackd's share at no extra cost to buyers.",
+      "type": "offering",
+      "date": "2026-11-09",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    },
+    {
+      "statement": "A presale ticket is a ticket to watch the movie. It is not an investment, donation or share in the film and carries no profit share or ownership.",
+      "type": "fact",
+      "date": "2026-11-09",
+      "source": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+      "attributedTo": "Madwackd Productions"
+    }
+  ],
+  "artifacts": {
+    "html": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/",
+    "markdown": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/index.md",
+    "claims": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/claims.json",
+    "receipt": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/receipt/",
+    "audio": "https://distributepressreleases.com/releases/madwackd-productions-the-earth-movie-official-trailer-presale/audio.mp3"
+  }
+}
