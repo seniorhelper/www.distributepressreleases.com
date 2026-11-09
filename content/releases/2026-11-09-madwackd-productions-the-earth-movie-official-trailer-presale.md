@@ -26,7 +26,7 @@ claims:
   - statement: The film is targeted for Summer 2027 at watchvrmovie.com, with no fixed premiere date yet.
     type: fact
     date: 2026-11-09
-  - statement: Presale tickets cost $2.99; the regular price at release will be $4.99; buyers can get a full refund on request any time before release.
+  - statement: Presale tickets cost $2.99; the regular price at release will be $4.88; buyers can get a full refund on request any time before release.
     type: offering
     date: 2026-11-09
   - statement: 1.5% of all ticket sales goes to carbon removal through Stripe Climate, paid from Madwackd's share at no extra cost to buyers.
@@ -37,7 +37,7 @@ claims:
     date: 2026-11-09
 ---
 
-Madwackd Productions, the Denver studio behind the AI video platform Madwackd Studio, has released the official trailer for THE EARTH MOVIE, its first feature film: a family-friendly satire made with AI-generated characters, voices and imagery. The four-minute trailer is out now at [theearthmovie.com](https://www.theearthmovie.com/#trailer). Presale tickets are on sale now for $2.99, against a regular price of $4.99 at release, with a full refund available on request any time before the film premieres.
+Madwackd Productions, the Denver studio behind the AI video platform Madwackd Studio, has released the official trailer for THE EARTH MOVIE, its first feature film: a family-friendly satire made with AI-generated characters, voices and imagery. The four-minute trailer is out now at [theearthmovie.com](https://www.theearthmovie.com/#trailer). Presale tickets are on sale now for $2.99, against a regular price of $4.88 at release, with a full refund available on request any time before the film premieres.
 
 THE EARTH MOVIE is set on a backwards planet hooked on its feeds, where everyone keeps score with a glowing number over their head. One scrawny nobody wakes up and starts asking the question nobody above the clouds wants asked, and learns that love and kindness beat money. The jokes stay clean, with no cussing and no crude humor, while the satire carries allegories that older viewers will catch. The film is targeted for Summer 2027 at [watchvrmovie.com](https://watchvrmovie.com/), an online theater viewers can visit with a VR headset or on a phone, tablet or computer. There is no fixed premiere date yet.
 
