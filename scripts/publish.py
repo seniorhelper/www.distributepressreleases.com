@@ -360,7 +360,6 @@ def release_html(r, prev_next):
             "url": SITE + "/",
             "logo": {"@type": "ImageObject",
                      "url": SITE + "/images/distribute-press-releases-logo.png"},
-            "email": "info@eyetoad.com",
             "ethicsPolicy": SITE + "/editorial-standards/",
             "correctionsPolicy": SITE + "/corrections/",
             "diversityPolicy": SITE + "/editorial-standards/",
@@ -626,8 +625,8 @@ def receipt_html(r, results):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="{gsc}">
-<title>Distribution receipt</title>
-<meta name="description" content="Public record of every channel this press release was published to, with dates and working links.">
+<title>Receipt: {rtitle}</title>
+<meta name="description" content="Distribution receipt for &quot;{dtitle}&quot;: every channel it was published to, with dates and working links.">
 <link rel="canonical" href="{url}receipt/">
 <meta name="robots" content="index, follow">
 <meta property="og:locale" content="en_US">
@@ -666,7 +665,14 @@ def receipt_html(r, results):
   <a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a>
 </div></div><div class="stamp"><a href="https://eyetoad.com/" rel="nofollow" title="Built by Eye To Ad Media">&#10084;&#65039;</a></div></footer>
 </body></html>
-""".format(gsc=GSC, url=r["url"], title=esc(r["title"]), rows=rows, **TRUST)
+""".format(gsc=GSC, url=r["url"], title=esc(r["title"]), rows=rows,
+           rtitle=esc(_clip(r["title"], 50)), dtitle=esc(_clip(r["title"], 60)), **TRUST)
+
+
+def _clip(s, n):
+    """Shorten a title on a word boundary for receipt titles and descriptions."""
+    s = str(s).strip()
+    return s if len(s) <= n else s[:n].rsplit(" ", 1)[0].rstrip(",;:-") + "\u2026"
 
 
 # ---------------------------------------------------------------- feeds
@@ -845,6 +851,9 @@ STATIC_PAGES = [
     ("/press-release-seo/", "0.8", "monthly"),
     ("/ai-press-release/", "0.8", "monthly"),
     ("/how-to-write-a-press-release/", "0.8", "monthly"),
+    ("/press-release-examples/", "0.8", "monthly"),
+    ("/press-release-distribution-cost/", "0.8", "monthly"),
+    ("/how-to-send-a-press-release-to-local-news/", "0.8", "monthly"),
     ("/tools/release-builder/", "0.8", "monthly"),
     ("/network/", "0.7", "weekly"), ("/newsrooms/", "0.6", "weekly"),
     ("/agents/", "0.6", "monthly"), ("/about/", "0.5", "yearly"),

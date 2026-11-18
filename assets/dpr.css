@@ -206,6 +206,7 @@ section{padding:clamp(3rem,7vw,6rem) 0}
 .band-ink h2,.band-ink h3{color:#fff}
 .band-ink p{color:#BFD0E9}
 .band-ink a{color:#8FC8FF}
+.band-ink a.btn-primary{color:#fff}.band-ink a.btn-ghost{color:var(--ink)}.band-ink a.btn-ghost:hover{color:var(--signal-deep)}
 
 .grid{display:grid;gap:1.1rem}
 .g-2{grid-template-columns:repeat(2,1fr)}

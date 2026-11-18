@@ -40,12 +40,19 @@ are documented at https://distributepressreleases.com/agents/. No key is require
 - [Newsroom](https://distributepressreleases.com/newsroom/): the free hosted press page and embed
 - [Audio and podcast](https://distributepressreleases.com/podcast/): narration and podcast distribution
 - [Machine interface](https://distributepressreleases.com/agents/): feeds, claims files, crawler documentation
+- [Published releases](https://distributepressreleases.com/releases/): every release, newest first, each with a public receipt
+- [Publishing network](https://distributepressreleases.com/network/): the sites releases are routed to
+- [Newsroom directory](https://distributepressreleases.com/newsrooms/): one page and feed per company
+- [Contact](https://distributepressreleases.com/contact/): start a release or ask a question
 
 ## Reference and research
 
 - [Press releases and SEO](https://distributepressreleases.com/press-release-seo/): what Google's spam policy says about paid release links
 - [Press releases and AI search](https://distributepressreleases.com/ai-press-release/): published research on AI citation rates, including findings that argue against buying a release
 - [How to write a press release](https://distributepressreleases.com/how-to-write-a-press-release/): format, structure, worked examples
+- [Press release examples](https://distributepressreleases.com/press-release-examples/): eight small business examples with sample headlines and openings
+- [Press release distribution cost](https://distributepressreleases.com/press-release-distribution-cost/): what drives the price, common add-ons, how to budget
+- [Sending a release to local news](https://distributepressreleases.com/how-to-send-a-press-release-to-local-news/): finding contacts, the pitch email, timing, follow-up
 
 ## Free tools, no signup, client-side only
 
@@ -55,6 +62,7 @@ are documented at https://distributepressreleases.com/agents/. No key is require
 - [Schema generator](https://distributepressreleases.com/tools/press-release-schema-generator/)
 - [Headline scorer](https://distributepressreleases.com/tools/headline-scorer/)
 - [Cost calculator](https://distributepressreleases.com/tools/distribution-cost-calculator/)
+- [Release builder](https://distributepressreleases.com/tools/release-builder/)
 
 ## Policies
 
@@ -77,7 +85,10 @@ are documented at https://distributepressreleases.com/agents/. No key is require
 - https://distributepressreleases.com/media.xml (Media RSS)
 - https://distributepressreleases.com/podcast.xml (audio episodes)
 - https://distributepressreleases.com/news-sitemap.xml (last 48 hours)
+- https://distributepressreleases.com/feeds/industry/<slug>.xml and /feeds/region/<slug>.xml (scoped RSS)
+- https://distributepressreleases.com/newsrooms/<company-slug>/feed.json and feed.xml (one company)
+- https://distributepressreleases.com/syndication/<site-id>.json (per-destination syndication feeds)
 
 ## Contact
 
-info@eyetoad.com | 1-800-481-8638 | 1001 Bannock St #660, Denver, CO 80204
+https://distributepressreleases.com/contact/ | 1-800-481-8638 | 1001 Bannock St #660, Denver, CO 80204
